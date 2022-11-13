@@ -1,0 +1,7 @@
+La validacion del PIN de transaccion se da cuando el usuario solicita realizar una 
+operacion la cual requiere de dicho PIN (Transferencia, pago de tarjeta y pago de servicios).
+1- El usuario completa el Formulario provisto con los datos de la operacion.
+2- El mediador realiza las comprobaciones con los datos provistos.
+3- El mediador realiza una peticion al BankServer. Este se encarga de validar
+los datos provistos, validar el PIN de transaccion comparandolo con el pin de transaccion de la cuenta de origen y retornar
+el comprobante de la operacion

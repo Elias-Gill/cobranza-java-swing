@@ -1,0 +1,11 @@
+1- Se muestra en pantalla el menú de inicio de sesión.
+2- El usuario rellena el formulario con sus datos (cedula y PIN de cuenta).
+3- Los datos se mandan al Mediador, donde primeramente se valida que los datos sean válidos, es decir, 
+que no se hayan insertado letras, que la cantidad de dígitos sea correcta, etc.
+4- El Mediador realiza una petición de inicio de sesión al BankServer
+6- El BankServer busca la cuenta en la base de datos, compara el PIN proporcionado y retorna un nuevo 
+objeto "Cuenta" al Mediador, el cual contiene los datos de la cuenta.
+7- Se muestra en pantalla el menú principal.
+8- El usuario oprime el botón "recargar".
+9,10- El sistema obtiene y retorna el saldo de la cuenta.
+11- Se actualiza el saldo en la interfaz.
