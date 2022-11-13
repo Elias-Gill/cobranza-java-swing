@@ -2,7 +2,7 @@ En documentacion ponen TODO sobre COMO USAR la parte del proyecto que les corres
 y que tener en cuenta para poder conectar.
 
 Ejemplo:
-```
+```markdown
 # Vista general
 Para el manejo de actividades del proyecto se dispone del modulo __src/backend/dataBase/activitiesManager.py__.
 
