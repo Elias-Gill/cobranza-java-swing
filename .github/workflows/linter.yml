@@ -4,9 +4,12 @@ on:
     branches: 
       - '*'
       - '!master'
+      
+  pull_request:
+    branches:
+      - '*'
 
 jobs:
-
   formatting:
     runs-on: ubuntu-latest
     steps:
