@@ -1,0 +1,8 @@
+La validacion del PIN de cuenta se da durante el proceso de inicio de sesion: 
+1- Se muestra en pantalla el menu de inicio de sesion.
+2- El usuario rellena el formulario con sus datos (cedula y PIN de cuenta).
+3- Los datos se mandan al Mediador, donde primeramente se valida que los datos sean validos, es decir, 
+que no se hayan insertado letras, que la cantidad de digitos sea correcta, etc.
+4- El Mediador realiza una peticion de inicio de sesion al BankServer
+6- El BankServer busca la cuenta en la base de datos, compara el PIN proporcionado y retorna un nuevo objeto "Cuenta"
+al Mediador, el cual contiene los datos de la cuenta.
