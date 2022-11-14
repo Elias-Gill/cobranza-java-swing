@@ -88,13 +88,18 @@ public class comprobante extends javax.swing.JFrame {
                                 layout.createSequentialGroup()
                                         .addGroup(
                                                 layout.createParallelGroup(
-                                                        javax.swing.GroupLayout.Alignment.LEADING)
+                                                                javax.swing.GroupLayout.Alignment
+                                                                        .LEADING)
                                                         .addGroup(
                                                                 layout.createSequentialGroup()
                                                                         .addGap(191, 191, 191)
                                                                         .addGroup(
                                                                                 layout.createParallelGroup(
-                                                                                        javax.swing.GroupLayout.Alignment.TRAILING)
+                                                                                                javax
+                                                                                                        .swing
+                                                                                                        .GroupLayout
+                                                                                                        .Alignment
+                                                                                                        .TRAILING)
                                                                                         .addComponent(
                                                                                                 Numero)
                                                                                         .addComponent(
@@ -108,40 +113,78 @@ public class comprobante extends javax.swing.JFrame {
                                                                         .addGap(18, 18, 18)
                                                                         .addGroup(
                                                                                 layout.createParallelGroup(
-                                                                                        javax.swing.GroupLayout.Alignment.LEADING)
+                                                                                                javax
+                                                                                                        .swing
+                                                                                                        .GroupLayout
+                                                                                                        .Alignment
+                                                                                                        .LEADING)
                                                                                         .addComponent(
                                                                                                 datosFecha,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                                javax
+                                                                                                        .swing
+                                                                                                        .GroupLayout
+                                                                                                        .PREFERRED_SIZE,
                                                                                                 299,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                                javax
+                                                                                                        .swing
+                                                                                                        .GroupLayout
+                                                                                                        .PREFERRED_SIZE)
                                                                                         .addComponent(
                                                                                                 datosCuentaDestino,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                                javax
+                                                                                                        .swing
+                                                                                                        .GroupLayout
+                                                                                                        .PREFERRED_SIZE,
                                                                                                 299,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                                javax
+                                                                                                        .swing
+                                                                                                        .GroupLayout
+                                                                                                        .PREFERRED_SIZE)
                                                                                         .addComponent(
                                                                                                 datosConcepto,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                                javax
+                                                                                                        .swing
+                                                                                                        .GroupLayout
+                                                                                                        .PREFERRED_SIZE,
                                                                                                 299,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                                javax
+                                                                                                        .swing
+                                                                                                        .GroupLayout
+                                                                                                        .PREFERRED_SIZE)
                                                                                         .addComponent(
                                                                                                 datosMonto,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                                javax
+                                                                                                        .swing
+                                                                                                        .GroupLayout
+                                                                                                        .PREFERRED_SIZE,
                                                                                                 299,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                                javax
+                                                                                                        .swing
+                                                                                                        .GroupLayout
+                                                                                                        .PREFERRED_SIZE)
                                                                                         .addComponent(
                                                                                                 datosNumero,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                                javax
+                                                                                                        .swing
+                                                                                                        .GroupLayout
+                                                                                                        .PREFERRED_SIZE,
                                                                                                 299,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                                                                javax
+                                                                                                        .swing
+                                                                                                        .GroupLayout
+                                                                                                        .PREFERRED_SIZE)))
                                                         .addGroup(
                                                                 layout.createSequentialGroup()
                                                                         .addGap(347, 347, 347)
                                                                         .addComponent(
                                                                                 Comprobante,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                javax.swing
+                                                                                        .GroupLayout
+                                                                                        .PREFERRED_SIZE,
                                                                                 132,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                                                javax.swing
+                                                                                        .GroupLayout
+                                                                                        .PREFERRED_SIZE)))
                                         .addContainerGap(193, Short.MAX_VALUE))
                         .addGroup(
                                 javax.swing.GroupLayout.Alignment.TRAILING,
@@ -162,85 +205,145 @@ public class comprobante extends javax.swing.JFrame {
                                         .addGap(30, 30, 30)
                                         .addGroup(
                                                 layout.createParallelGroup(
-                                                        javax.swing.GroupLayout.Alignment.LEADING)
+                                                                javax.swing.GroupLayout.Alignment
+                                                                        .LEADING)
                                                         .addComponent(
                                                                 CuentaDestino,
-                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                javax.swing.GroupLayout
+                                                                        .PREFERRED_SIZE,
                                                                 30,
-                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                javax.swing.GroupLayout
+                                                                        .PREFERRED_SIZE)
                                                         .addComponent(
                                                                 datosNumero,
-                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                javax.swing.GroupLayout
+                                                                        .PREFERRED_SIZE,
                                                                 30,
-                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                javax.swing.GroupLayout
+                                                                        .PREFERRED_SIZE))
                                         .addGap(30, 30, 30)
                                         .addGroup(
                                                 layout.createParallelGroup(
-                                                        javax.swing.GroupLayout.Alignment.TRAILING)
+                                                                javax.swing.GroupLayout.Alignment
+                                                                        .TRAILING)
                                                         .addGroup(
                                                                 layout.createSequentialGroup()
                                                                         .addGroup(
                                                                                 layout.createParallelGroup(
-                                                                                        javax.swing.GroupLayout.Alignment.TRAILING)
+                                                                                                javax
+                                                                                                        .swing
+                                                                                                        .GroupLayout
+                                                                                                        .Alignment
+                                                                                                        .TRAILING)
                                                                                         .addGroup(
                                                                                                 layout.createSequentialGroup()
                                                                                                         .addGroup(
                                                                                                                 layout.createParallelGroup(
-                                                                                                                        javax.swing.GroupLayout.Alignment.TRAILING)
+                                                                                                                                javax
+                                                                                                                                        .swing
+                                                                                                                                        .GroupLayout
+                                                                                                                                        .Alignment
+                                                                                                                                        .TRAILING)
                                                                                                                         .addGroup(
                                                                                                                                 layout.createSequentialGroup()
                                                                                                                                         .addGroup(
                                                                                                                                                 layout.createParallelGroup(
-                                                                                                                                                        javax.swing.GroupLayout.Alignment.TRAILING)
+                                                                                                                                                                javax
+                                                                                                                                                                        .swing
+                                                                                                                                                                        .GroupLayout
+                                                                                                                                                                        .Alignment
+                                                                                                                                                                        .TRAILING)
                                                                                                                                                         .addComponent(
                                                                                                                                                                 Numero,
-                                                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                                                                                                javax
+                                                                                                                                                                        .swing
+                                                                                                                                                                        .GroupLayout
+                                                                                                                                                                        .PREFERRED_SIZE,
                                                                                                                                                                 30,
-                                                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                                                                                                javax
+                                                                                                                                                                        .swing
+                                                                                                                                                                        .GroupLayout
+                                                                                                                                                                        .PREFERRED_SIZE)
                                                                                                                                                         .addComponent(
                                                                                                                                                                 datosFecha,
-                                                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                                                                                                javax
+                                                                                                                                                                        .swing
+                                                                                                                                                                        .GroupLayout
+                                                                                                                                                                        .PREFERRED_SIZE,
                                                                                                                                                                 30,
-                                                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                                                                                                                javax
+                                                                                                                                                                        .swing
+                                                                                                                                                                        .GroupLayout
+                                                                                                                                                                        .PREFERRED_SIZE))
                                                                                                                                         .addGap(
                                                                                                                                                 40,
                                                                                                                                                 40,
                                                                                                                                                 40)
                                                                                                                                         .addComponent(
                                                                                                                                                 Fecha,
-                                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                                                                                javax
+                                                                                                                                                        .swing
+                                                                                                                                                        .GroupLayout
+                                                                                                                                                        .PREFERRED_SIZE,
                                                                                                                                                 30,
-                                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                                                                                                javax
+                                                                                                                                                        .swing
+                                                                                                                                                        .GroupLayout
+                                                                                                                                                        .PREFERRED_SIZE))
                                                                                                                         .addComponent(
                                                                                                                                 datosCuentaDestino,
-                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                                                                javax
+                                                                                                                                        .swing
+                                                                                                                                        .GroupLayout
+                                                                                                                                        .PREFERRED_SIZE,
                                                                                                                                 30,
-                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                                                                                javax
+                                                                                                                                        .swing
+                                                                                                                                        .GroupLayout
+                                                                                                                                        .PREFERRED_SIZE))
                                                                                                         .addGap(
                                                                                                                 37,
                                                                                                                 37,
                                                                                                                 37)
                                                                                                         .addComponent(
                                                                                                                 Monto,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                                                javax
+                                                                                                                        .swing
+                                                                                                                        .GroupLayout
+                                                                                                                        .PREFERRED_SIZE,
                                                                                                                 30,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                                                                javax
+                                                                                                                        .swing
+                                                                                                                        .GroupLayout
+                                                                                                                        .PREFERRED_SIZE))
                                                                                         .addComponent(
                                                                                                 datosConcepto,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                                javax
+                                                                                                        .swing
+                                                                                                        .GroupLayout
+                                                                                                        .PREFERRED_SIZE,
                                                                                                 30,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                                                javax
+                                                                                                        .swing
+                                                                                                        .GroupLayout
+                                                                                                        .PREFERRED_SIZE))
                                                                         .addGap(18, 18, 18)
                                                                         .addComponent(
                                                                                 Concepto,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                javax.swing
+                                                                                        .GroupLayout
+                                                                                        .PREFERRED_SIZE,
                                                                                 30,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                                javax.swing
+                                                                                        .GroupLayout
+                                                                                        .PREFERRED_SIZE))
                                                         .addComponent(
                                                                 datosMonto,
-                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                javax.swing.GroupLayout
+                                                                        .PREFERRED_SIZE,
                                                                 30,
-                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                javax.swing.GroupLayout
+                                                                        .PREFERRED_SIZE))
                                         .addGap(18, 18, 18)
                                         .addComponent(jButton1)
                                         .addContainerGap(53, Short.MAX_VALUE)));
