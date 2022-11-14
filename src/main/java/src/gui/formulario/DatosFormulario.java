@@ -1,3 +1,4 @@
-package gui;
+package src.gui.formulario;
 
-public class DatosFormulario {}
+public class DatosFormulario {
+}
