@@ -1,3 +1,8 @@
 package src.gui.formulario;
 
-public class DatosFormulario {}
+public class DatosFormulario {
+
+    int monto;
+    int pin;
+    int CuentaDestino;
+}
