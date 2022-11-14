@@ -1,5 +1,3 @@
 package gui;
 
-public class DatosFormulario {
-    
-}
+public class DatosFormulario {}
