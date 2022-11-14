@@ -1,5 +1,3 @@
 package bankServer.regsYcomprobs;
 
-public class DatosComprobante {
-
-}
+public class DatosComprobante {}
