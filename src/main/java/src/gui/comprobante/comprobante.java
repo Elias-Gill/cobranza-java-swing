@@ -5,15 +5,12 @@
  */
 package src.gui.comprobante;
 
-import bankServer.regsYcomprobs.DatosComprobante;
+import src.bankServer.regsYcomprobs.DatosComprobante;
 
 /**
  * @author Andres Moises
  */
 public class comprobante extends javax.swing.JFrame {
-<<<<<<< HEAD
-=======
-
     private javax.swing.JLabel Comprobante;
     private javax.swing.JLabel Concepto;
     private javax.swing.JLabel CuentaDestino;
@@ -26,35 +23,21 @@ public class comprobante extends javax.swing.JFrame {
     private javax.swing.JLabel datosMonto;
     private javax.swing.JLabel datosNumero;
     private javax.swing.JButton jButton1;
->>>>>>> origin/master
 
-	private javax.swing.JLabel Comprobante;
-	private javax.swing.JLabel Concepto;
-	private javax.swing.JLabel CuentaDestino;
-	private javax.swing.JLabel Fecha;
-	private javax.swing.JLabel Monto;
-	private javax.swing.JLabel Numero;
-	private javax.swing.JLabel datosConcepto;
-	private javax.swing.JLabel datosCuentaDestino;
-	private javax.swing.JLabel datosFecha;
-	private javax.swing.JLabel datosMonto;
-	private javax.swing.JLabel datosNumero;
-	private javax.swing.JButton jButton1;
+    /**
+     * Creates new form comprobante
+     */
+    public comprobante(DatosComprobante Datos) {
+        initComponents();
+        datosFecha.setText(Datos.fecha.toString());
+        datosCuentaDestino.setText(Datos.cuentaDestino.toString());
+        datosMonto.setText(Datos.monto.toString());
+        datosNumero.setText(Datos.id.toString());
+        datosConcepto.setText(Datos.concepto);
+    }
 
-	/**
-	 * Creates new form comprobante
-	 */
-	public comprobante(DatosComprobante Datos) {
-		initComponents();
-		datosFecha.setText(Datos.fecha.toString());
-		datosCuentaDestino.setText(Datos.cuentaDestino.toString());
-		datosMonto.setText(Datos.monto.toString());
-		datosNumero.setText(Datos.id.toString());
-		datosConcepto.setText(Datos.concepto);
-	}
-
-	// componentes creados con netbeans
-	private void initComponents() {
+    // componentes creados con netbeans
+    private void initComponents() {
 
 		Comprobante = new javax.swing.JLabel();
 		Numero = new javax.swing.JLabel();
@@ -98,7 +81,6 @@ public class comprobante extends javax.swing.JFrame {
 			}
 		});
 
-<<<<<<< HEAD
 		// layout
 		javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
 		getContentPane().setLayout(layout);
@@ -264,37 +246,26 @@ public class comprobante extends javax.swing.JFrame {
 				.addGap(18, 18, 18)
 				.addComponent(jButton1)
 				.addContainerGap(53, Short.MAX_VALUE)));
-=======
-        pack();
-    } // </editor-fold>
->>>>>>> origin/master
-
 		pack();
 	} // </editor-fold>
 
-	private void jButton1ActionPerformed(
-	    java.awt.event.ActionEvent evt) { // GEN-FIRST:event_jButton1ActionPerformed
-		this.dispose();
-	} // GEN-LAST:event_jButton1ActionPerformed
+    private void jButton1ActionPerformed(
+            java.awt.event.ActionEvent evt) { // GEN-FIRST:event_jButton1ActionPerformed
+        this.dispose();
+    } // GEN-LAST:event_jButton1ActionPerformed
 
-<<<<<<< HEAD
-	public void mostrarComprobante() {
-		java.awt.EventQueue.invokeLater(
-		    new Runnable() {
-			public void run() {
-				setVisible(true);
-			}
-		});
-	}
+    public void mostrarComprobante() {
+        java.awt.EventQueue.invokeLater(
+                new Runnable() {
+                    public void run() {
+                        setVisible(true);
+                    }
+                });
+    }
 
-	/* EJEMPLO DE USO DE COMPROBANTE
-        comprobante c = new comprobante(new DatosComprobante());
-        c.mostrarComprobante();
-	 */
-=======
-    /* EJEMPLO DE USO DE COMPROBANTE
-       comprobante c = new comprobante(new DatosComprobante());
-       c.mostrarComprobante();
-    */
->>>>>>> origin/master
+    /*
+     * EJEMPLO DE USO DE COMPROBANTE
+     * comprobante c = new comprobante(new DatosComprobante());
+     * c.mostrarComprobante();
+     */
 }
