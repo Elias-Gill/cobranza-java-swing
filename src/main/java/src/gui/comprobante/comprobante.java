@@ -33,7 +33,7 @@ public class comprobante extends javax.swing.JFrame {
     public comprobante(DatosComprobante Datos) {
         initComponents();
         datosFecha.setText(Datos.fecha.toString());
-        //datosCuentaDestino.setText(Datos.cuentaDestino.toString());
+        // datosCuentaDestino.setText(Datos.cuentaDestino.toString());
         datosMonto.setText(Datos.monto.toString());
         datosNumero.setText(Datos.id.toString());
         datosConcepto.setText(Datos.concepto);
@@ -378,7 +378,10 @@ public class comprobante extends javax.swing.JFrame {
         LocalDate federico = LocalDate.now();
         Cuenta inicio = new Cuenta();
 
-        comprobante c = new comprobante(new DatosComprobante(hola, "goku", hola, federico, null, null, "goku", "goku"));
+        comprobante c =
+                new comprobante(
+                        new DatosComprobante(
+                                hola, "goku", hola, federico, null, null, "goku", "goku"));
         c.mostrarComprobante();
     }
     /*
