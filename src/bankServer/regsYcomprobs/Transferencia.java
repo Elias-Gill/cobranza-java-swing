@@ -1,6 +1,3 @@
 package bankServer.regsYcomprobs;
 
-public class Transferencia {
-    
-}
-
+public class Transferencia {}

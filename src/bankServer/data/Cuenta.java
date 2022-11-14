@@ -1,5 +1,3 @@
 package bankServer.data;
 
-public class Cuenta {
-
-}
+public class Cuenta {}

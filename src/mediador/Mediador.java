@@ -5,8 +5,8 @@ import bankServer.DatosComprobante;
 import gui.DatosFormulario;
 
 public class Mediador {
-    CuentaLogueo cuentaActiva; 
-    
+    CuentaLogueo cuentaActiva;
+
     public DatosComprobante NuevaTransferencia(DatosFormulario d) {
         return new DatosComprobante();
     }
