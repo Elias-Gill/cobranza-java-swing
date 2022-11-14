@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package gui;
+package src.gui.comprobante;
 
 import bankServer.regsYcomprobs.DatosComprobante;
 
@@ -11,6 +11,7 @@ import bankServer.regsYcomprobs.DatosComprobante;
  * @author Andres Moises
  */
 public class comprobante extends javax.swing.JFrame {
+
     private javax.swing.JLabel Comprobante;
     private javax.swing.JLabel Concepto;
     private javax.swing.JLabel CuentaDestino;
@@ -349,7 +350,7 @@ public class comprobante extends javax.swing.JFrame {
                                         .addContainerGap(53, Short.MAX_VALUE)));
 
         pack();
-    } // </editor-fold>//GEN-END:initComponents
+    } // </editor-fold>
 
     private void jButton1ActionPerformed(
             java.awt.event.ActionEvent evt) { // GEN-FIRST:event_jButton1ActionPerformed
@@ -366,7 +367,7 @@ public class comprobante extends javax.swing.JFrame {
     }
 
     /* EJEMPLO DE USO DE COMPROBANTE
-        comprobante c = new comprobante(new DatosComprobante());
-        c.mostrarComprobante();
+       comprobante c = new comprobante(new DatosComprobante());
+       c.mostrarComprobante();
     */
 }
