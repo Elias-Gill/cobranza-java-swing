@@ -11,6 +11,22 @@ import bankServer.regsYcomprobs.DatosComprobante;
  * @author Andres Moises
  */
 public class comprobante extends javax.swing.JFrame {
+<<<<<<< HEAD
+=======
+
+    private javax.swing.JLabel Comprobante;
+    private javax.swing.JLabel Concepto;
+    private javax.swing.JLabel CuentaDestino;
+    private javax.swing.JLabel Fecha;
+    private javax.swing.JLabel Monto;
+    private javax.swing.JLabel Numero;
+    private javax.swing.JLabel datosConcepto;
+    private javax.swing.JLabel datosCuentaDestino;
+    private javax.swing.JLabel datosFecha;
+    private javax.swing.JLabel datosMonto;
+    private javax.swing.JLabel datosNumero;
+    private javax.swing.JButton jButton1;
+>>>>>>> origin/master
 
 	private javax.swing.JLabel Comprobante;
 	private javax.swing.JLabel Concepto;
@@ -82,6 +98,7 @@ public class comprobante extends javax.swing.JFrame {
 			}
 		});
 
+<<<<<<< HEAD
 		// layout
 		javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
 		getContentPane().setLayout(layout);
@@ -247,6 +264,10 @@ public class comprobante extends javax.swing.JFrame {
 				.addGap(18, 18, 18)
 				.addComponent(jButton1)
 				.addContainerGap(53, Short.MAX_VALUE)));
+=======
+        pack();
+    } // </editor-fold>
+>>>>>>> origin/master
 
 		pack();
 	} // </editor-fold>
@@ -256,6 +277,7 @@ public class comprobante extends javax.swing.JFrame {
 		this.dispose();
 	} // GEN-LAST:event_jButton1ActionPerformed
 
+<<<<<<< HEAD
 	public void mostrarComprobante() {
 		java.awt.EventQueue.invokeLater(
 		    new Runnable() {
@@ -269,4 +291,10 @@ public class comprobante extends javax.swing.JFrame {
         comprobante c = new comprobante(new DatosComprobante());
         c.mostrarComprobante();
 	 */
+=======
+    /* EJEMPLO DE USO DE COMPROBANTE
+       comprobante c = new comprobante(new DatosComprobante());
+       c.mostrarComprobante();
+    */
+>>>>>>> origin/master
 }
