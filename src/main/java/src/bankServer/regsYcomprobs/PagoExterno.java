@@ -1,3 +1,3 @@
-package bankServer.regsYcomprobs;
+package src.bankServer.regsYcomprobs;
 
 public class PagoExterno {}

@@ -1,3 +1,3 @@
-package bankServer.data;
+package src.bankServer.data;
 
 public class Cuenta {}

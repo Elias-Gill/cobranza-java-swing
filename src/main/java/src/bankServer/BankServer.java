@@ -1,10 +1,10 @@
-package bankServer;
+package src.bankServer;
 
-import bankServer.data.Cuenta;
-import bankServer.regsYcomprobs.DatosComprobante;
-import bankServer.regsYcomprobs.Deposito;
-import bankServer.regsYcomprobs.PagoExterno;
-import bankServer.regsYcomprobs.Transferencia;
+import src.bankServer.data.Cuenta;
+import src.bankServer.regsYcomprobs.DatosComprobante;
+import src.bankServer.regsYcomprobs.Deposito;
+import src.bankServer.regsYcomprobs.PagoExterno;
+import src.bankServer.regsYcomprobs.Transferencia;
 
 public class BankServer {
     public DatosComprobante NuevaTransferencia(Transferencia t) {

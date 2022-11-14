@@ -1,11 +1,11 @@
-package mediador;
+package src.mediador;
 
-import bankServer.CuentaLogueo;
-import bankServer.DatosComprobante;
-import gui.DatosFormulario;
+import src.bankServer.data.Cuenta;
+import src.bankServer.regsYcomprobs.DatosComprobante;
+import src.gui.formularios.DatosFormulario;
 
 public class Mediador {
-    CuentaLogueo cuentaActiva;
+    Cuenta cuentaActiva;
 
     public DatosComprobante NuevaTransferencia(DatosFormulario d) {
         return new DatosComprobante();
