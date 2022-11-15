@@ -7,10 +7,14 @@ package src.gui.formulario;
 
 import com.formdev.flatlaf.FlatDarkLaf;
 
+import src.gui.inicioSesion.Login;
+
 /**
  * @author Andres Moises
  */
-public class formularioDeposito extends javax.swing.JFrame {
+public class formularioDeposito extends javax.swing.JFrame implements formularioInterface {
+
+    public DatosFormulario datosFormulario = new DatosFormulario();
 
     /** Creates new form formularioDeposito */
     public formularioDeposito() {
@@ -141,19 +145,20 @@ public class formularioDeposito extends javax.swing.JFrame {
         this.dispose();
     } // GEN-LAST:event_jButton1ActionPerformed
 
+    // BOTON DE ACEPTAR
     private void jButton2ActionPerformed(
             java.awt.event.ActionEvent evt) { // GEN-FIRST:event_jButton2ActionPerformed
-        this.dispose();
+        // cerrar ventana
+        try {
+            datosFormulario.monto = Integer.parseInt(entrada.getText());
+            this.dispose();
+        } catch (Exception e) {
+            // TODO  poner alerta de monto invalido
+        }
+
     } // GEN-LAST:event_jButton2ActionPerformed
 
-    static void MostrarFormulario() {
-    }
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-
+    public void MostrarFormulario() {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(
                 new Runnable() {
@@ -171,4 +176,18 @@ public class formularioDeposito extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
+
+    // --- EJEMPLO DE USO ---
+    public static void main(String[] args) {
+        // componente donde queres anadir
+        Login l = new Login();
+        // anadir al componente
+        formularioDeposito f = new formularioDeposito();
+        l.add(f);
+        f.MostrarFormulario();
+        l.setVisible(true);
+
+        // para sacar los datos
+        // DatosFormulario i = f.datosFormulario;
+    }
 }
