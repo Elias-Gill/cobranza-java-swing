@@ -4,6 +4,8 @@
  */
 package src.gui.inicioSesion;
 
+import com.formdev.flatlaf.*;
+
 /**
  *
  * @author Abeld
@@ -45,10 +47,10 @@ public class Login extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(251, 252, 253));
         jPanel1.setLayout(null);
 
-        jLabel1.setBackground(new java.awt.Color(135, 164, 197));
+        jLabel1.setBackground(new java.awt.Color(190, 182, 154));
         jLabel1.setFont(new java.awt.Font("Segoe UI Emoji", 2, 60)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Abeld\\FP UNA\\finaLP\\src\\main\\java\\src\\assets\\lobito.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Abeld\\FP UNA\\finaLP\\src\\main\\java\\src\\assets\\infi.png")); // NOI18N
         jLabel1.setOpaque(true);
         jPanel1.add(jLabel1);
         jLabel1.setBounds(0, 0, 490, 480);
@@ -104,11 +106,11 @@ public class Login extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1002, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 479, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -144,7 +146,7 @@ public class Login extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                //FlatDarkLaf.setup();
+                FlatDarkLaf.setup();
                 new Login().setVisible(true);
             }
         });
