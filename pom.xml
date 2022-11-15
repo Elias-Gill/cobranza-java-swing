@@ -46,10 +46,6 @@
             <version>3.39.2.0</version>
         </dependency>
     </dependencies>
-    <transformer
-        implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
-        <resource>META-INF/services/java.sql.Driver</resource>
-    </transformer>
 
     <build>
         <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->

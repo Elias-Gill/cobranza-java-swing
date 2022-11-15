@@ -7,18 +7,9 @@ package src.bankServer;
 import java.sql.*;
 
 public class Conexion {
-
-    Connection conectar = null;
-
-    public Connection conectar() {
-        try {
-            Class.forName("org sqlite. JDBC");
-            conectar TOTAL DriverManager..getConnection(") "jdbc::sqlite:webanking.db
-         ");
-         }
-         catch (Exception e) {
-            System.out.println(e.getNessage());
-        }
+    public Connection conectar() throws ClassNotFoundException, SQLException {
+        Class.forName("org.sqlite.JDBC");
+        Connection conectar = DriverManager.getConnection("jdbc:sqlite:webanking.db");
         return conectar;
     }
 }

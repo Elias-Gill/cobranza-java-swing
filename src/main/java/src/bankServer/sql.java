@@ -18,11 +18,17 @@ public class sql {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-
-        Conexion CC = new Conexion();
-        Connection cn = CC.conectar();
-        if (cn != null) {
-            System.out.println("Conectado a la BD");
+        try {
+            Connection cn = new Conexion().conectar();
+            if (cn != null) {
+                System.out.println("Conectado a la BD");
+            } else {
+                System.out.println("\nNO FUE POSIBLE CONECTAR\n\n");
+            }
+        } catch (ClassNotFoundException e) {
+            System.out.println(e);
+        } catch (SQLException e) {
+            System.out.println(e);
         }
     }
 }
