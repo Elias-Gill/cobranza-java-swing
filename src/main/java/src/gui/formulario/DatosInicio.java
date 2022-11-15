@@ -4,6 +4,8 @@
  */
 package src.gui.formulario;
 
+import src.mediador.Mediador;
+
 /**
  *
  * @author Abeld
@@ -13,8 +15,9 @@ public class DatosInicio extends javax.swing.JPanel {
     /**
      * Creates new form DatosInicio
      */
-    public DatosInicio() {
+    public DatosInicio(Mediador m) {
         initComponents();
+        // m.cuentaActiva.saldo;
     }
 
     /**

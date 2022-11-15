@@ -4,19 +4,22 @@
  */
 package src.gui.formulario;
 
+import src.mediador.Mediador;
+
 /**
  *
  * @author Abeld
  */
 public class FormularioPagarServicios extends javax.swing.JPanel {
-
+    Mediador mediador;
     /**
      * Creates new form FormularioPagarServicios
      */
-    public FormularioPagarServicios() {
+    public FormularioPagarServicios(Mediador m) {
         initComponents();
         botones.add(btn1);
         botones.add(btn2);
+        mediador = m;
     }
 
     /**
@@ -136,16 +139,14 @@ public class FormularioPagarServicios extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1ActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_btn1ActionPerformed
 
+    // FUNCION PARA PAGAR SERVICIO
     private void btnPagarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPagarMouseClicked
-        // TODO add your handling code here:
-
+        mediador.PagarServicio()
     }//GEN-LAST:event_btnPagarMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

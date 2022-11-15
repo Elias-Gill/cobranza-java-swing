@@ -5,15 +5,21 @@
 package src.gui.menu;
 
 import com.formdev.flatlaf.FlatDarkLaf;
-import src.mediador.Mediador;
-import src.gui.formulario.*;
+
+import src.gui.formulario.DatosInicio;
+import src.gui.formulario.FormularioDeposito;
+import src.gui.formulario.FormularioPagarServicios;
+import src.gui.formulario.FormularioPagoTarjetas;
+import src.gui.formulario.FormularioTransferencia;
 import src.gui.intercambiarPaneles.IntercambiarPaneles;
+import src.mediador.Mediador;
 
 /**
  *
  * @author Abeld
  */
 public class Menu extends javax.swing.JPanel {
+    public Mediador mediador = new Mediador();
 
     private IntercambiarPaneles intercambiar = new IntercambiarPaneles();
 
@@ -385,26 +391,22 @@ public class Menu extends javax.swing.JPanel {
     }//GEN-LAST:event_btnPagarServiciosMouseClicked
 
     private void btnInicioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInicioMouseClicked
-        // TODO add your handling code here:
         System.out.println("Holi");
         DatosInicio panel = new DatosInicio();
         intercambiar.modificarPanel(panel, panelDer, 1);
     }//GEN-LAST:event_btnInicioMouseClicked
 
     private void btnTransferirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTransferirMouseClicked
-        // TODO add your handling code here:
         FormularioTransferencia panel = new FormularioTransferencia();
         intercambiar.modificarPanel(panel, panelDer, 1);
     }//GEN-LAST:event_btnTransferirMouseClicked
 
     private void btnDepositarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDepositarMouseClicked
-        // TODO add your handling code here:
-        FormularioDeposito panel = new FormularioDeposito();
+        FormularioDeposito panel = new FormularioDeposito(mediador);
         intercambiar.modificarPanel(panel, panelDer, 1);
     }//GEN-LAST:event_btnDepositarMouseClicked
 
     private void btnPagarTarjetaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPagarTarjetaMouseClicked
-        // TODO add your handling code here:
         FormularioPagoTarjetas panel = new FormularioPagoTarjetas();
         intercambiar.modificarPanel(panel, panelDer, 1);
     }//GEN-LAST:event_btnPagarTarjetaMouseClicked

@@ -1,14 +1,14 @@
 package src.bankServer.data;
 
 public class Cuenta {
-    int nroCuenta;
-    String direccion;
-    String nombre;
-    String apellido;
-    int cedula;
-    int telefono;
-    int saldo;
-    Tarjeta tarjeta;
+   public int nroCuenta;
+   public String direccion;
+   public String nombre;
+   public String apellido;
+   public int cedula;
+   public int telefono;
+   public int saldo;
+   public Tarjeta tarjeta;
 
     public Cuenta(
             int nroCuenta,

@@ -4,17 +4,21 @@
  */
 package src.gui.formulario;
 
+import src.mediador.Mediador;
+
 /**
  *
  * @author Abeld
  */
 public class FormularioDeposito extends javax.swing.JPanel {
+    Mediador mediador;
 
     /**
      * Creates new form FormularioDeposito
      */
-    public FormularioDeposito() {
+    public FormularioDeposito(Mediador m) {
         initComponents();
+        mediador = m;
     }
 
     /**
@@ -94,11 +98,17 @@ public class FormularioDeposito extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void entradaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_entradaActionPerformed
 
+    //BOTON DE deposito
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        Integer monto = Integer.parseInt(entrada.getText());
+        try {
+            mediador.NuevoDeposito(monto);
+            entrada.setText("");
+        } catch (Exception e) {
+            // TODO  lanzar error de formulario
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
