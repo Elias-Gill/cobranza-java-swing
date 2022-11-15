@@ -25,11 +25,19 @@
       <scope>test</scope>
     </dependency>
 
-  <!-- INFO  flatlaf es nuestra libreria de interfaz grafica-->
+  <!-- INFO  flatlaf es nuestra libreria de interfaz grafica -->
     <dependency>
       <groupId>com.formdev</groupId>
       <artifactId>flatlaf</artifactId>
       <version>2.6</version>
+    </dependency>
+
+  <!-- INFO  libreria para imprimir como pdf -->
+    <dependency>
+        <groupId>com.itextpdf</groupId>
+        <artifactId>itext7-core</artifactId>
+        <version>7.2.4</version>
+        <type>pom</type>
     </dependency>
   </dependencies>
 

@@ -1,5 +1,7 @@
 package src.gui;
 
-public class menuPrincipal {
+import src.mediador.Mediador;
 
+public class menuPrincipal {
+    public menuPrincipal(Mediador m) {}
 }

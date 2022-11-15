@@ -15,9 +15,15 @@ public class DatosComprobante {
     public String metodo;
     public String tipos;
 
-    public DatosComprobante(Integer id, String concepto, Integer monto,
-            LocalDate fecha, Cuenta cuentaOrigen, Cuenta cuentaDestino,
-            String metodo, String tipos) {
+    public DatosComprobante(
+            Integer id,
+            String concepto,
+            Integer monto,
+            LocalDate fecha,
+            Cuenta cuentaOrigen,
+            Cuenta cuentaDestino,
+            String metodo,
+            String tipos) {
 
         this.id = id;
         this.concepto = concepto;
@@ -29,5 +35,5 @@ public class DatosComprobante {
         this.fecha = fecha;
     }
 
-    public DatosComprobante () { }
+    public DatosComprobante() {}
 }

@@ -1,11 +1,12 @@
 package src.mediador;
 
+import src.Banco;
 import src.bankServer.data.Cuenta;
 import src.bankServer.regsYcomprobs.DatosComprobante;
 import src.gui.formulario.DatosFormulario;
 
 public class Mediador {
-
+    Banco b = new Banco();
     Cuenta cuentaActiva;
 
     public DatosComprobante NuevaTransferencia(DatosFormulario d) {
@@ -16,8 +17,9 @@ public class Mediador {
         return new DatosComprobante();
     }
 
-    public DatosComprobante IniciarSesion(String contrasena, int cedula) {
-        return new DatosComprobante();
+    public Cuenta iniciarSesion(String contrasena, int cedula) throws Exception {
+        cuentaActiva = b.iniciarSesion(contrasena, cedula);
+        return new Cuenta();
     }
 
     public DatosComprobante PagarServicio(DatosFormulario d) {
