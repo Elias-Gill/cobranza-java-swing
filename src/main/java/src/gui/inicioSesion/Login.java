@@ -146,7 +146,7 @@ public class Login extends javax.swing.JFrame {
 
         //Cuenta cuenta = new Mediador().IniciarSesion(contrasena, cedula);
         if (true) {
-            jLabel8.setVisible(true);
+            jLabel8.setText("Datos Inválidos!");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
