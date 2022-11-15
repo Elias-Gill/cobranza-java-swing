@@ -10,15 +10,8 @@ public class Cuenta {
     int saldo;
     Tarjeta tarjeta;
 
-    public Cuenta(
-            int nroCuenta,
-            String direccion,
-            String nombre,
-            String apellido,
-            int cedula,
-            int telefono,
-            int saldo,
-            Tarjeta tarjeta) {
+    public Cuenta(int nroCuenta, String direccion, String nombre, String apellido,
+            int cedula, int telefono, int saldo, Tarjeta tarjeta) {
 
         this.nroCuenta = nroCuenta;
         this.direccion = direccion;
@@ -30,5 +23,7 @@ public class Cuenta {
         this.tarjeta = tarjeta;
     }
 
-    public Cuenta() {}
+    public Cuenta() {
+
+    }
 }
