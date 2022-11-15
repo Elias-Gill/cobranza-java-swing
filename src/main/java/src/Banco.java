@@ -10,8 +10,8 @@ import src.bankServer.data.Cuenta;
  * @author elias
  */
 public class Banco {
-    public Cuenta iniciarSesion(String contrasena, int cedula) throws Exception{
-        if (1== Integer.parseInt("1")){
+    public Cuenta iniciarSesion(String contrasena, int cedula) throws Exception {
+        if (1 == Integer.parseInt("1")) {
             return new Cuenta();
         } else {
             throw new Exception("erro de iniciio de sesion");
