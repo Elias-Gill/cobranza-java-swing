@@ -1,3 +1,4 @@
-package gui;
+package src.gui;
 
-public class menuPrincipal {}
+public class menuPrincipal {
+}
