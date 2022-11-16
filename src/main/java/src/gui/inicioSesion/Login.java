@@ -59,9 +59,19 @@ public class Login extends javax.swing.JFrame {
         setUndecorated(true);
         setSize(new java.awt.Dimension(591, 444));
 
-        panelDer.setBackground(new java.awt.Color(251, 252, 253));
-        panelDer.setMinimumSize(new java.awt.Dimension(591, 444));
-        panelDer.setLayout(null);
+        jPanel1.setBackground(new java.awt.Color(251, 252, 253));
+        jPanel1.setLayout(null);
+
+        jLabel1.setBackground(new java.awt.Color(0, 102, 204));
+        jLabel1.setFont(new java.awt.Font("Segoe UI Emoji", 2, 60)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setIcon(
+                new javax.swing.ImageIcon(
+                        "C:\\Users\\Abeld\\FP"
+                            + " UNA\\finaLP\\src\\main\\java\\src\\assets\\infi.png")); // NOI18N
+        jLabel1.setOpaque(true);
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(0, 0, 490, 480);
 
         jTextField1.setBackground(new java.awt.Color(255, 255, 255));
         jTextField1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
