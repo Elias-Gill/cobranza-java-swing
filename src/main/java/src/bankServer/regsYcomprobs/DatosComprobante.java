@@ -2,38 +2,46 @@ package src.bankServer.regsYcomprobs;
 
 import java.time.LocalDate;
 
-import src.bankServer.data.Cuenta;
-
 public class DatosComprobante {
 
     public Integer id;
     public String concepto;
     public Integer monto;
     public LocalDate fecha;
-    public Cuenta cuentaOrigen;
-    public Cuenta cuentaDestino;
+    public int cuentaOrigen;
+    public int cuentaDestino;
     public String metodo;
-    public String tipos;
+    public String tipo;
 
-    public DatosComprobante(
-            Integer id,
-            String concepto,
-            Integer monto,
-            LocalDate fecha,
-            Cuenta cuentaOrigen,
-            Cuenta cuentaDestino,
-            String metodo,
-            String tipos) {
+    // constructor vacio
+    public DatosComprobante() { }
 
-        this.id = id;
-        this.concepto = concepto;
-        this.cuentaDestino = cuentaDestino;
-        this.monto = monto;
-        this.cuentaOrigen = cuentaOrigen;
-        this.metodo = metodo;
-        this.tipos = tipos;
-        this.fecha = fecha;
+    // Transferencia a otra cuenta
+    public DatosComprobante(Transferencia t) {
+        this.cuentaDestino = t.cuentaDestino;
+        this.cuentaOrigen = t.cuentaOrigen;
+        this.monto = t.monto;
+        this.concepto = "Transferencia de dinero"; 
     }
 
-    public DatosComprobante() {}
+    // deposito de dinero
+    public DatosComprobante(Deposito d) {
+        this.cuentaDestino = d.cuentaDestino;
+        this.monto = d.monto;
+        this.concepto = "Deposito de dinero"; 
+    }
+
+    // pago de servicio externo
+    public DatosComprobante(PagoServicio p) {
+        this.cuentaOrigen = p.cuentaOrigen;
+        this.monto = p.monto;
+        this.concepto = "Pago de serivicio: " + p.servicio + " con " + p.metodo;
+    }
+
+    // pago de deuda de tarjeta
+    public DatosComprobante(int c, int monto) {
+        this.cuentaOrigen = c;
+        this.monto = monto;
+        this.concepto = "Pago de deuda Tarjeta de credito.";
+    }
 }

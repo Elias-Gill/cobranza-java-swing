@@ -1,7 +1,5 @@
 package src.bankServer;
 
-import java.sql.SQLException;
-
 import src.bankServer.regsYcomprobs.Transferencia;
 
 public class probar {
@@ -9,9 +7,9 @@ public class probar {
     public static void main(String[] args) throws Exception {
         BankServer b = new BankServer();
         System.out.println(b.IniciarSesion("buIKyNvMaS", 48271).toString());
-        b.NuevaTransferencia(new Transferencia(48271, 182605794, 123, 477198999));
+        b.NuevaTransferencia(new Transferencia(182605794, 48271, 1613698564, 477198999));
         // deberia cerarse
-        System.out.println(b.IniciarSesion("buIKyNvMaS", 48271).toString());
+        System.out.println("\n\n" + b.IniciarSesion("buIKyNvMaS", 48271).toString());
     }
 
 }

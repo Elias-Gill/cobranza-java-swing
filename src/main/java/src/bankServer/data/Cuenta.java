@@ -1,11 +1,11 @@
 package src.bankServer.data;
 
 public class Cuenta {
-    public int nroCuenta;
+    public int cedula;
     public String direccion;
     public String nombre;
     public String apellido;
-    public int cedula;
+    public int nroCuenta;
     public String telefono;
     public int saldo;
     public int tarjeta;
@@ -15,7 +15,7 @@ public class Cuenta {
     public Cuenta(int nroCuenta, String direccion, String nombre, String apellido,
             int cedula, String telefono, int saldo, int tarjeta, int pin, String contrasena) {
 
-        this.nroCuenta = nroCuenta;
+        this.cedula = cedula;
         this.direccion = direccion;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -35,7 +35,7 @@ public class Cuenta {
     public String toString() {
         String res = String.format(
                 "Nro: %d \nNombre: %s\n Apellido: %s \nDireccion: %s \nCedula: %d \nTelefono: %s \nSaldo: %d",
-                this.nroCuenta,
+                this.cedula,
                 this.nombre,
                 this.apellido,
                 this.direccion,

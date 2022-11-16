@@ -6,9 +6,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import org.sqlite.SQLiteException;
+
 import src.bankServer.data.Cuenta;
 
-public class consultasSQL {
+public class operacionesSQL {
     private Connection cn;
 
     public Cuenta obtenerCuenta(int documentoIdentidad) throws ClassNotFoundException, SQLException {
@@ -35,55 +37,31 @@ public class consultasSQL {
         throw new SQLException("Unable to find account");
     }
 
-    // funcion para sumar saldo al saldo actual de la cuenta
-    public void sumarSaldo(int cedula, int monto) throws SQLException {
-        iniciarBaseDeDatos();
-        Cuenta c;
-        try {
-            c = obtenerCuenta(cedula);
-            int saldo = c.saldo + monto;
-            // set nuevo saldo
-            String query = String.format("UPDATE warehouses SET saldo = ? WHERE cedula=%d", cedula);
-            PreparedStatement pstmt = cn.prepareStatement(query);
-            pstmt.setInt(1, saldo);
-            pstmt.executeUpdate();
-        } catch (ClassNotFoundException e) {
-            throw new SQLException("Unable to update saldo");
-        } finally {
-            cn.close(); // si no se encuentra la cuenta
-        }
-    }
-
-    // funcion para restar saldo al saldo actual de la cuenta
-    public void restarSaldo(int cedula, int monto) throws SQLException {
-        iniciarBaseDeDatos();
-        Cuenta c;
-        try {
-            c = obtenerCuenta(cedula);
-            int saldo = c.saldo - monto;
-            // set nuevo saldo
-            String query = String.format("UPDATE warehouses SET saldo = ? WHERE cedula=%d", cedula);
-            PreparedStatement pstmt = cn.prepareStatement(query);
-            pstmt.setInt(1, saldo);
-            pstmt.executeUpdate();
-        } catch (ClassNotFoundException e) {
-            throw new SQLException("Unable to update saldo");
-        } finally {
-            cn.close(); // si no se encuentra la cuenta
-        }
-    }
-
     // setea un saldo especifico, se usa para recuperacion de errores de transaccion
     // ja'e chupe
-    public void setSaldoEspecifico(int monto, int cedula) throws SQLException {
+    public void setSaldo(int monto, int cedula) throws SQLException {
         iniciarBaseDeDatos();
         try {
-            String query = String.format("UPDATE warehouses SET saldo = ? WHERE cedula=%d", cedula);
+            String query = String.format("UPDATE Cuentas SET saldo = ? WHERE cedula=%d", cedula);
             PreparedStatement pstmt = cn.prepareStatement(query);
             pstmt.setInt(1, monto);
             pstmt.executeUpdate();
         } catch (Exception e) {
-            System.out.println(e);
+            System.out.println(("Error al actualizar el saldo de cuenta" + e.toString()));
+        } finally {
+            cn.close(); // si no se encuentra la cuenta
+        }
+    }
+
+    public void setSaldoTarjeta(int monto, int cedula) throws SQLException {
+        iniciarBaseDeDatos();
+        try {
+            String query = String.format("UPDATE Cuentas SET saldo_Tarjeta = ? WHERE cedula=%d", cedula);
+            PreparedStatement pstmt = cn.prepareStatement(query);
+            pstmt.setInt(1, monto);
+            pstmt.executeUpdate();
+        } catch (Exception e) {
+            System.out.println(("Error al actualizar saldo de tarjeta" + e.toString()));
         } finally {
             cn.close(); // si no se encuentra la cuenta
         }
@@ -95,11 +73,38 @@ public class consultasSQL {
             Class.forName("org.sqlite.JDBC");
             cn = DriverManager.getConnection("jdbc:sqlite:webanking.db");
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println(("Error al iniciar servidor: " + e.toString()));
             System.exit(0);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
             System.exit(0);
+        }
+    }
+
+    public void pagarTarjeta(int monto, int cedula) throws SQLException {
+        iniciarBaseDeDatos();
+        String query = String.format("SELECT * FROM Cuentas WHERE cedula=%d", cedula);
+        ResultSet rs = cn.createStatement().executeQuery(query);
+        int deudaTarjeta;
+        if (rs.next()) {
+            deudaTarjeta = rs.getInt("deuda_Tarjeta");
+
+            if (deudaTarjeta < monto) {
+                throw new RuntimeException("Monto invalido");
+            }
+        } else {
+            throw new RuntimeException("No se encontro la cuenta");
+        }
+
+        try {
+            query = String.format("UPDATE Cuentas SET deuda_Tarjeta = ? WHERE cedula=%d", cedula);
+            PreparedStatement pstmt = cn.prepareStatement(query);
+            pstmt.setInt(1, deudaTarjeta - monto);
+            pstmt.executeUpdate();
+        } catch (Exception e) {
+            System.out.println(("Error al actualizar saldo de tarjeta" + e.toString()));
+        } finally {
+            cn.close(); // si no se encuentra la cuenta
         }
     }
 }

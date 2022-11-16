@@ -1,21 +1,19 @@
 package src.bankServer;
 
+import java.sql.SQLException;
+
 import src.bankServer.data.Cuenta;
 import src.bankServer.regsYcomprobs.DatosComprobante;
 import src.bankServer.regsYcomprobs.Deposito;
-import src.bankServer.regsYcomprobs.PagoExterno;
+import src.bankServer.regsYcomprobs.PagoServicio;
 import src.bankServer.regsYcomprobs.Transferencia;
 
-import java.sql.SQLException;
-
-import src.bankServer.consultasSQL;
-
 public class BankServer {
-    consultasSQL consulta = new consultasSQL();
+    operacionesSQL sql = new operacionesSQL();
 
     public DatosComprobante NuevaTransferencia(Transferencia t) throws Exception {
-        Cuenta origen = consulta.obtenerCuenta(t.cuentaOrigen);
-        Cuenta destino = consulta.obtenerCuenta(t.cuentaDestino);
+        Cuenta origen = sql.obtenerCuenta(t.cuentaOrigen);
+        Cuenta destino = sql.obtenerCuenta(t.cuentaDestino);
         // revisar pin de transaccion
         if (origen.pin != t.pin) {
             throw new Exception("PIN proporcionado invalido");
@@ -27,37 +25,62 @@ public class BankServer {
 
         // realizar la transaccion
         try {
-            consulta.sumarSaldo(t.cuentaDestino, t.monto);
-            consulta.restarSaldo(t.cuentaOrigen, t.monto);
+            // restar dinero al origen
+            sql.setSaldo(origen.saldo - t.monto, t.cuentaOrigen);
+            // sumar dinero al destino
+            sql.setSaldo(destino.saldo + t.monto, t.cuentaDestino);
         } catch (SQLException e) { 
-            // si ocurre un error entonces devolver el dinero
-            consulta.setSaldoEspecifico(origen.saldo, t.cuentaOrigen);
-            consulta.setSaldoEspecifico(destino.saldo, t.cuentaDestino);
+            // si ocurre un error entonces restaurar el saldo de las cuentas
+            sql.setSaldo(origen.saldo, t.cuentaOrigen);
+            sql.setSaldo(destino.saldo, t.cuentaDestino);
             throw new Exception("Problema de base de datos: " + e.toString());
         }
 
-        // TODO  agregar comprobante
-        return new DatosComprobante();
+        return new DatosComprobante(t);
     }
 
     public DatosComprobante NuevoDeposito(Deposito d) throws ClassNotFoundException, SQLException {
-        consulta.sumarSaldo(d.cuentaOrigen, d.monto);
-        return new DatosComprobante();
+        Cuenta destino = sql.obtenerCuenta(d.cuentaDestino);
+        sql.setSaldo(d.monto + destino.saldo, d.cuentaDestino);
+        return new DatosComprobante(d);
     }
 
     public Cuenta IniciarSesion(String contrasena, int cedula) throws Exception {
-        Cuenta c = consulta.obtenerCuenta(cedula);
+        Cuenta c = sql.obtenerCuenta(cedula);
         if (c.contrasena.compareTo(contrasena) == 0) {
             return c;
         }
         throw new Exception("Credenciales invalidas");
     }
 
-    public DatosComprobante PagarServicio(PagoExterno p) {
-        return new DatosComprobante();
+    public DatosComprobante PagarServicio(PagoServicio p) {
+        try {
+			pagarServicio(p.monto, p.servicio);
+            Cuenta c = sql.obtenerCuenta(p.cuentaOrigen);
+            if (p.metodo == "tarjeta") {
+                sql.setSaldoTarjeta(c.saldo - p.monto, c.cedula);
+            } else {
+                sql.setSaldo( c.saldo - p.monto, c.cedula);
+            }
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+        return new DatosComprobante(p);
     }
 
-    public DatosComprobante PagarTarjeta(Cuenta c, int monto, String pin) {
-        return new DatosComprobante();
+	public DatosComprobante PagarTarjeta(Cuenta c, int monto, String pin) {
+        try {
+            sql.pagarTarjeta(monto, c.cedula);
+            sql.setSaldo(monto - c.saldo, c.cedula);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+        return new DatosComprobante(c.cedula, monto);
     }
+
+    // no hay servicios para pagar
+    private void pagarServicio(int m, String servicio) throws Exception {
+        throw new Exception("No se puede conectar con el servicio. Debe de ser del gobierno o algo");
+	}
 }
+
