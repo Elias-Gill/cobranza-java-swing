@@ -10,11 +10,13 @@ import src.bankServer.data.Cuenta;
 import src.bankServer.data.Tarjeta;
 
 public class consultasSQL {
+
     private Connection cn;
 
     public Cuenta obtenerCuenta(int nro_cuenta) throws ClassNotFoundException, SQLException {
         iniciarBaseDeDatos();
-        String query = String.format("SELECT * FROM Cuenta WHERE nro_cuenta=%d", nro_cuenta);
+        //String query = String.format("SELECT * FROM Cuenta WHERE nro_cuenta=%d", nro_cuenta);
+        String query = String.format("SELECT * from Cuenta");
         ResultSet rs = cn.createStatement().executeQuery(query);
         if (rs.next()) {
             int nroCuenta = rs.getInt("nro_cuenta");
