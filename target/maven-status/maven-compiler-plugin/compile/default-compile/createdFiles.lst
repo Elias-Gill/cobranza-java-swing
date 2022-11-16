@@ -1,4 +1,5 @@
 src/mediador/Mediador.class
+src/bankServer/probar.class
 src/bankServer/regsYcomprobs/PagoExterno.class
 src/gui/formulario/formularioDeposito$1.class
 src/gui/inicioSesion/Login$1.class
@@ -6,7 +7,6 @@ src/gui/formulario/formularioPagoTarjeta$4.class
 src/gui/formulario/formularioDeposito$4.class
 src/gui/formulario/DatosFormulario.class
 src/bankServer/regsYcomprobs/DatosComprobante.class
-src/bankServer/Conexion.class
 src/bankServer/consultasSQL.class
 src/gui/formulario/formularioPagoTarjeta$2.class
 src/gui/comprobante/Comprobante.class
@@ -15,7 +15,6 @@ src/gui/formulario/formularioTransferencia$4.class
 src/bankServer/BankServer.class
 src/gui/formulario/formularioDeposito$2.class
 src/gui/formulario/formularioTransferencia$1.class
-src/bankServer/data/Tarjeta.class
 src/Banco.class
 src/bankServer/regsYcomprobs/Deposito.class
 src/gui/comprobante/Comprobante$2.class
@@ -24,7 +23,6 @@ src/bankServer/data/Registro.class
 src/gui/formulario/formularioTransferencia.class
 src/gui/menuPrincipal.class
 src/gui/formulario/formularioDeposito.class
-src/bankServer/sql.class
 src/gui/inicioSesion/Login.class
 src/gui/formulario/formularioPagoTarjeta.class
 src/gui/formulario/formularioTransferencia$3.class

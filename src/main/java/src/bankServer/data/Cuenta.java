@@ -8,11 +8,12 @@ public class Cuenta {
     public int cedula;
     public String telefono;
     public int saldo;
-    public Tarjeta tarjeta;
+    public int tarjeta;
     public int pin;
+    public String contrasena;
 
     public Cuenta(int nroCuenta, String direccion, String nombre, String apellido,
-            int cedula, String telefono, int saldo, Tarjeta tarjeta) {
+            int cedula, String telefono, int saldo, int tarjeta, int pin, String contrasena) {
 
         this.nroCuenta = nroCuenta;
         this.direccion = direccion;
@@ -22,6 +23,8 @@ public class Cuenta {
         this.telefono = telefono;
         this.saldo = saldo;
         this.tarjeta = tarjeta;
+        this.pin = pin;
+        this.contrasena = contrasena;
     }
 
     public Cuenta() {
