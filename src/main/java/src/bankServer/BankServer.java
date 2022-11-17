@@ -29,7 +29,7 @@ public class BankServer {
             sql.setSaldo(origen.saldo - t.monto, t.cuentaOrigen);
             // sumar dinero al destino
             sql.setSaldo(destino.saldo + t.monto, t.cuentaDestino);
-        } catch (SQLException e) { 
+        } catch (SQLException e) {
             // si ocurre un error entonces restaurar el saldo de las cuentas
             sql.setSaldo(origen.saldo, t.cuentaOrigen);
             sql.setSaldo(destino.saldo, t.cuentaDestino);
@@ -53,34 +53,33 @@ public class BankServer {
         throw new Exception("Credenciales invalidas");
     }
 
-    public DatosComprobante PagarServicio(PagoServicio p) {
-        try {
-			pagarServicio(p.monto, p.servicio);
-            Cuenta c = sql.obtenerCuenta(p.cuentaOrigen);
-            if (p.metodo == "tarjeta") {
-                sql.setSaldoTarjeta(c.saldo - p.monto, c.cedula);
-            } else {
-                sql.setSaldo( c.saldo - p.monto, c.cedula);
-            }
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+    public DatosComprobante PagarServicio(PagoServicio p) throws Exception {
+        // comprobar pin de transaccion
+        Cuenta c = sql.obtenerCuenta(p.cuentaOrigen);
+        if (c.pin != p.pin) {
+            throw new Exception("Pin de transaccion incorrecto");
+        }
+        pagarServicio(p.monto, p.servicio);
+        if (p.metodo == "tarjeta") {
+            sql.setSaldoTarjeta(c.saldo - p.monto, c.cedula);
+        } else {
+            sql.setSaldo(c.saldo - p.monto, c.cedula);
+        }
         return new DatosComprobante(p);
     }
 
-	public DatosComprobante PagarTarjeta(Cuenta c, int monto, String pin) {
+    public DatosComprobante PagarTarjeta(Cuenta c, int monto, String pin) {
         try {
             sql.pagarTarjeta(monto, c.cedula);
             sql.setSaldo(monto - c.saldo, c.cedula);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return new DatosComprobante(c.cedula, monto);
     }
 
     // no hay servicios para pagar
     private void pagarServicio(int m, String servicio) throws Exception {
         throw new Exception("No se puede conectar con el servicio. Debe de ser del gobierno o algo");
-	}
+    }
 }
-

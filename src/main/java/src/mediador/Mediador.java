@@ -1,38 +1,50 @@
 package src.mediador;
 
-import src.Banco;
+import java.sql.SQLException;
+
+import src.bankServer.BankServer;
 import src.bankServer.data.Cuenta;
 import src.bankServer.regsYcomprobs.DatosComprobante;
+import src.bankServer.regsYcomprobs.Deposito;
+import src.bankServer.regsYcomprobs.PagoServicio;
+import src.bankServer.regsYcomprobs.Transferencia;
 import src.gui.comprobante.Comprobante;
-import src.gui.formulario.DatosFormulario;
 
 public class Mediador {
-    private Banco b = new Banco();
+    private BankServer server = new BankServer();
     public Cuenta cuentaActiva;
 
-    public DatosComprobante NuevaTransferencia(DatosFormulario d) {
-        return new DatosComprobante();
+    // metodo para realizar una nueva transferencia
+    public Comprobante NuevaTransferencia(int cuentaDestino, int monto, int pin) throws Exception {
+        DatosComprobante d = server
+                .NuevaTransferencia(new Transferencia(cuentaActiva.cedula, cuentaDestino, monto, pin));
+        return new Comprobante(d);
     }
 
-    public void NuevoDeposito(Integer d) throws RuntimeException{
+    // metodo para realizar un nuevo deposito
+    public Comprobante NuevoDeposito(int monto) throws RuntimeException, ClassNotFoundException, SQLException {
         // hacer la transaccion backend
-        DatosComprobante c = new DatosComprobante();
-        cuentaActiva.saldo += d;
-        Comprobante comprobante = new Comprobante(c);
-        comprobante.mostrarComprobante();
+        if (cuentaActiva == null) {
+            throw new RuntimeException("Aun no se ha iniciado sesion");
+        }
+        DatosComprobante d = server.NuevoDeposito(new Deposito(cuentaActiva.cedula, monto));
+        return new Comprobante(d);
     }
 
+    // metodo para iniciar sesion
     public Cuenta iniciarSesion(String contrasena, int cedula) throws Exception {
-        cuentaActiva = b.iniciarSesion(contrasena, cedula);
-        return new Cuenta();
+        this.cuentaActiva = server.IniciarSesion(contrasena, cedula);
+        return cuentaActiva;
     }
 
-    public DatosComprobante PagarServicio(pin int, string servicio, int monto, metodo string) {
-        // TODO  bank server
-        return new DatosComprobante();
+    // pagar un servicion externo (copaco, ANDE)
+    public Comprobante PagarServicio(int pin, String servicio, int monto, String metodo) throws Exception {
+        DatosComprobante d = server.PagarServicio(new PagoServicio(monto, servicio, cuentaActiva.cedula, pin, metodo));
+        return new Comprobante(d);
     }
 
-    public DatosComprobante PagarTarjeta(DatosFormulario d) {
-        return new DatosComprobante();
+    public Comprobante PagarTarjeta(int monto, String metodo) {
+        DatosComprobante d = server.PagarTarjeta(cuentaActiva, monto, metodo);
+        return new Comprobante(d);
     }
 }
