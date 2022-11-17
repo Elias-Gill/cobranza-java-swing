@@ -5,6 +5,11 @@
 package src.gui.menu;
 
 import com.formdev.flatlaf.FlatDarkLaf;
+<<<<<<< HEAD
+import src.mediador.Mediador;
+import src.gui.formulario.*;
+import src.gui.intercambiarPaneles.IntercambiarPaneles;
+=======
 
 import src.gui.formulario.DatosInicio;
 import src.gui.formulario.FormularioDeposito;
@@ -13,13 +18,17 @@ import src.gui.formulario.FormularioPagoTarjetas;
 import src.gui.formulario.FormularioTransferencia;
 import src.gui.intercambiarPaneles.IntercambiarPaneles;
 import src.mediador.Mediador;
+>>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
 
 /**
  *
  * @author Abeld
  */
 public class Menu extends javax.swing.JPanel {
+<<<<<<< HEAD
+=======
     public Mediador mediador = new Mediador();
+>>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
 
     private IntercambiarPaneles intercambiar = new IntercambiarPaneles();
 
@@ -48,8 +57,13 @@ public class Menu extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         btnInicio = new javax.swing.JPanel();
+<<<<<<< HEAD
+        jLabel8 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+=======
         jLabel11 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+>>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
         btnTransferir = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
@@ -59,23 +73,61 @@ public class Menu extends javax.swing.JPanel {
         btnPagarTarjeta = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
+<<<<<<< HEAD
+        btnSalir = new javax.swing.JPanel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        panelDer = new javax.swing.JPanel();
+        panelInicio = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+
+        setMaximumSize(new java.awt.Dimension(769, 500));
+        setMinimumSize(new java.awt.Dimension(769, 500));
+        setPreferredSize(new java.awt.Dimension(769, 500));
+=======
         jLabel7 = new javax.swing.JLabel();
         btnSalir = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         panelDer = new javax.swing.JPanel();
+>>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
 
         panelIzq.setBackground(new java.awt.Color(153, 153, 153));
         panelIzq.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
         btnPagarServicios.setBackground(new java.awt.Color(102, 102, 102));
         btnPagarServicios.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+<<<<<<< HEAD
+        btnPagarServicios.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+=======
+>>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
         btnPagarServicios.setPreferredSize(new java.awt.Dimension(93, 39));
         btnPagarServicios.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnPagarServiciosMouseClicked(evt);
             }
+<<<<<<< HEAD
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnPagarServiciosMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnPagarServiciosMouseExited(evt);
+            }
+=======
+>>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
         });
 
         jLabel1.setBackground(new java.awt.Color(240, 240, 240));
@@ -109,21 +161,43 @@ public class Menu extends javax.swing.JPanel {
 
         btnInicio.setBackground(new java.awt.Color(102, 102, 102));
         btnInicio.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+<<<<<<< HEAD
+        btnInicio.setForeground(new java.awt.Color(153, 255, 255));
+        btnInicio.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+=======
+>>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
         btnInicio.setPreferredSize(new java.awt.Dimension(93, 39));
         btnInicio.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnInicioMouseClicked(evt);
             }
+<<<<<<< HEAD
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnInicioMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnInicioMouseExited(evt);
+            }
+        });
+
+=======
         });
 
         jLabel11.setFont(new java.awt.Font("Segoe UI Emoji", 0, 14)); // NOI18N
         jLabel11.setText("👤");
 
+>>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
         jLabel8.setBackground(new java.awt.Color(240, 240, 240));
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(204, 204, 204));
         jLabel8.setText("Inicio");
 
+<<<<<<< HEAD
+        jLabel11.setFont(new java.awt.Font("Segoe UI Emoji", 0, 14)); // NOI18N
+        jLabel11.setText("👤");
+
+=======
+>>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
         javax.swing.GroupLayout btnInicioLayout = new javax.swing.GroupLayout(btnInicio);
         btnInicio.setLayout(btnInicioLayout);
         btnInicioLayout.setHorizontalGroup(
@@ -147,11 +221,24 @@ public class Menu extends javax.swing.JPanel {
 
         btnTransferir.setBackground(new java.awt.Color(102, 102, 102));
         btnTransferir.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+<<<<<<< HEAD
+        btnTransferir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+=======
+>>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
         btnTransferir.setPreferredSize(new java.awt.Dimension(93, 39));
         btnTransferir.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnTransferirMouseClicked(evt);
             }
+<<<<<<< HEAD
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnTransferirMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnTransferirMouseExited(evt);
+            }
+=======
+>>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
         });
 
         jLabel3.setBackground(new java.awt.Color(240, 240, 240));
@@ -185,11 +272,24 @@ public class Menu extends javax.swing.JPanel {
 
         btnDepositar.setBackground(new java.awt.Color(102, 102, 102));
         btnDepositar.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+<<<<<<< HEAD
+        btnDepositar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+=======
+>>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
         btnDepositar.setPreferredSize(new java.awt.Dimension(93, 39));
         btnDepositar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnDepositarMouseClicked(evt);
             }
+<<<<<<< HEAD
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnDepositarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnDepositarMouseExited(evt);
+            }
+=======
+>>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
         });
 
         jLabel4.setBackground(new java.awt.Color(240, 240, 240));
@@ -223,11 +323,24 @@ public class Menu extends javax.swing.JPanel {
 
         btnPagarTarjeta.setBackground(new java.awt.Color(102, 102, 102));
         btnPagarTarjeta.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+<<<<<<< HEAD
+        btnPagarTarjeta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+=======
+>>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
         btnPagarTarjeta.setPreferredSize(new java.awt.Dimension(93, 39));
         btnPagarTarjeta.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnPagarTarjetaMouseClicked(evt);
             }
+<<<<<<< HEAD
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnPagarTarjetaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnPagarTarjetaMouseExited(evt);
+            }
+=======
+>>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
         });
 
         jLabel5.setBackground(new java.awt.Color(240, 240, 240));
@@ -259,6 +372,11 @@ public class Menu extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
+<<<<<<< HEAD
+        btnSalir.setBackground(new java.awt.Color(102, 102, 102));
+        btnSalir.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        btnSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+=======
         jLabel7.setBackground(new java.awt.Color(255, 255, 255));
         jLabel7.setFont(new java.awt.Font("Segoe UI Emoji", 1, 80)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
@@ -266,11 +384,21 @@ public class Menu extends javax.swing.JPanel {
 
         btnSalir.setBackground(new java.awt.Color(102, 102, 102));
         btnSalir.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+>>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
         btnSalir.setPreferredSize(new java.awt.Dimension(93, 39));
         btnSalir.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnSalirMouseClicked(evt);
             }
+<<<<<<< HEAD
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnSalirMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnSalirMouseExited(evt);
+            }
+=======
+>>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
         });
 
         jLabel14.setBackground(new java.awt.Color(240, 240, 240));
@@ -302,9 +430,20 @@ public class Menu extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
+<<<<<<< HEAD
+        jLabel7.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel7.setFont(new java.awt.Font("Segoe UI Emoji", 1, 80)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel7.setText("🌄");
+
+        jLabel6.setBackground(new java.awt.Color(240, 240, 240));
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
+=======
         jLabel6.setBackground(new java.awt.Color(240, 240, 240));
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(204, 204, 204));
+>>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
         jLabel6.setText("NOMBRE DEL BANCO");
 
         javax.swing.GroupLayout panelIzqLayout = new javax.swing.GroupLayout(panelIzq);
@@ -328,7 +467,11 @@ public class Menu extends javax.swing.JPanel {
                             .addComponent(btnSalir, javax.swing.GroupLayout.DEFAULT_SIZE, 289, Short.MAX_VALUE))))
                 .addContainerGap())
             .addGroup(panelIzqLayout.createSequentialGroup()
+<<<<<<< HEAD
+                .addGap(53, 53, 53)
+=======
                 .addGap(54, 54, 54)
+>>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
                 .addComponent(jLabel6)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -336,7 +479,11 @@ public class Menu extends javax.swing.JPanel {
             panelIzqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelIzqLayout.createSequentialGroup()
                 .addContainerGap()
+<<<<<<< HEAD
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+=======
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+>>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel6)
                 .addGap(18, 18, 18)
@@ -351,21 +498,134 @@ public class Menu extends javax.swing.JPanel {
                 .addComponent(btnPagarTarjeta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+<<<<<<< HEAD
+                .addContainerGap(60, Short.MAX_VALUE))
+=======
                 .addGap(27, 27, 27))
+>>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
         );
 
         panelDer.setBackground(new java.awt.Color(255, 255, 255));
         panelDer.setForeground(new java.awt.Color(255, 255, 255));
 
+<<<<<<< HEAD
+        panelInicio.setBackground(new java.awt.Color(255, 255, 255));
+        panelInicio.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED, new java.awt.Color(102, 102, 102), new java.awt.Color(102, 102, 102), new java.awt.Color(102, 102, 102), new java.awt.Color(102, 102, 102)));
+
+        jLabel2.setBackground(new java.awt.Color(102, 102, 102));
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel2.setText("Saldo Disponible");
+
+        jLabel16.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel16.setText("Datos de la Cuenta ");
+
+        jLabel17.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel17.setText("N° de Cédula:");
+
+        jLabel18.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel18.setText("Cuenta N°:");
+
+        jLabel19.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel19.setText("Telefono:");
+
+        jLabel20.setFont(new java.awt.Font("Segoe UI Emoji", 0, 18)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel20.setText("🔄");
+
+        jLabel21.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel21.setText("xxxx");
+
+        jLabel22.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel22.setText("xxxx");
+
+        jLabel23.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel23.setText("xxxx");
+
+        jLabel24.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel24.setText("xxxx");
+
+        jLabel25.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel25.setText("₲");
+
+        javax.swing.GroupLayout panelInicioLayout = new javax.swing.GroupLayout(panelInicio);
+        panelInicio.setLayout(panelInicioLayout);
+        panelInicioLayout.setHorizontalGroup(
+            panelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelInicioLayout.createSequentialGroup()
+                .addGap(66, 66, 66)
+                .addGroup(panelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel16)
+                    .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel19)
+                    .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(panelInicioLayout.createSequentialGroup()
+                        .addComponent(jLabel25)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel20)))
+                .addContainerGap(168, Short.MAX_VALUE))
+        );
+        panelInicioLayout.setVerticalGroup(
+            panelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelInicioLayout.createSequentialGroup()
+                .addGap(69, 69, 69)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel25)
+                    .addComponent(jLabel21)
+                    .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(39, 39, 39)
+                .addComponent(jLabel16)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel17)
+                .addGap(5, 5, 5)
+                .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel19)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel24)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+=======
+>>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
         javax.swing.GroupLayout panelDerLayout = new javax.swing.GroupLayout(panelDer);
         panelDer.setLayout(panelDerLayout);
         panelDerLayout.setHorizontalGroup(
             panelDerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+<<<<<<< HEAD
+            .addComponent(panelInicio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        panelDerLayout.setVerticalGroup(
+            panelDerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(panelInicio, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+=======
             .addGap(0, 600, Short.MAX_VALUE)
         );
         panelDerLayout.setVerticalGroup(
             panelDerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
+>>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -387,6 +647,35 @@ public class Menu extends javax.swing.JPanel {
     private void btnPagarServiciosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPagarServiciosMouseClicked
         // TODO add your handling code here:
         FormularioPagarServicios panel = new FormularioPagarServicios();
+<<<<<<< HEAD
+        intercambiar.modificarPanel(panel, panelDer);
+    }//GEN-LAST:event_btnPagarServiciosMouseClicked
+
+    private void btnInicioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInicioMouseClicked
+        // TODO add your handling code here:
+        panelDer.removeAll();
+        panelDer.revalidate();
+        panelDer.add(panelInicio);
+        panelDer.repaint();
+    }//GEN-LAST:event_btnInicioMouseClicked
+
+    private void btnTransferirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTransferirMouseClicked
+        // TODO add your handling code here:
+        FormularioTransferencia panel = new FormularioTransferencia();
+        intercambiar.modificarPanel(panel, panelDer);
+    }//GEN-LAST:event_btnTransferirMouseClicked
+
+    private void btnDepositarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDepositarMouseClicked
+        // TODO add your handling code here:
+        FormularioDeposito panel = new FormularioDeposito();
+        intercambiar.modificarPanel(panel, panelDer);
+    }//GEN-LAST:event_btnDepositarMouseClicked
+
+    private void btnPagarTarjetaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPagarTarjetaMouseClicked
+        // TODO add your handling code here:
+        FormularioPagoTarjetas panel = new FormularioPagoTarjetas();
+        intercambiar.modificarPanel(panel, panelDer);
+=======
         intercambiar.modificarPanel(panel, panelDer, 1);
     }//GEN-LAST:event_btnPagarServiciosMouseClicked
 
@@ -409,6 +698,7 @@ public class Menu extends javax.swing.JPanel {
     private void btnPagarTarjetaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPagarTarjetaMouseClicked
         FormularioPagoTarjetas panel = new FormularioPagoTarjetas();
         intercambiar.modificarPanel(panel, panelDer, 1);
+>>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
     }//GEN-LAST:event_btnPagarTarjetaMouseClicked
 
     private void btnSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSalirMouseClicked
@@ -416,6 +706,69 @@ public class Menu extends javax.swing.JPanel {
         System.exit(0);
     }//GEN-LAST:event_btnSalirMouseClicked
 
+<<<<<<< HEAD
+    private void btnInicioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInicioMouseEntered
+        // TODO add your handling code here:
+        btnInicio.setBackground(new java.awt.Color(51, 51, 51));
+    }//GEN-LAST:event_btnInicioMouseEntered
+
+    private void btnInicioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInicioMouseExited
+        // TODO add your handling code here:
+        btnInicio.setBackground(new java.awt.Color(102, 102, 102));
+    }//GEN-LAST:event_btnInicioMouseExited
+
+    private void btnPagarServiciosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPagarServiciosMouseEntered
+        // TODO add your handling code here:
+        btnPagarServicios.setBackground(new java.awt.Color(51, 51, 51));
+    }//GEN-LAST:event_btnPagarServiciosMouseEntered
+
+    private void btnPagarServiciosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPagarServiciosMouseExited
+        // TODO add your handling code here:
+        btnPagarServicios.setBackground(new java.awt.Color(102, 102, 102));
+    }//GEN-LAST:event_btnPagarServiciosMouseExited
+
+    private void btnTransferirMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTransferirMouseEntered
+        // TODO add your handling code here:
+        btnTransferir.setBackground(new java.awt.Color(51, 51, 51));
+    }//GEN-LAST:event_btnTransferirMouseEntered
+
+    private void btnTransferirMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTransferirMouseExited
+        // TODO add your handling code here:
+        btnTransferir.setBackground(new java.awt.Color(102, 102, 102));
+    }//GEN-LAST:event_btnTransferirMouseExited
+
+    private void btnDepositarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDepositarMouseEntered
+        // TODO add your handling code here:
+        btnDepositar.setBackground(new java.awt.Color(51, 51, 51));
+    }//GEN-LAST:event_btnDepositarMouseEntered
+
+    private void btnDepositarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDepositarMouseExited
+        // TODO add your handling code here:
+        btnDepositar.setBackground(new java.awt.Color(102, 102, 102));
+    }//GEN-LAST:event_btnDepositarMouseExited
+
+    private void btnPagarTarjetaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPagarTarjetaMouseEntered
+        // TODO add your handling code here:
+        btnPagarTarjeta.setBackground(new java.awt.Color(51, 51, 51));
+    }//GEN-LAST:event_btnPagarTarjetaMouseEntered
+
+    private void btnPagarTarjetaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPagarTarjetaMouseExited
+        // TODO add your handling code here:
+        btnPagarTarjeta.setBackground(new java.awt.Color(102, 102, 102));
+    }//GEN-LAST:event_btnPagarTarjetaMouseExited
+
+    private void btnSalirMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSalirMouseEntered
+        // TODO add your handling code here:
+        btnSalir.setBackground(new java.awt.Color(51, 51, 51));
+    }//GEN-LAST:event_btnSalirMouseEntered
+
+    private void btnSalirMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSalirMouseExited
+        // TODO add your handling code here:
+        btnSalir.setBackground(new java.awt.Color(102, 102, 102));
+    }//GEN-LAST:event_btnSalirMouseExited
+
+=======
+>>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
     /**
      * @param args the command line arguments
      */
@@ -443,6 +796,20 @@ public class Menu extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+<<<<<<< HEAD
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+=======
+>>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -451,6 +818,10 @@ public class Menu extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     public javax.swing.JPanel panelDer;
+<<<<<<< HEAD
+    public javax.swing.JPanel panelInicio;
+=======
+>>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
     public javax.swing.JPanel panelIzq;
     // End of variables declaration//GEN-END:variables
 }
