@@ -56,6 +56,17 @@ public class Login extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 0));
+<<<<<<< HEAD
+        setMaximumSize(new java.awt.Dimension(769, 500));
+        setMinimumSize(new java.awt.Dimension(769, 500));
+        setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(769, 500));
+        setSize(new java.awt.Dimension(769, 500));
+
+        panelDer.setBackground(new java.awt.Color(255, 255, 255));
+        panelDer.setMinimumSize(new java.awt.Dimension(591, 444));
+        panelDer.setLayout(null);
+=======
         setUndecorated(true);
         setSize(new java.awt.Dimension(591, 444));
 
@@ -72,13 +83,18 @@ public class Login extends javax.swing.JFrame {
         jLabel1.setOpaque(true);
         jPanel1.add(jLabel1);
         jLabel1.setBounds(0, 0, 490, 480);
+>>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
 
         jTextField1.setBackground(new java.awt.Color(255, 255, 255));
         jTextField1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jTextField1.setForeground(new java.awt.Color(204, 204, 204));
         jTextField1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(217, 219, 228)));
         panelDer.add(jTextField1);
+<<<<<<< HEAD
+        jTextField1.setBounds(100, 190, 330, 20);
+=======
         jTextField1.setBounds(180, 190, 330, 18);
+>>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
 
         btnInicio.setBackground(new java.awt.Color(153, 153, 153));
         btnInicio.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -90,38 +106,62 @@ public class Login extends javax.swing.JFrame {
             }
         });
         panelDer.add(btnInicio);
+<<<<<<< HEAD
+        btnInicio.setBounds(190, 360, 150, 20);
+=======
         btnInicio.setBounds(270, 360, 150, 22);
+>>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
 
         jPasswordField1.setBackground(new java.awt.Color(255, 255, 255));
         jPasswordField1.setForeground(new java.awt.Color(204, 204, 204));
         jPasswordField1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(217, 219, 228)));
         panelDer.add(jPasswordField1);
+<<<<<<< HEAD
+        jPasswordField1.setBounds(100, 280, 330, 20);
+=======
         jPasswordField1.setBounds(180, 280, 330, 22);
+>>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
 
         jLabel2.setFont(new java.awt.Font("Felix Titling", 0, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(102, 102, 102));
         jLabel2.setText("Iniciar Sesión");
         panelDer.add(jLabel2);
+<<<<<<< HEAD
+        jLabel2.setBounds(170, 90, 180, 30);
+=======
         jLabel2.setBounds(250, 90, 180, 30);
+>>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(102, 102, 102));
         jLabel3.setText("CONTRASEÑA");
         jLabel3.setToolTipText("");
         panelDer.add(jLabel3);
+<<<<<<< HEAD
+        jLabel3.setBounds(100, 250, 210, 20);
+=======
         jLabel3.setBounds(180, 250, 210, 17);
+>>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(102, 102, 102));
         jLabel5.setText("DOCUMENTO DE IDENTIDAD");
         jLabel5.setToolTipText("");
         panelDer.add(jLabel5);
+<<<<<<< HEAD
+        jLabel5.setBounds(100, 150, 210, 20);
+=======
         jLabel5.setBounds(180, 150, 210, 17);
+>>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
 
         jLabel7.setFont(new java.awt.Font("Segoe UI Emoji", 0, 18)); // NOI18N
         jLabel7.setText("👤");
         panelDer.add(jLabel7);
+<<<<<<< HEAD
+        jLabel7.setBounds(70, 180, 40, 40);
+=======
         jLabel7.setBounds(150, 180, 40, 40);
+>>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
 
         jLabel1.setForeground(new java.awt.Color(255, 0, 0));
         panelDer.add(jLabel1);
@@ -130,12 +170,25 @@ public class Login extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Segoe UI Emoji", 0, 18)); // NOI18N
         jLabel4.setText("🔒");
         panelDer.add(jLabel4);
+<<<<<<< HEAD
+        jLabel4.setBounds(70, 270, 30, 50);
+=======
         jLabel4.setBounds(150, 270, 30, 50);
+>>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
 
         panelIzq.setBackground(new java.awt.Color(153, 153, 153));
         panelIzq.setForeground(new java.awt.Color(204, 204, 204));
 
         jLabel9.setBackground(new java.awt.Color(255, 255, 255));
+<<<<<<< HEAD
+        jLabel9.setFont(new java.awt.Font("Segoe UI Emoji", 1, 130)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel9.setText("🌄");
+
+        jLabel10.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
+=======
         jLabel9.setFont(new java.awt.Font("Segoe UI Emoji", 1, 120)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("🌄");
@@ -143,6 +196,7 @@ public class Login extends javax.swing.JFrame {
         jLabel10.setBackground(new java.awt.Color(240, 240, 240));
         jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(204, 204, 204));
+>>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
         jLabel10.setText("NOMBRE DEL BANCO");
 
         javax.swing.GroupLayout panelIzqLayout = new javax.swing.GroupLayout(panelIzq);
@@ -150,20 +204,36 @@ public class Login extends javax.swing.JFrame {
         panelIzqLayout.setHorizontalGroup(
             panelIzqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelIzqLayout.createSequentialGroup()
+<<<<<<< HEAD
+                .addGap(51, 51, 51)
+                .addGroup(panelIzqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(63, Short.MAX_VALUE))
+=======
                 .addGap(63, 63, 63)
                 .addGroup(panelIzqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel10)
                     .addComponent(jLabel9))
                 .addContainerGap(54, Short.MAX_VALUE))
+>>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
         );
         panelIzqLayout.setVerticalGroup(
             panelIzqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelIzqLayout.createSequentialGroup()
+<<<<<<< HEAD
+                .addGap(80, 80, 80)
+                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel10)
+                .addContainerGap(155, Short.MAX_VALUE))
+=======
                 .addGap(79, 79, 79)
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel10)
                 .addContainerGap(158, Short.MAX_VALUE))
+>>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -173,7 +243,11 @@ public class Login extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(panelIzq, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+<<<<<<< HEAD
+                .addComponent(panelDer, javax.swing.GroupLayout.PREFERRED_SIZE, 483, javax.swing.GroupLayout.PREFERRED_SIZE))
+=======
                 .addComponent(panelDer, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE))
+>>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -193,8 +267,13 @@ public class Login extends javax.swing.JFrame {
             // iniciar menu principal
             Menu menu = new Menu(mediador);
             IntercambiarPaneles intercambio = new IntercambiarPaneles();
+<<<<<<< HEAD
+            intercambio.modificarPanel(menu.panelIzq, panelIzq);
+            intercambio.modificarPanel(menu.panelDer, panelDer);
+=======
             intercambio.modificarPanel(menu.panelIzq, panelIzq, 0);
             intercambio.modificarPanel(menu.panelDer, panelDer, 1);
+>>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
         } catch (Exception e) {
             jLabel1.setText("Datos Inválidos!");
         }
