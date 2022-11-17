@@ -14,7 +14,7 @@ import src.gui.intercambiarPaneles.IntercambiarPaneles;
  * @author Abeld
  */
 public class Menu extends javax.swing.JPanel {
-
+    private Mediador m;
     private IntercambiarPaneles intercambiar = new IntercambiarPaneles();
 
     /**
@@ -26,6 +26,7 @@ public class Menu extends javax.swing.JPanel {
 
     public Menu(Mediador m) {
         initComponents();
+        this.m = m;
     }
 
     /**
@@ -536,13 +537,11 @@ public class Menu extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnPagarServiciosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPagarServiciosMouseClicked
-        // TODO add your handling code here:
-        FormularioPagarServicios panel = new FormularioPagarServicios();
+        FormularioPagarServicios panel = new FormularioPagarServicios(m);
         intercambiar.modificarPanel(panel, panelDer);
     }//GEN-LAST:event_btnPagarServiciosMouseClicked
 
     private void btnInicioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInicioMouseClicked
-        // TODO add your handling code here:
         panelDer.removeAll();
         panelDer.revalidate();
         panelDer.add(panelInicio);
@@ -550,85 +549,69 @@ public class Menu extends javax.swing.JPanel {
     }//GEN-LAST:event_btnInicioMouseClicked
 
     private void btnTransferirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTransferirMouseClicked
-        // TODO add your handling code here:
-        FormularioTransferencia panel = new FormularioTransferencia();
+        FormularioTransferencia panel = new FormularioTransferencia(m);
         intercambiar.modificarPanel(panel, panelDer);
     }//GEN-LAST:event_btnTransferirMouseClicked
 
     private void btnDepositarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDepositarMouseClicked
-        // TODO add your handling code here:
-        FormularioDeposito panel = new FormularioDeposito();
+        FormularioDeposito panel = new FormularioDeposito(m);
         intercambiar.modificarPanel(panel, panelDer);
     }//GEN-LAST:event_btnDepositarMouseClicked
 
     private void btnPagarTarjetaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPagarTarjetaMouseClicked
-        // TODO add your handling code here:
-        FormularioPagoTarjetas panel = new FormularioPagoTarjetas();
+        FormularioPagoTarjetas panel = new FormularioPagoTarjetas(m);
         intercambiar.modificarPanel(panel, panelDer);
     }//GEN-LAST:event_btnPagarTarjetaMouseClicked
 
     private void btnSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSalirMouseClicked
-        // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_btnSalirMouseClicked
 
     private void btnInicioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInicioMouseEntered
-        // TODO add your handling code here:
         btnInicio.setBackground(new java.awt.Color(51, 51, 51));
     }//GEN-LAST:event_btnInicioMouseEntered
 
     private void btnInicioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInicioMouseExited
-        // TODO add your handling code here:
         btnInicio.setBackground(new java.awt.Color(102, 102, 102));
     }//GEN-LAST:event_btnInicioMouseExited
 
     private void btnPagarServiciosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPagarServiciosMouseEntered
-        // TODO add your handling code here:
         btnPagarServicios.setBackground(new java.awt.Color(51, 51, 51));
     }//GEN-LAST:event_btnPagarServiciosMouseEntered
 
     private void btnPagarServiciosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPagarServiciosMouseExited
-        // TODO add your handling code here:
         btnPagarServicios.setBackground(new java.awt.Color(102, 102, 102));
     }//GEN-LAST:event_btnPagarServiciosMouseExited
 
     private void btnTransferirMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTransferirMouseEntered
-        // TODO add your handling code here:
         btnTransferir.setBackground(new java.awt.Color(51, 51, 51));
     }//GEN-LAST:event_btnTransferirMouseEntered
 
     private void btnTransferirMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTransferirMouseExited
-        // TODO add your handling code here:
         btnTransferir.setBackground(new java.awt.Color(102, 102, 102));
     }//GEN-LAST:event_btnTransferirMouseExited
 
     private void btnDepositarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDepositarMouseEntered
-        // TODO add your handling code here:
         btnDepositar.setBackground(new java.awt.Color(51, 51, 51));
     }//GEN-LAST:event_btnDepositarMouseEntered
 
     private void btnDepositarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDepositarMouseExited
-        // TODO add your handling code here:
         btnDepositar.setBackground(new java.awt.Color(102, 102, 102));
     }//GEN-LAST:event_btnDepositarMouseExited
 
     private void btnPagarTarjetaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPagarTarjetaMouseEntered
-        // TODO add your handling code here:
         btnPagarTarjeta.setBackground(new java.awt.Color(51, 51, 51));
     }//GEN-LAST:event_btnPagarTarjetaMouseEntered
 
     private void btnPagarTarjetaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPagarTarjetaMouseExited
-        // TODO add your handling code here:
         btnPagarTarjeta.setBackground(new java.awt.Color(102, 102, 102));
     }//GEN-LAST:event_btnPagarTarjetaMouseExited
 
     private void btnSalirMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSalirMouseEntered
-        // TODO add your handling code here:
         btnSalir.setBackground(new java.awt.Color(51, 51, 51));
     }//GEN-LAST:event_btnSalirMouseEntered
 
     private void btnSalirMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSalirMouseExited
-        // TODO add your handling code here:
         btnSalir.setBackground(new java.awt.Color(102, 102, 102));
     }//GEN-LAST:event_btnSalirMouseExited
 
