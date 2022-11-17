@@ -27,10 +27,6 @@ public class Cuenta {
         this.contrasena = contrasena;
     }
 
-    public Cuenta() {
-
-    }
-
     @Override
     public String toString() {
         String res = String.format(
@@ -44,4 +40,6 @@ public class Cuenta {
                 this.saldo);
         return res;
     }
+
+    public Cuenta() {}
 }
