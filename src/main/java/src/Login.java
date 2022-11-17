@@ -14,6 +14,7 @@ import src.mediador.Mediador;
  * @author Abeld
  */
 public class Login extends javax.swing.JFrame {
+
     Mediador m = new Mediador();
 
     /**

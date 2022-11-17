@@ -21,12 +21,12 @@ public class Comprobante extends javax.swing.JPanel implements Printable {
      * Creates new form compro
      */
     public Comprobante(DatosComprobante d) {
-        initComponents();
         datosConcepto.setText(d.concepto);
         datosCuentaDestino.setText(String.valueOf(d.cuentaDestino));
         datosFecha.setText(d.fecha.toString());
         datosMonto.setText(String.valueOf(d.monto));
         datosNumero.setText(String.valueOf(d.idComprobante));
+        initComponents();
     }
 
     /**

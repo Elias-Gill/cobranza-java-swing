@@ -13,6 +13,7 @@ import src.mediador.Mediador;
  * @author Abeld
  */
 public class FormularioDeposito extends javax.swing.JPanel {
+
     Mediador m;
 
     /**
@@ -115,8 +116,10 @@ public class FormularioDeposito extends javax.swing.JPanel {
             comp = m.NuevoDeposito(monto);
             IntercambiarPaneles intercambiar = new IntercambiarPaneles();
             intercambiar.modificarPanel(comp, panelPrincipal);
+            System.out.println("Holoa");
         } catch (Exception e) {
             // TODO lanzar error
+            System.out.println("nRT");
         }
     }
 

@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"src"},{"l":"src.bankServer"},{"l":"src.bankServer.data"},{"l":"src.bankServer.regsYcomprobs"},{"l":"src.gui"},{"l":"src.gui.comprobante"},{"l":"src.gui.formulario"},{"l":"src.gui.inicioSesion"},{"l":"src.gui.menu"},{"l":"src.mediador"}];updateSearchResults();

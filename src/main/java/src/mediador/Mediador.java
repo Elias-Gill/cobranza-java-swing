@@ -11,8 +11,13 @@ import src.bankServer.regsYcomprobs.Transferencia;
 import src.gui.comprobante.Comprobante;
 
 public class Mediador {
+
     private BankServer server = new BankServer();
     public Cuenta cuentaActiva;
+
+    public Mediador() {
+
+    }
 
     // metodo para realizar una nueva transferencia
     public Comprobante NuevaTransferencia(int cuentaDestino, int monto, int pin) throws Exception {
@@ -48,7 +53,7 @@ public class Mediador {
         return new Comprobante(d);
     }
 
-    private void comprobarPin(){
+    private void comprobarPin() {
 
     }
 }
