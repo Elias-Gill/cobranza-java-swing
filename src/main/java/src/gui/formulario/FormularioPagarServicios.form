@@ -6,12 +6,9 @@
     </Component>
   </NonVisualComponents>
   <Properties>
-<<<<<<< HEAD
     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
       <Color id="Hand Cursor"/>
     </Property>
-=======
->>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
     <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
       <Dimension value="[591, 444]"/>
     </Property>
@@ -34,29 +31,16 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-<<<<<<< HEAD
           <Component id="panelPrincipal" alignment="0" max="32767" attributes="0"/>
-=======
-          <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
->>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-<<<<<<< HEAD
           <Component id="panelPrincipal" alignment="0" max="32767" attributes="0"/>
-=======
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
-              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="87" max="32767" attributes="0"/>
-          </Group>
->>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-<<<<<<< HEAD
     <Container class="javax.swing.JPanel" name="panelPrincipal">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -66,15 +50,11 @@
           <Color id="Default Cursor"/>
         </Property>
       </Properties>
-=======
-    <Container class="javax.swing.JPanel" name="jPanel1">
->>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-<<<<<<< HEAD
                   <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="lblPinTransaccion" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -97,45 +77,13 @@
                       </Group>
                   </Group>
                   <EmptySpace pref="195" max="32767" attributes="0"/>
-=======
-                  <EmptySpace min="-2" pref="145" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
-                                  <Component id="btnPagar" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField1" alignment="0" min="-2" pref="188" max="-2" attributes="0"/>
-                              <Component id="jPasswordField1" alignment="0" min="-2" pref="176" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <Component id="comboBox" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="btn1" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="btn2" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                  </Group>
-                  <EmptySpace pref="219" max="32767" attributes="0"/>
->>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-<<<<<<< HEAD
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace pref="92" max="32767" attributes="0"/>
-=======
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
->>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="comboBox" min="-2" max="-2" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
@@ -144,7 +92,6 @@
                           <Component id="btn2" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-<<<<<<< HEAD
                   <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
                   <Component id="lblMonto" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
@@ -156,25 +103,11 @@
                   <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                   <Component id="btnPagar1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
-=======
-                  <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="jTextField1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="jPasswordField1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="btnPagar" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="19" max="32767" attributes="0"/>
->>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-<<<<<<< HEAD
         <Component class="javax.swing.JComboBox" name="comboBox">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -183,38 +116,6 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-=======
-        <Component class="javax.swing.JLabel" name="jLabel1">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Monto"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="jTextField1">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField1ActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabel2">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Pin de Transacci&#xf3;n"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JPasswordField" name="jPasswordField1">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jPasswordField1"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="btnPagar">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Pagar"/>
-          </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnPagarMouseClicked"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JComboBox" name="comboBox">
-          <Properties>
->>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="4">
                 <StringItem index="0" value="FPUNA"/>
@@ -230,7 +131,6 @@
         </Component>
         <Component class="javax.swing.JRadioButton" name="btn1">
           <Properties>
-<<<<<<< HEAD
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="66" green="66" red="66" type="rgb"/>
             </Property>
@@ -321,19 +221,6 @@
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnPagar1MouseClicked"/>
           </Events>
         </Component>
-=======
-            <Property name="text" type="java.lang.String" value="Saldo de Cuenta"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn1ActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JRadioButton" name="btn2">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Tarjeta de Cr&#xe9;dito"/>
-          </Properties>
-        </Component>
->>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
       </SubComponents>
     </Container>
   </SubComponents>

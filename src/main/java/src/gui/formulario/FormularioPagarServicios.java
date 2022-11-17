@@ -4,19 +4,14 @@
  */
 package src.gui.formulario;
 
-<<<<<<< HEAD
 import src.gui.comprobante.Comprobante;
 import src.gui.intercambiarPaneles.IntercambiarPaneles;
-=======
-import src.mediador.Mediador;
->>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
 
 /**
  *
  * @author Abeld
  */
 public class FormularioPagarServicios extends javax.swing.JPanel {
-<<<<<<< HEAD
 
     /**
      * Creates new form FormularioPagarServicios
@@ -25,17 +20,6 @@ public class FormularioPagarServicios extends javax.swing.JPanel {
         initComponents();
         botones.add(btn1);
         botones.add(btn2);
-=======
-    Mediador mediador;
-    /**
-     * Creates new form FormularioPagarServicios
-     */
-    public FormularioPagarServicios(Mediador m) {
-        initComponents();
-        botones.add(btn1);
-        botones.add(btn2);
-        mediador = m;
->>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
     }
 
     /**
@@ -48,7 +32,6 @@ public class FormularioPagarServicios extends javax.swing.JPanel {
     private void initComponents() {
 
         botones = new javax.swing.ButtonGroup();
-<<<<<<< HEAD
         panelPrincipal = new javax.swing.JPanel();
         comboBox = new javax.swing.JComboBox<>();
         btn1 = new javax.swing.JRadioButton();
@@ -147,104 +130,12 @@ public class FormularioPagarServicios extends javax.swing.JPanel {
                 .addGap(35, 35, 35)
                 .addComponent(btnPagar1)
                 .addGap(70, 70, 70))
-=======
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        btnPagar = new javax.swing.JButton();
-        comboBox = new javax.swing.JComboBox<>();
-        btn1 = new javax.swing.JRadioButton();
-        btn2 = new javax.swing.JRadioButton();
-
-        setMinimumSize(new java.awt.Dimension(591, 444));
-        setPreferredSize(new java.awt.Dimension(591, 444));
-
-        jLabel1.setText("Monto");
-
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-
-        jLabel2.setText("Pin de Transacción");
-
-        jPasswordField1.setText("jPasswordField1");
-
-        btnPagar.setText("Pagar");
-        btnPagar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnPagarMouseClicked(evt);
-            }
-        });
-
-        comboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "FPUNA", "ANDE", "CLARO", "TIGO" }));
-
-        btn1.setText("Saldo de Cuenta");
-        btn1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn1ActionPerformed(evt);
-            }
-        });
-
-        btn2.setText("Tarjeta de Crédito");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(145, 145, 145)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(46, 46, 46)
-                                .addComponent(btnPagar))
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel1)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(39, 39, 39))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(comboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(36, 36, 36)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btn1)
-                            .addComponent(btn2))))
-                .addContainerGap(219, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(comboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(btn1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btn2)))
-                .addGap(20, 20, 20)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21)
-                .addComponent(jLabel2)
-                .addGap(18, 18, 18)
-                .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnPagar)
-                .addContainerGap(19, Short.MAX_VALUE))
->>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-<<<<<<< HEAD
             .addComponent(panelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
@@ -259,35 +150,11 @@ public class FormularioPagarServicios extends javax.swing.JPanel {
         IntercambiarPaneles intercambiar = new IntercambiarPaneles();
         intercambiar.modificarPanel(panel, panelPrincipal);
     }//GEN-LAST:event_btnPagar1MouseClicked
-=======
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(84, 84, 84)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(87, Short.MAX_VALUE))
-        );
-    }// </editor-fold>//GEN-END:initComponents
-
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
-    private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1ActionPerformed
-    }//GEN-LAST:event_btn1ActionPerformed
-
-    // FUNCION PARA PAGAR SERVICIO
-    private void btnPagarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPagarMouseClicked
-        mediador.PagarServicio()
-    }//GEN-LAST:event_btnPagarMouseClicked
->>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup botones;
     private javax.swing.JRadioButton btn1;
     private javax.swing.JRadioButton btn2;
-<<<<<<< HEAD
     private javax.swing.JButton btnPagar1;
     private javax.swing.JComboBox<String> comboBox;
     private javax.swing.JPasswordField jPassPintTransaccion;
@@ -295,14 +162,5 @@ public class FormularioPagarServicios extends javax.swing.JPanel {
     private javax.swing.JLabel lblMonto;
     private javax.swing.JLabel lblPinTransaccion;
     private javax.swing.JPanel panelPrincipal;
-=======
-    private javax.swing.JButton btnPagar;
-    private javax.swing.JComboBox<String> comboBox;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField1;
->>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
     // End of variables declaration//GEN-END:variables
 }

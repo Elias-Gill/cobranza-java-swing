@@ -5,30 +5,15 @@
 package src.gui.menu;
 
 import com.formdev.flatlaf.FlatDarkLaf;
-<<<<<<< HEAD
 import src.mediador.Mediador;
 import src.gui.formulario.*;
 import src.gui.intercambiarPaneles.IntercambiarPaneles;
-=======
-
-import src.gui.formulario.DatosInicio;
-import src.gui.formulario.FormularioDeposito;
-import src.gui.formulario.FormularioPagarServicios;
-import src.gui.formulario.FormularioPagoTarjetas;
-import src.gui.formulario.FormularioTransferencia;
-import src.gui.intercambiarPaneles.IntercambiarPaneles;
-import src.mediador.Mediador;
->>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
 
 /**
  *
  * @author Abeld
  */
 public class Menu extends javax.swing.JPanel {
-<<<<<<< HEAD
-=======
-    public Mediador mediador = new Mediador();
->>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
 
     private IntercambiarPaneles intercambiar = new IntercambiarPaneles();
 
@@ -57,13 +42,8 @@ public class Menu extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         btnInicio = new javax.swing.JPanel();
-<<<<<<< HEAD
         jLabel8 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-=======
-        jLabel11 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
->>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
         btnTransferir = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
@@ -73,7 +53,6 @@ public class Menu extends javax.swing.JPanel {
         btnPagarTarjeta = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-<<<<<<< HEAD
         btnSalir = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
@@ -96,38 +75,24 @@ public class Menu extends javax.swing.JPanel {
         setMaximumSize(new java.awt.Dimension(769, 500));
         setMinimumSize(new java.awt.Dimension(769, 500));
         setPreferredSize(new java.awt.Dimension(769, 500));
-=======
-        jLabel7 = new javax.swing.JLabel();
-        btnSalir = new javax.swing.JPanel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        panelDer = new javax.swing.JPanel();
->>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
 
         panelIzq.setBackground(new java.awt.Color(153, 153, 153));
         panelIzq.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
         btnPagarServicios.setBackground(new java.awt.Color(102, 102, 102));
         btnPagarServicios.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-<<<<<<< HEAD
         btnPagarServicios.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-=======
->>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
         btnPagarServicios.setPreferredSize(new java.awt.Dimension(93, 39));
         btnPagarServicios.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnPagarServiciosMouseClicked(evt);
             }
-<<<<<<< HEAD
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnPagarServiciosMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 btnPagarServiciosMouseExited(evt);
             }
-=======
->>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
         });
 
         jLabel1.setBackground(new java.awt.Color(240, 240, 240));
@@ -161,17 +126,13 @@ public class Menu extends javax.swing.JPanel {
 
         btnInicio.setBackground(new java.awt.Color(102, 102, 102));
         btnInicio.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-<<<<<<< HEAD
         btnInicio.setForeground(new java.awt.Color(153, 255, 255));
         btnInicio.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-=======
->>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
         btnInicio.setPreferredSize(new java.awt.Dimension(93, 39));
         btnInicio.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnInicioMouseClicked(evt);
             }
-<<<<<<< HEAD
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnInicioMouseEntered(evt);
             }
@@ -180,24 +141,14 @@ public class Menu extends javax.swing.JPanel {
             }
         });
 
-=======
-        });
-
-        jLabel11.setFont(new java.awt.Font("Segoe UI Emoji", 0, 14)); // NOI18N
-        jLabel11.setText("👤");
-
->>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
         jLabel8.setBackground(new java.awt.Color(240, 240, 240));
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(204, 204, 204));
         jLabel8.setText("Inicio");
 
-<<<<<<< HEAD
         jLabel11.setFont(new java.awt.Font("Segoe UI Emoji", 0, 14)); // NOI18N
         jLabel11.setText("👤");
 
-=======
->>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
         javax.swing.GroupLayout btnInicioLayout = new javax.swing.GroupLayout(btnInicio);
         btnInicio.setLayout(btnInicioLayout);
         btnInicioLayout.setHorizontalGroup(
@@ -221,24 +172,18 @@ public class Menu extends javax.swing.JPanel {
 
         btnTransferir.setBackground(new java.awt.Color(102, 102, 102));
         btnTransferir.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-<<<<<<< HEAD
         btnTransferir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-=======
->>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
         btnTransferir.setPreferredSize(new java.awt.Dimension(93, 39));
         btnTransferir.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnTransferirMouseClicked(evt);
             }
-<<<<<<< HEAD
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnTransferirMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 btnTransferirMouseExited(evt);
             }
-=======
->>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
         });
 
         jLabel3.setBackground(new java.awt.Color(240, 240, 240));
@@ -272,24 +217,18 @@ public class Menu extends javax.swing.JPanel {
 
         btnDepositar.setBackground(new java.awt.Color(102, 102, 102));
         btnDepositar.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-<<<<<<< HEAD
         btnDepositar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-=======
->>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
         btnDepositar.setPreferredSize(new java.awt.Dimension(93, 39));
         btnDepositar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnDepositarMouseClicked(evt);
             }
-<<<<<<< HEAD
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnDepositarMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 btnDepositarMouseExited(evt);
             }
-=======
->>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
         });
 
         jLabel4.setBackground(new java.awt.Color(240, 240, 240));
@@ -323,24 +262,18 @@ public class Menu extends javax.swing.JPanel {
 
         btnPagarTarjeta.setBackground(new java.awt.Color(102, 102, 102));
         btnPagarTarjeta.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-<<<<<<< HEAD
         btnPagarTarjeta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-=======
->>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
         btnPagarTarjeta.setPreferredSize(new java.awt.Dimension(93, 39));
         btnPagarTarjeta.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnPagarTarjetaMouseClicked(evt);
             }
-<<<<<<< HEAD
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnPagarTarjetaMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 btnPagarTarjetaMouseExited(evt);
             }
-=======
->>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
         });
 
         jLabel5.setBackground(new java.awt.Color(240, 240, 240));
@@ -372,33 +305,20 @@ public class Menu extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
-<<<<<<< HEAD
         btnSalir.setBackground(new java.awt.Color(102, 102, 102));
         btnSalir.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         btnSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-=======
-        jLabel7.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel7.setFont(new java.awt.Font("Segoe UI Emoji", 1, 80)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("🌄");
-
-        btnSalir.setBackground(new java.awt.Color(102, 102, 102));
-        btnSalir.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
->>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
         btnSalir.setPreferredSize(new java.awt.Dimension(93, 39));
         btnSalir.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnSalirMouseClicked(evt);
             }
-<<<<<<< HEAD
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnSalirMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 btnSalirMouseExited(evt);
             }
-=======
->>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
         });
 
         jLabel14.setBackground(new java.awt.Color(240, 240, 240));
@@ -430,7 +350,6 @@ public class Menu extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
-<<<<<<< HEAD
         jLabel7.setBackground(new java.awt.Color(0, 0, 0));
         jLabel7.setFont(new java.awt.Font("Segoe UI Emoji", 1, 80)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 0, 0));
@@ -439,11 +358,6 @@ public class Menu extends javax.swing.JPanel {
         jLabel6.setBackground(new java.awt.Color(240, 240, 240));
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 0, 0));
-=======
-        jLabel6.setBackground(new java.awt.Color(240, 240, 240));
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(204, 204, 204));
->>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
         jLabel6.setText("NOMBRE DEL BANCO");
 
         javax.swing.GroupLayout panelIzqLayout = new javax.swing.GroupLayout(panelIzq);
@@ -467,11 +381,7 @@ public class Menu extends javax.swing.JPanel {
                             .addComponent(btnSalir, javax.swing.GroupLayout.DEFAULT_SIZE, 289, Short.MAX_VALUE))))
                 .addContainerGap())
             .addGroup(panelIzqLayout.createSequentialGroup()
-<<<<<<< HEAD
                 .addGap(53, 53, 53)
-=======
-                .addGap(54, 54, 54)
->>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
                 .addComponent(jLabel6)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -479,11 +389,7 @@ public class Menu extends javax.swing.JPanel {
             panelIzqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelIzqLayout.createSequentialGroup()
                 .addContainerGap()
-<<<<<<< HEAD
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-=======
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
->>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel6)
                 .addGap(18, 18, 18)
@@ -498,17 +404,12 @@ public class Menu extends javax.swing.JPanel {
                 .addComponent(btnPagarTarjeta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-<<<<<<< HEAD
                 .addContainerGap(60, Short.MAX_VALUE))
-=======
-                .addGap(27, 27, 27))
->>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
         );
 
         panelDer.setBackground(new java.awt.Color(255, 255, 255));
         panelDer.setForeground(new java.awt.Color(255, 255, 255));
 
-<<<<<<< HEAD
         panelInicio.setBackground(new java.awt.Color(255, 255, 255));
         panelInicio.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED, new java.awt.Color(102, 102, 102), new java.awt.Color(102, 102, 102), new java.awt.Color(102, 102, 102), new java.awt.Color(102, 102, 102)));
 
@@ -607,25 +508,15 @@ public class Menu extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-=======
->>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
         javax.swing.GroupLayout panelDerLayout = new javax.swing.GroupLayout(panelDer);
         panelDer.setLayout(panelDerLayout);
         panelDerLayout.setHorizontalGroup(
             panelDerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-<<<<<<< HEAD
             .addComponent(panelInicio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         panelDerLayout.setVerticalGroup(
             panelDerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(panelInicio, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-=======
-            .addGap(0, 600, Short.MAX_VALUE)
-        );
-        panelDerLayout.setVerticalGroup(
-            panelDerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
->>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -647,7 +538,6 @@ public class Menu extends javax.swing.JPanel {
     private void btnPagarServiciosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPagarServiciosMouseClicked
         // TODO add your handling code here:
         FormularioPagarServicios panel = new FormularioPagarServicios();
-<<<<<<< HEAD
         intercambiar.modificarPanel(panel, panelDer);
     }//GEN-LAST:event_btnPagarServiciosMouseClicked
 
@@ -675,30 +565,6 @@ public class Menu extends javax.swing.JPanel {
         // TODO add your handling code here:
         FormularioPagoTarjetas panel = new FormularioPagoTarjetas();
         intercambiar.modificarPanel(panel, panelDer);
-=======
-        intercambiar.modificarPanel(panel, panelDer, 1);
-    }//GEN-LAST:event_btnPagarServiciosMouseClicked
-
-    private void btnInicioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInicioMouseClicked
-        System.out.println("Holi");
-        DatosInicio panel = new DatosInicio();
-        intercambiar.modificarPanel(panel, panelDer, 1);
-    }//GEN-LAST:event_btnInicioMouseClicked
-
-    private void btnTransferirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTransferirMouseClicked
-        FormularioTransferencia panel = new FormularioTransferencia();
-        intercambiar.modificarPanel(panel, panelDer, 1);
-    }//GEN-LAST:event_btnTransferirMouseClicked
-
-    private void btnDepositarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDepositarMouseClicked
-        FormularioDeposito panel = new FormularioDeposito(mediador);
-        intercambiar.modificarPanel(panel, panelDer, 1);
-    }//GEN-LAST:event_btnDepositarMouseClicked
-
-    private void btnPagarTarjetaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPagarTarjetaMouseClicked
-        FormularioPagoTarjetas panel = new FormularioPagoTarjetas();
-        intercambiar.modificarPanel(panel, panelDer, 1);
->>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
     }//GEN-LAST:event_btnPagarTarjetaMouseClicked
 
     private void btnSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSalirMouseClicked
@@ -706,7 +572,6 @@ public class Menu extends javax.swing.JPanel {
         System.exit(0);
     }//GEN-LAST:event_btnSalirMouseClicked
 
-<<<<<<< HEAD
     private void btnInicioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInicioMouseEntered
         // TODO add your handling code here:
         btnInicio.setBackground(new java.awt.Color(51, 51, 51));
@@ -767,8 +632,6 @@ public class Menu extends javax.swing.JPanel {
         btnSalir.setBackground(new java.awt.Color(102, 102, 102));
     }//GEN-LAST:event_btnSalirMouseExited
 
-=======
->>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
     /**
      * @param args the command line arguments
      */
@@ -796,7 +659,6 @@ public class Menu extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
-<<<<<<< HEAD
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
@@ -808,8 +670,6 @@ public class Menu extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
-=======
->>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -818,10 +678,7 @@ public class Menu extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     public javax.swing.JPanel panelDer;
-<<<<<<< HEAD
     public javax.swing.JPanel panelInicio;
-=======
->>>>>>> bd79886b4c8dc1ddbbd12677c725fde9b1127d6a
     public javax.swing.JPanel panelIzq;
     // End of variables declaration//GEN-END:variables
 }
