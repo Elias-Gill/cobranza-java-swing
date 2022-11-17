@@ -9,7 +9,8 @@ import src.bankServer.regsYcomprobs.PagoServicio;
 import src.bankServer.regsYcomprobs.Transferencia;
 
 public class BankServer {
-    operacionesSQL sql = new operacionesSQL();
+    private operacionesSQL sql = new operacionesSQL();
+    private generadorRegistro gr = new generadorRegistro();
 
     public DatosComprobante NuevaTransferencia(Transferencia t) throws Exception {
         Cuenta origen = sql.obtenerCuenta(t.cuentaOrigen);
@@ -36,13 +37,18 @@ public class BankServer {
             throw new Exception("Problema de base de datos: " + e.toString());
         }
 
-        return new DatosComprobante(t);
+        DatosComprobante dc = new DatosComprobante(t);
+        gr.nuevoRegistro(dc);
+        return dc;
     }
 
     public DatosComprobante NuevoDeposito(Deposito d) throws ClassNotFoundException, SQLException {
         Cuenta destino = sql.obtenerCuenta(d.cuentaDestino);
         sql.setSaldo(d.monto + destino.saldo, d.cuentaDestino);
-        return new DatosComprobante(d);
+
+        DatosComprobante dc = new DatosComprobante(d);
+        gr.nuevoRegistro(dc);
+        return dc;
     }
 
     public Cuenta IniciarSesion(String contrasena, int cedula) throws Exception {
@@ -65,17 +71,18 @@ public class BankServer {
         } else {
             sql.setSaldo(c.saldo - p.monto, c.cedula);
         }
-        return new DatosComprobante(p);
+        DatosComprobante dc = new DatosComprobante(p);
+        gr.nuevoRegistro(dc);
+        return dc;
     }
 
-    public DatosComprobante PagarTarjeta(Cuenta c, int monto) {
-        try {
-            sql.pagarTarjeta(monto, c.cedula);
-            sql.setSaldo(monto - c.saldo, c.cedula);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return new DatosComprobante(c.cedula, monto);
+    public DatosComprobante PagarTarjeta(Cuenta c, int monto) throws SQLException {
+        sql.pagarTarjeta(monto, c.cedula);
+        sql.setSaldo(monto - c.saldo, c.cedula);
+
+        DatosComprobante dc = new DatosComprobante(c.cedula, monto);
+        gr.nuevoRegistro(dc);
+        return dc;
     }
 
     // no hay servicios para pagar

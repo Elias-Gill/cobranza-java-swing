@@ -9,7 +9,7 @@ public class PagoServicio {
 
     public PagoServicio(int monto, String servicio, int cuentaOrigen, int pin, String metodo) {
         this.monto = monto;
-        this.servicio = servicio;
+        this.idServicio = idServicio;
         this.cuentaOrigen = cuentaOrigen;
         this.pin = pin;
         this.metodo = metodo;

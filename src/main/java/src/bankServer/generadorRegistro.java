@@ -4,12 +4,8 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import src.bankServer.data.Registro;
 import src.bankServer.regsYcomprobs.DatosComprobante;
-import src.bankServer.operacionesSQL.*;
-import src.bankServer.data.Registro;
 
 public class generadorRegistro {
 
@@ -24,11 +20,10 @@ public class generadorRegistro {
         ps.setInt(2, datos.cuentaDestino);
         ps.setInt(3, datos.monto);
         ps.setDate(4, new Date(datos.fecha.getYear(), datos.fecha.getMonthValue(), datos.fecha.getDayOfMonth()));
-        ps.setString(5, datos.metodo);//forma pago
+        ps.setString(5, datos.metodo); // forma pago
         ps.setString(6, datos.concepto);
-        ps.setInt(7, datos.servicio.idServicio);
+        ps.setString(7, datos.idServicio);
         ps.setInt(8, datos.cuentaOrigen);
-        ps.setString(9, datos.servicio.nombreServicio);
         ps.executeUpdate();
         cn.close();
     }

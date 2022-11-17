@@ -6,8 +6,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import org.sqlite.SQLiteException;
-
 import src.bankServer.data.Cuenta;
 
 public class operacionesSQL {
@@ -55,30 +53,11 @@ public class operacionesSQL {
 
     public void setSaldoTarjeta(int monto, int cedula) throws SQLException {
         iniciarBaseDeDatos();
-        try {
-            String query = String.format("UPDATE Cuentas SET saldo_Tarjeta = ? WHERE cedula=%d", cedula);
-            PreparedStatement pstmt = cn.prepareStatement(query);
-            pstmt.setInt(1, monto);
-            pstmt.executeUpdate();
-        } catch (Exception e) {
-            System.out.println(("Error al actualizar saldo de tarjeta" + e.toString()));
-        } finally {
-            cn.close(); // si no se encuentra la cuenta
-        }
-    }
-
-    // iniciar la base de datos
-    public void iniciarBaseDeDatos() {
-        try {
-            Class.forName("org.sqlite.JDBC");
-            cn = DriverManager.getConnection("jdbc:sqlite:webanking.db");
-        } catch (SQLException e) {
-            System.out.println(("Error al iniciar servidor: " + e.toString()));
-            System.exit(0);
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-            System.exit(0);
-        }
+        String query = String.format("UPDATE Cuentas SET saldo_Tarjeta = ? WHERE cedula=%d", cedula);
+        PreparedStatement pstmt = cn.prepareStatement(query);
+        pstmt.setInt(1, monto);
+        pstmt.executeUpdate();
+        cn.close(); // si no se encuentra la cuenta
     }
 
     public void pagarTarjeta(int monto, int cedula) throws SQLException {
@@ -87,24 +66,33 @@ public class operacionesSQL {
         ResultSet rs = cn.createStatement().executeQuery(query);
         int deudaTarjeta;
         if (rs.next()) {
+            // comprobar que el monto no supere la deuda
             deudaTarjeta = rs.getInt("deuda_Tarjeta");
-
             if (deudaTarjeta < monto) {
                 throw new RuntimeException("Monto invalido");
             }
         } else {
-            throw new RuntimeException("No se encontro la cuenta");
+            throw new RuntimeException("No se encontro la tarjeta");
         }
 
+        query = String.format("UPDATE Cuentas SET deuda_Tarjeta = ? WHERE cedula=%d", cedula);
+        PreparedStatement pstmt = cn.prepareStatement(query);
+        pstmt.setInt(1, deudaTarjeta - monto);
+        pstmt.executeUpdate();
+        cn.close(); // si no se encuentra la cuenta
+    }
+
+    // iniciar la base de datos
+    private void iniciarBaseDeDatos() {
         try {
-            query = String.format("UPDATE Cuentas SET deuda_Tarjeta = ? WHERE cedula=%d", cedula);
-            PreparedStatement pstmt = cn.prepareStatement(query);
-            pstmt.setInt(1, deudaTarjeta - monto);
-            pstmt.executeUpdate();
-        } catch (Exception e) {
-            System.out.println(("Error al actualizar saldo de tarjeta" + e.toString()));
-        } finally {
-            cn.close(); // si no se encuentra la cuenta
+            Class.forName("org.sqlite.JDBC");
+            cn = DriverManager.getConnection("jdbc:sqlite:webanking.db");
+        } catch (SQLException e) {
+            System.out.println(("Error al iniciar servidor: " + e.toString()));
+            System.exit(0);
+        } catch (ClassNotFoundException e) {
+            System.out.println(("Error al iniciar servidor: " + e.toString()));
+            System.exit(0);
         }
     }
 }

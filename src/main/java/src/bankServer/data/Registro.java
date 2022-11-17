@@ -20,7 +20,7 @@ public class Registro {
         this.monto = monto;
         this.fecha_transaccion = fecha_transaccion;
         this.forma_pago = forma_pago;
-        this.servicio = servicio;
+        this.idServicio = idServicio;
         this.cuenta_origen = cuenta_origen;
     }
 }

@@ -7,33 +7,37 @@ import java.sql.SQLException;
 import src.bankServer.data.ServicioExterno;
 
 public class serverServicio {
-
     private Connection cn;
 
-    ServicioExterno getServicioNombre(String nombre) throws SQLException {
+    // buscar un servicio por su descripcion
+    ServicioExterno getServicioNombre(String id) throws SQLException {
         iniciarBaseDeDatos();
-        String query = String.format("SELECT * FROM Servicios WHERE nombre=%s", nombre);
+        String query = String.format("SELECT * FROM Servicios WHERE id_Servicio=%s", id);
         ResultSet rs = cn.createStatement().executeQuery(query);
         if (rs.next()) {
+            ServicioExterno res = new ServicioExterno(rs.getInt("id_Servicio"), rs.getString("descripcion"));
             cn.close();
-            return new ServicioExterno(rs.getInt("idServicio"), rs.getString("nombreServicio"));
+            return res;
         }
         cn.close();
         throw new SQLException("Unable to find account");
     }
 
-    ServicioExterno getServicioID(int id) throws SQLException {
+    // buscar un servicio por su id
+    ServicioExterno getServicioID(String descripcion) throws SQLException {
         iniciarBaseDeDatos();
-        String query = String.format("SELECT * FROM Servicios WHERE nombre=%s", id);
+        String query = String.format("SELECT * FROM Servicios WHERE descripcion=%s", descripcion);
         ResultSet rs = cn.createStatement().executeQuery(query);
         if (rs.next()) {
+            ServicioExterno res = new ServicioExterno(rs.getInt("id_Servicio"), rs.getString("descripcion"));
             cn.close();
-            return new ServicioExterno(rs.getInt("idServicio"), rs.getString("nombreServicio"));
+            return res;
         }
         cn.close();
         throw new SQLException("Unable to find account");
     }
 
+    // iniciar la conexion con la base de datos
     public void iniciarBaseDeDatos() {
         try {
             Class.forName("org.sqlite.JDBC");

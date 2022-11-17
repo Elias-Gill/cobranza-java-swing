@@ -13,7 +13,7 @@ public class DatosComprobante {
     public int cuentaDestino;
     public String metodo;
     public String tipo;
-    public ServicioExterno servicio;
+    public String idServicio;
 
     // constructor vacio
     public DatosComprobante() {
@@ -25,6 +25,7 @@ public class DatosComprobante {
         this.cuentaOrigen = t.cuentaOrigen;
         this.monto = t.monto;
         this.concepto = "Transferencia de dinero";
+        this.fecha = LocalDate.now();
     }
 
     // deposito de dinero
@@ -32,6 +33,7 @@ public class DatosComprobante {
         this.cuentaDestino = d.cuentaDestino;
         this.monto = d.monto;
         this.concepto = "Deposito de dinero";
+        this.fecha = LocalDate.now();
     }
 
     // pago de servicio externo
@@ -39,6 +41,8 @@ public class DatosComprobante {
         this.cuentaOrigen = p.cuentaOrigen;
         this.monto = p.monto;
         this.concepto = "Pago de serivicio: " + p.servicio + " con " + p.metodo;
+        this.idServicio = p.servicio;
+        this.fecha = LocalDate.now();
     }
 
     // pago de deuda de tarjeta
@@ -46,5 +50,6 @@ public class DatosComprobante {
         this.cuentaOrigen = c;
         this.monto = monto;
         this.concepto = "Pago de deuda Tarjeta de credito.";
+        this.fecha = LocalDate.now();
     }
 }

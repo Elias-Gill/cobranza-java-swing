@@ -3,10 +3,10 @@ package src.bankServer.data;
 public class ServicioExterno {
 
     public int idServicio;
-    public String nombreServicio;
+    public String descripcionServicio;
 
-    public ServicioExterno(int idServicio, String nombreServicio) {
+    public ServicioExterno(int idServicio, String descripcion) {
         this.idServicio = idServicio;
-        this.nombreServicio = nombreServicio;
+        this.descripcionServicio = descripcion;
     }
 }
