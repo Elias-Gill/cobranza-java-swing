@@ -14,6 +14,7 @@ import src.gui.intercambiarPaneles.IntercambiarPaneles;
  * @author Abeld
  */
 public class Menu extends javax.swing.JPanel {
+
     private Mediador m;
     private IntercambiarPaneles intercambiar = new IntercambiarPaneles();
 
@@ -27,6 +28,10 @@ public class Menu extends javax.swing.JPanel {
     public Menu(Mediador m) {
         initComponents();
         this.m = m;
+        lblSaldo.setText(String.valueOf(m.cuentaActiva.saldo));
+        lblCuenta.setText(String.valueOf(m.cuentaActiva.nroCuenta));
+        lblCedula.setText(String.valueOf(m.cuentaActiva.cedula));
+        lblTelefono.setText(m.cuentaActiva.telefono);
     }
 
     /**
@@ -66,11 +71,11 @@ public class Menu extends javax.swing.JPanel {
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
-        jLabel23 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
+        btnActualizarSaldo = new javax.swing.JLabel();
+        lblSaldo = new javax.swing.JLabel();
+        lblCuenta = new javax.swing.JLabel();
+        lblCedula = new javax.swing.JLabel();
+        lblTelefono = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(769, 500));
@@ -435,25 +440,33 @@ public class Menu extends javax.swing.JPanel {
         jLabel19.setForeground(new java.awt.Color(102, 102, 102));
         jLabel19.setText("Telefono:");
 
-        jLabel20.setFont(new java.awt.Font("Segoe UI Emoji", 0, 18)); // NOI18N
-        jLabel20.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel20.setText("🔄");
+        btnActualizarSaldo.setFont(new java.awt.Font("Segoe UI Emoji", 0, 18)); // NOI18N
+        btnActualizarSaldo.setForeground(new java.awt.Color(102, 102, 102));
+        btnActualizarSaldo.setText("🔄");
+        btnActualizarSaldo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnActualizarSaldo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnActualizarSaldoMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnActualizarSaldoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnActualizarSaldoMouseExited(evt);
+            }
+        });
 
-        jLabel21.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel21.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel21.setText("xxxx");
+        lblSaldo.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblSaldo.setForeground(new java.awt.Color(51, 51, 51));
 
-        jLabel22.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel22.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel22.setText("xxxx");
+        lblCuenta.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblCuenta.setForeground(new java.awt.Color(51, 51, 51));
 
-        jLabel23.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel23.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel23.setText("xxxx");
+        lblCedula.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblCedula.setForeground(new java.awt.Color(51, 51, 51));
 
-        jLabel24.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel24.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel24.setText("xxxx");
+        lblTelefono.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblTelefono.setForeground(new java.awt.Color(51, 51, 51));
 
         jLabel25.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel25.setForeground(new java.awt.Color(51, 51, 51));
@@ -467,9 +480,9 @@ public class Menu extends javax.swing.JPanel {
                 .addGap(66, 66, 66)
                 .addGroup(panelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel16)
-                    .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2)
                     .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel19)
@@ -477,9 +490,9 @@ public class Menu extends javax.swing.JPanel {
                     .addGroup(panelInicioLayout.createSequentialGroup()
                         .addComponent(jLabel25)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblSaldo, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel20)))
+                        .addComponent(btnActualizarSaldo)))
                 .addContainerGap(168, Short.MAX_VALUE))
         );
         panelInicioLayout.setVerticalGroup(
@@ -490,22 +503,22 @@ public class Menu extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel25)
-                    .addComponent(jLabel21)
-                    .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblSaldo)
+                    .addComponent(btnActualizarSaldo, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(39, 39, 39)
                 .addComponent(jLabel16)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel17)
                 .addGap(5, 5, 5)
-                .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel18)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel19)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel24)
+                .addComponent(lblTelefono)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -615,6 +628,18 @@ public class Menu extends javax.swing.JPanel {
         btnSalir.setBackground(new java.awt.Color(102, 102, 102));
     }//GEN-LAST:event_btnSalirMouseExited
 
+    private void btnActualizarSaldoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnActualizarSaldoMouseEntered
+        btnActualizarSaldo.setBackground(new java.awt.Color(51, 51, 51));
+    }//GEN-LAST:event_btnActualizarSaldoMouseEntered
+
+    private void btnActualizarSaldoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnActualizarSaldoMouseExited
+        btnActualizarSaldo.setBackground(new java.awt.Color(102, 102, 102));
+    }//GEN-LAST:event_btnActualizarSaldoMouseExited
+
+    private void btnActualizarSaldoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnActualizarSaldoMouseClicked
+        lblSaldo.setText(String.valueOf(m.cuentaActiva.saldo));
+    }//GEN-LAST:event_btnActualizarSaldoMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -629,6 +654,7 @@ public class Menu extends javax.swing.JPanel {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel btnActualizarSaldo;
     private javax.swing.JPanel btnDepositar;
     private javax.swing.JPanel btnInicio;
     private javax.swing.JPanel btnPagarServicios;
@@ -647,11 +673,6 @@ public class Menu extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -660,6 +681,10 @@ public class Menu extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel lblCedula;
+    private javax.swing.JLabel lblCuenta;
+    private javax.swing.JLabel lblSaldo;
+    private javax.swing.JLabel lblTelefono;
     public javax.swing.JPanel panelDer;
     public javax.swing.JPanel panelInicio;
     public javax.swing.JPanel panelIzq;
