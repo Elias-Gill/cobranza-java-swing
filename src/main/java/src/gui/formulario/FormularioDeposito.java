@@ -12,13 +12,13 @@ import src.mediador.Mediador;
  *
  * @author Abeld
  */
-public class FormularioPagoTarjetas extends javax.swing.JPanel {
+public class FormularioDeposito extends javax.swing.JPanel {
     Mediador m;
 
     /**
-     * Creates new form FormularioPagoTarjeta
+     * Creates new form FormularioDeposito
      */
-    public FormularioPagoTarjetas(Mediador m) {
+    public FormularioDeposito(Mediador m) {
         initComponents();
         this.m = m;
     }
@@ -36,14 +36,12 @@ public class FormularioPagoTarjetas extends javax.swing.JPanel {
         panelPrincipal = new javax.swing.JPanel();
         lblMonto = new javax.swing.JLabel();
         jTextMonto = new javax.swing.JTextField();
-        lblPinTransaccion = new javax.swing.JLabel();
-        jPassPintTransaccion = new javax.swing.JPasswordField();
-        btnPagar = new javax.swing.JButton();
+        btnDepositar = new javax.swing.JButton();
 
-        setMinimumSize(new java.awt.Dimension(591, 444));
         setPreferredSize(new java.awt.Dimension(591, 444));
 
         panelPrincipal.setBackground(new java.awt.Color(255, 255, 255));
+        panelPrincipal.setMinimumSize(new java.awt.Dimension(591, 444));
 
         lblMonto.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblMonto.setForeground(new java.awt.Color(102, 102, 102));
@@ -55,22 +53,13 @@ public class FormularioPagoTarjetas extends javax.swing.JPanel {
         jTextMonto
                 .setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(217, 219, 228)));
 
-        lblPinTransaccion.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblPinTransaccion.setForeground(new java.awt.Color(102, 102, 102));
-        lblPinTransaccion.setText("Pin de Transaccion");
-
-        jPassPintTransaccion.setBackground(new java.awt.Color(255, 255, 255));
-        jPassPintTransaccion.setForeground(new java.awt.Color(204, 204, 204));
-        jPassPintTransaccion
-                .setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(217, 219, 228)));
-
-        btnPagar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnPagar.setForeground(new java.awt.Color(255, 255, 255));
-        btnPagar.setText("Pagar");
-        btnPagar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnPagar.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnDepositar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnDepositar.setForeground(new java.awt.Color(255, 255, 255));
+        btnDepositar.setText("Depositar");
+        btnDepositar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnDepositar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnPagarMouseClicked(evt);
+                btnDepositarMouseClicked(evt);
             }
         });
 
@@ -79,37 +68,29 @@ public class FormularioPagoTarjetas extends javax.swing.JPanel {
         panelPrincipalLayout.setHorizontalGroup(
                 panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(panelPrincipalLayout.createSequentialGroup()
-                                .addGap(67, 67, 67)
+                                .addGap(66, 66, 66)
                                 .addGroup(panelPrincipalLayout
                                         .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(lblPinTransaccion)
-                                        .addComponent(lblMonto, javax.swing.GroupLayout.PREFERRED_SIZE, 97,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jTextMonto, javax.swing.GroupLayout.PREFERRED_SIZE, 330,
                                                 javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jPassPintTransaccion, javax.swing.GroupLayout.PREFERRED_SIZE, 330,
+                                        .addComponent(lblMonto, javax.swing.GroupLayout.PREFERRED_SIZE, 97,
                                                 javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGroup(panelPrincipalLayout.createSequentialGroup()
-                                                .addGap(105, 105, 105)
-                                                .addComponent(btnPagar)))
-                                .addContainerGap(194, Short.MAX_VALUE)));
+                                                .addGap(91, 91, 91)
+                                                .addComponent(btnDepositar)))
+                                .addContainerGap(195, Short.MAX_VALUE)));
         panelPrincipalLayout.setVerticalGroup(
                 panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
                                 panelPrincipalLayout.createSequentialGroup()
-                                        .addContainerGap(157, Short.MAX_VALUE)
+                                        .addContainerGap(173, Short.MAX_VALUE)
                                         .addComponent(lblMonto)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGap(18, 18, 18)
                                         .addComponent(jTextMonto, javax.swing.GroupLayout.PREFERRED_SIZE, 20,
                                                 javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(24, 24, 24)
-                                        .addComponent(lblPinTransaccion)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jPassPintTransaccion, javax.swing.GroupLayout.PREFERRED_SIZE, 20,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(35, 35, 35)
-                                        .addComponent(btnPagar)
-                                        .addGap(114, 114, 114)));
+                                        .addGap(27, 27, 27)
+                                        .addComponent(btnDepositar)
+                                        .addGap(164, 164, 164)));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -123,18 +104,15 @@ public class FormularioPagoTarjetas extends javax.swing.JPanel {
                                 javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnPagarMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btnPagarMouseClicked
+    private void btnDepositarMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btnDepositarMouseClicked
         transaccionar();
-    }// GEN-LAST:event_btnPagarMouseClicked
+    }// GEN-LAST:event_btnDepositarMouseClicked
 
     private void transaccionar() {
         Comprobante comp;
         try {
-            // parsear datos
             int monto = Integer.parseInt(jTextMonto.getText());
-
-            // realizar la transaccion
-            comp = m.PagarTarjeta(monto);
+            comp = m.NuevoDeposito(monto);
             IntercambiarPaneles intercambiar = new IntercambiarPaneles();
             intercambiar.modificarPanel(comp, panelPrincipal);
         } catch (Exception e) {
@@ -143,11 +121,9 @@ public class FormularioPagoTarjetas extends javax.swing.JPanel {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnPagar;
-    private javax.swing.JPasswordField jPassPintTransaccion;
+    private javax.swing.JButton btnDepositar;
     private javax.swing.JTextField jTextMonto;
     private javax.swing.JLabel lblMonto;
-    private javax.swing.JLabel lblPinTransaccion;
     private javax.swing.JPanel panelPrincipal;
     // End of variables declaration//GEN-END:variables
 }

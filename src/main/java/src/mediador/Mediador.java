@@ -43,8 +43,8 @@ public class Mediador {
         return new Comprobante(d);
     }
 
-    public Comprobante PagarTarjeta(int monto, String metodo) {
-        DatosComprobante d = server.PagarTarjeta(cuentaActiva, monto, metodo);
+    public Comprobante PagarTarjeta(int monto) {
+        DatosComprobante d = server.PagarTarjeta(cuentaActiva, monto);
         return new Comprobante(d);
     }
 }
