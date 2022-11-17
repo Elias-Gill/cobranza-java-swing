@@ -1,8 +1,7 @@
-package src.bankServer;
-
+import src.bankServer.BankServer;
 import src.bankServer.regsYcomprobs.Transferencia;
 
-public class probar {
+public class bankServer {
 
     public static void main(String[] args) throws Exception {
         BankServer b = new BankServer();
