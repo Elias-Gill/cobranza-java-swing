@@ -13,6 +13,7 @@ import src.mediador.Mediador;
  * @author Abeld
  */
 public class FormularioTransferencia extends javax.swing.JPanel {
+
     Mediador m;
 
     /**
@@ -30,7 +31,7 @@ public class FormularioTransferencia extends javax.swing.JPanel {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated
-    // Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         panelPrincipal = new javax.swing.JPanel();
@@ -41,6 +42,7 @@ public class FormularioTransferencia extends javax.swing.JPanel {
         jTextMonto = new javax.swing.JTextField();
         jTextCuentaDestino = new javax.swing.JTextField();
         jPassPintTransaccion = new javax.swing.JPasswordField();
+        lblInvalido = new javax.swing.JLabel();
 
         setMinimumSize(new java.awt.Dimension(591, 444));
 
@@ -71,77 +73,73 @@ public class FormularioTransferencia extends javax.swing.JPanel {
         jTextMonto.setBackground(new java.awt.Color(255, 255, 255));
         jTextMonto.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jTextMonto.setForeground(new java.awt.Color(204, 204, 204));
-        jTextMonto
-                .setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(217, 219, 228)));
+        jTextMonto.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(217, 219, 228)));
 
         jTextCuentaDestino.setBackground(new java.awt.Color(255, 255, 255));
         jTextCuentaDestino.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jTextCuentaDestino.setForeground(new java.awt.Color(204, 204, 204));
-        jTextCuentaDestino
-                .setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(217, 219, 228)));
+        jTextCuentaDestino.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(217, 219, 228)));
 
         jPassPintTransaccion.setBackground(new java.awt.Color(255, 255, 255));
         jPassPintTransaccion.setForeground(new java.awt.Color(204, 204, 204));
-        jPassPintTransaccion
-                .setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(217, 219, 228)));
+        jPassPintTransaccion.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(217, 219, 228)));
+
+        lblInvalido.setForeground(new java.awt.Color(255, 0, 0));
 
         javax.swing.GroupLayout panelPrincipalLayout = new javax.swing.GroupLayout(panelPrincipal);
         panelPrincipal.setLayout(panelPrincipalLayout);
         panelPrincipalLayout.setHorizontalGroup(
-                panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(panelPrincipalLayout.createSequentialGroup()
-                                .addGap(63, 63, 63)
-                                .addGroup(panelPrincipalLayout
-                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(lblPinTransaccion)
-                                        .addComponent(lblMonto, javax.swing.GroupLayout.PREFERRED_SIZE, 97,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(lblCuentaDesino, javax.swing.GroupLayout.PREFERRED_SIZE, 97,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jTextMonto, javax.swing.GroupLayout.PREFERRED_SIZE, 330,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jPassPintTransaccion, javax.swing.GroupLayout.PREFERRED_SIZE, 330,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jTextCuentaDestino, javax.swing.GroupLayout.PREFERRED_SIZE, 330,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(panelPrincipalLayout.createSequentialGroup()
-                                                .addGap(105, 105, 105)
-                                                .addComponent(btnTransferir)))
-                                .addContainerGap(198, Short.MAX_VALUE)));
+            panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelPrincipalLayout.createSequentialGroup()
+                .addGap(63, 63, 63)
+                .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblPinTransaccion)
+                    .addComponent(lblMonto, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblCuentaDesino, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextMonto, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPassPintTransaccion, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextCuentaDestino, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(panelPrincipalLayout.createSequentialGroup()
+                        .addGap(96, 96, 96)
+                        .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblInvalido, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(panelPrincipalLayout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(btnTransferir)))))
+                .addContainerGap(198, Short.MAX_VALUE))
+        );
         panelPrincipalLayout.setVerticalGroup(
-                panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
-                                panelPrincipalLayout.createSequentialGroup()
-                                        .addContainerGap(138, Short.MAX_VALUE)
-                                        .addComponent(lblCuentaDesino)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jTextCuentaDestino, javax.swing.GroupLayout.PREFERRED_SIZE, 20,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(20, 20, 20)
-                                        .addComponent(lblMonto)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jTextMonto, javax.swing.GroupLayout.PREFERRED_SIZE, 20,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(24, 24, 24)
-                                        .addComponent(lblPinTransaccion)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jPassPintTransaccion, javax.swing.GroupLayout.PREFERRED_SIZE, 20,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(35, 35, 35)
-                                        .addComponent(btnTransferir)
-                                        .addGap(92, 92, 92)));
+            panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelPrincipalLayout.createSequentialGroup()
+                .addContainerGap(138, Short.MAX_VALUE)
+                .addComponent(lblCuentaDesino)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextCuentaDestino, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addComponent(lblMonto)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextMonto, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24)
+                .addComponent(lblPinTransaccion)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPassPintTransaccion, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblInvalido, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnTransferir)
+                .addGap(89, 89, 89))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(panelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE,
-                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(panelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
         layout.setVerticalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(panelPrincipal, javax.swing.GroupLayout.Alignment.TRAILING,
-                                javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-                                Short.MAX_VALUE));
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(panelPrincipal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnTransferirMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btnTransferirMouseClicked
@@ -149,7 +147,6 @@ public class FormularioTransferencia extends javax.swing.JPanel {
     }// GEN-LAST:event_btnTransferirMouseClicked
 
     private void transaccionar() {
-        Comprobante comp;
         try {
             // parsear datos
             int monto = Integer.parseInt(jTextMonto.getText());
@@ -157,11 +154,11 @@ public class FormularioTransferencia extends javax.swing.JPanel {
             int pin = Integer.parseInt(String.valueOf(jPassPintTransaccion.getPassword()));
 
             // realizar la transaccion
-            comp = m.NuevaTransferencia(destino, monto, pin);
+            Comprobante comp = m.NuevaTransferencia(destino, monto, pin);
             IntercambiarPaneles intercambiar = new IntercambiarPaneles();
             intercambiar.modificarPanel(comp, panelPrincipal);
         } catch (Exception e) {
-            // TODO lanzar error
+            lblInvalido.setText("Datos Inválidos!");
         }
     }
 
@@ -171,6 +168,7 @@ public class FormularioTransferencia extends javax.swing.JPanel {
     private javax.swing.JTextField jTextCuentaDestino;
     private javax.swing.JTextField jTextMonto;
     private javax.swing.JLabel lblCuentaDesino;
+    private javax.swing.JLabel lblInvalido;
     private javax.swing.JLabel lblMonto;
     private javax.swing.JLabel lblPinTransaccion;
     private javax.swing.JPanel panelPrincipal;

@@ -119,7 +119,7 @@ public class Login extends javax.swing.JFrame {
 
         jLabel1.setForeground(new java.awt.Color(255, 0, 0));
         panelDer.add(jLabel1);
-        jLabel1.setBounds(300, 320, 100, 20);
+        jLabel1.setBounds(220, 320, 100, 20);
 
         jLabel4.setFont(new java.awt.Font("Segoe UI Emoji", 0, 18)); // NOI18N
         jLabel4.setText("🔒");

@@ -14,6 +14,7 @@ src\Login.class
 src\gui\formulario\FormularioPagoTarjetas.class
 src\gui\menu\Menu$5.class
 src\bankServer\regsYcomprobs\PagoServicio.class
+src\gui\formulario\FormularioDeposito$2.class
 src\gui\menu\Menu$3.class
 src\bankServer\data\ServicioExterno.class
 src\bankServer\regsYcomprobs\DatosComprobante.class

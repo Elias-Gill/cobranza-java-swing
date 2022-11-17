@@ -7,28 +7,29 @@ public class DatosComprobante {
     public Integer idComprobante;
     public String concepto;
     public Integer monto;
-    public LocalDate fecha;
+    public LocalDate fecha = LocalDate.now();
     public int cuentaOrigen;
     public int cuentaDestino;
     public String metodo;
     public String tipo;
 
     // constructor vacio
-    public DatosComprobante() { }
+    public DatosComprobante() {
+    }
 
     // Transferencia a otra cuenta
     public DatosComprobante(Transferencia t) {
         this.cuentaDestino = t.cuentaDestino;
         this.cuentaOrigen = t.cuentaOrigen;
         this.monto = t.monto;
-        this.concepto = "Transferencia de dinero"; 
+        this.concepto = "Transferencia de dinero";
     }
 
     // deposito de dinero
     public DatosComprobante(Deposito d) {
         this.cuentaDestino = d.cuentaDestino;
         this.monto = d.monto;
-        this.concepto = "Deposito de dinero"; 
+        this.concepto = "Deposito de dinero";
     }
 
     // pago de servicio externo
