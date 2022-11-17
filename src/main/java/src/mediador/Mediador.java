@@ -32,7 +32,7 @@ public class Mediador {
     }
 
     // metodo para iniciar sesion
-    public Cuenta iniciarSesion(String contrasena, int cedula) throws Exception {
+    public Cuenta IniciarSesion(String contrasena, int cedula) throws Exception {
         this.cuentaActiva = server.IniciarSesion(contrasena, cedula);
         return cuentaActiva;
     }
@@ -43,8 +43,12 @@ public class Mediador {
         return new Comprobante(d);
     }
 
-    public Comprobante PagarTarjeta(int monto, String metodo) {
-        DatosComprobante d = server.PagarTarjeta(cuentaActiva, monto, metodo);
+    public Comprobante PagarTarjeta(int monto) {
+        DatosComprobante d = server.PagarTarjeta(cuentaActiva, monto);
         return new Comprobante(d);
+    }
+
+    private void comprobarPin(){
+
     }
 }

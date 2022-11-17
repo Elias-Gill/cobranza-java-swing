@@ -68,7 +68,7 @@ public class BankServer {
         return new DatosComprobante(p);
     }
 
-    public DatosComprobante PagarTarjeta(Cuenta c, int monto, String pin) {
+    public DatosComprobante PagarTarjeta(Cuenta c, int monto) {
         try {
             sql.pagarTarjeta(monto, c.cedula);
             sql.setSaldo(monto - c.saldo, c.cedula);

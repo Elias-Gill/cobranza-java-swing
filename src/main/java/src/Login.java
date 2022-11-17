@@ -3,10 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package src.gui.inicioSesion;
+package src;
 
 import com.formdev.flatlaf.FlatDarkLaf;
-import src.bankServer.data.Cuenta;
 import src.gui.menu.Menu;
 import src.gui.intercambiarPaneles.IntercambiarPaneles;
 import src.mediador.Mediador;
@@ -15,6 +14,7 @@ import src.mediador.Mediador;
  * @author Abeld
  */
 public class Login extends javax.swing.JFrame {
+    Mediador m = new Mediador();
 
     /**
      * Creates new form Login
@@ -182,7 +182,7 @@ public class Login extends javax.swing.JFrame {
             int cedula = Integer.parseInt(jTextField1.getText());
             String contrasena = String.valueOf(jPasswordField1.getPassword());
             Mediador mediador = new Mediador();
-            Cuenta cuenta = mediador.iniciarSesion(contrasena, cedula);
+            mediador.IniciarSesion(contrasena, cedula);
             // iniciar menu principal
             Menu menu = new Menu(mediador);
             IntercambiarPaneles intercambio = new IntercambiarPaneles();

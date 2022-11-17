@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 public class DatosComprobante {
 
-    public Integer id;
+    public Integer idComprobante;
     public String concepto;
     public Integer monto;
     public LocalDate fecha;
