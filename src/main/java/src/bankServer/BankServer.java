@@ -1,7 +1,6 @@
 package src.bankServer;
 
 import java.sql.SQLException;
-
 import src.bankServer.data.Cuenta;
 import src.bankServer.regsYcomprobs.DatosComprobante;
 import src.bankServer.regsYcomprobs.Deposito;
@@ -9,6 +8,7 @@ import src.bankServer.regsYcomprobs.PagoServicio;
 import src.bankServer.regsYcomprobs.Transferencia;
 
 public class BankServer {
+
     private operacionesSQL sql = new operacionesSQL();
     private generadorRegistro gr = new generadorRegistro();
 
@@ -47,7 +47,7 @@ public class BankServer {
         sql.setSaldo(d.monto + destino.saldo, d.cuentaDestino);
 
         DatosComprobante dc = new DatosComprobante(d);
-        gr.nuevoRegistro(dc);
+        //gr.nuevoRegistro(dc);
         return dc;
     }
 
