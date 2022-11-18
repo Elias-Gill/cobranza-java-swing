@@ -141,7 +141,7 @@ public class FormularioPagoTarjetas extends javax.swing.JPanel {
             IntercambiarPaneles intercambiar = new IntercambiarPaneles();
             intercambiar.modificarPanel(comp, panelPrincipal);
         } catch (Exception e) {
-            lblInvalido.setText("Datos Inválidos!");
+            lblInvalido.setText(e.getMessage());
         }
     }
 

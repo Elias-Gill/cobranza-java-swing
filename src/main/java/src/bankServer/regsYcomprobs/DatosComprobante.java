@@ -1,7 +1,6 @@
 package src.bankServer.regsYcomprobs;
 
 import java.time.LocalDate;
-import src.bankServer.data.ServicioExterno;
 
 public class DatosComprobante {
 
@@ -9,8 +8,8 @@ public class DatosComprobante {
     public String concepto;
     public Integer monto;
     public LocalDate fecha;
-    public int cuentaOrigen;
     public int cuentaDestino;
+    public int cuentaOrigen;
     public String metodo;
     public String tipo;
     public String idServicio;
@@ -30,7 +29,7 @@ public class DatosComprobante {
 
     // deposito de dinero
     public DatosComprobante(Deposito d) {
-        this.cuentaDestino = d.cuentaDestino;
+        this.cuentaOrigen = d.cuentaOrigen;
         this.monto = d.monto;
         this.concepto = "Deposito de dinero";
         this.fecha = LocalDate.now();

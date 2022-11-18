@@ -1,7 +1,6 @@
 package src.bankServer;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -11,8 +10,11 @@ import src.bankServer.data.Cuenta;
 public class operacionesSQL {
     private Connection cn;
 
+    public operacionesSQL(Connection c) {
+        cn = c;
+    }
+
     public Cuenta obtenerCuenta(int documentoIdentidad) throws ClassNotFoundException, SQLException {
-        iniciarBaseDeDatos();
         String query = String.format("SELECT * FROM Cuentas WHERE cedula=%d", documentoIdentidad);
         ResultSet rs = cn.createStatement().executeQuery(query);
         if (rs.next()) {
@@ -26,19 +28,17 @@ public class operacionesSQL {
             int tarjetaID = rs.getInt("numero_Tarjeta");
             int pin = rs.getInt("pin_transaccion");
             String contrasena = rs.getString("contrasena");
+            int saldo_Tarjeta = rs.getInt("saldo_Tarjeta");
             // retorna la cuenta encontrada
-            cn.close();
             return new Cuenta(nroCuenta, direccion, nombre, apellido, cedula, telefono, saldo,
-                    tarjetaID, pin, contrasena);
+                    tarjetaID, pin, contrasena, saldo_Tarjeta);
         }
-        cn.close();
         throw new SQLException("Unable to find account");
     }
 
     // setea un saldo especifico, se usa para recuperacion de errores de transaccion
     // ja'e chupe
     public void setSaldo(int monto, int cedula) throws SQLException {
-        iniciarBaseDeDatos();
         try {
             String query = String.format("UPDATE Cuentas SET saldo = ? WHERE cedula=%d", cedula);
             PreparedStatement pstmt = cn.prepareStatement(query);
@@ -46,22 +46,17 @@ public class operacionesSQL {
             pstmt.executeUpdate();
         } catch (Exception e) {
             System.out.println(("Error al actualizar el saldo de cuenta" + e.toString()));
-        } finally {
-            cn.close(); // si no se encuentra la cuenta
         }
     }
 
     public void setSaldoTarjeta(int monto, int cedula) throws SQLException {
-        iniciarBaseDeDatos();
         String query = String.format("UPDATE Cuentas SET saldo_Tarjeta = ? WHERE cedula=%d", cedula);
         PreparedStatement pstmt = cn.prepareStatement(query);
         pstmt.setInt(1, monto);
         pstmt.executeUpdate();
-        cn.close(); // si no se encuentra la cuenta
     }
 
     public void pagarTarjeta(int monto, int cedula) throws SQLException {
-        iniciarBaseDeDatos();
         String query = String.format("SELECT * FROM Cuentas WHERE cedula=%d", cedula);
         ResultSet rs = cn.createStatement().executeQuery(query);
         int deudaTarjeta;
@@ -79,20 +74,5 @@ public class operacionesSQL {
         PreparedStatement pstmt = cn.prepareStatement(query);
         pstmt.setInt(1, deudaTarjeta - monto);
         pstmt.executeUpdate();
-        cn.close(); // si no se encuentra la cuenta
-    }
-
-    // iniciar la base de datos
-    private void iniciarBaseDeDatos() {
-        try {
-            Class.forName("org.sqlite.JDBC");
-            cn = DriverManager.getConnection("jdbc:sqlite:webanking.db");
-        } catch (SQLException e) {
-            System.out.println(("Error al iniciar servidor: " + e.toString()));
-            System.exit(0);
-        } catch (ClassNotFoundException e) {
-            System.out.println(("Error al iniciar servidor: " + e.toString()));
-            System.exit(0);
-        }
     }
 }
