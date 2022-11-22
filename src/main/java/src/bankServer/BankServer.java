@@ -84,10 +84,11 @@ public class BankServer {
     public DatosComprobante PagarServicio(PagoServicio p) throws Exception {
         // comprobar pin de transaccion
         Cuenta c = sql.obtenerCuentaCedula(p.cuentaOrigen);
-        if (c.pin != p.pin) {
+        if (c.pin != p.pin && c.pin != p.pin) {
             throw new Exception("Pin de transaccion incorrecto");
         }
 
+        // determinar el metodo de transaccion
         if (p.metodo == "tarjeta") {
             if (c.saldoTarjeta < p.monto) {
                 throw new Exception("Fondos insuficientes");
@@ -115,11 +116,5 @@ public class BankServer {
         DatosComprobante dc = new DatosComprobante(c.cedula, monto);
         gr.nuevoRegistro(dc);
         return dc;
-    }
-
-    // no hay servicios para pagar
-    private void pagarServicio(int m, String servicio) throws Exception {
-        throw new Exception(
-                "No se puede conectar con el servicio. \nDebe de ser cosa del gobierno o algo");
     }
 }
