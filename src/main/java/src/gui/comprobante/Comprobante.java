@@ -22,8 +22,12 @@ public class Comprobante extends javax.swing.JPanel implements Printable {
     public Comprobante(DatosComprobante d) {
         initComponents();
         datosConcepto.setText(d.concepto);
-        // datosConcepto.setText(d.concepto);
         datosCuentaDestino.setText(String.valueOf(d.cuentaDestino));
+        if (d.cuentaDestino != 0) {
+            datosCuentaDestino.setText(String.valueOf(d.cuentaDestino));
+        } else {
+            datosCuentaDestino.setText("########");
+        }
         datosFecha.setText(d.fecha.toString());
         datosMonto.setText(String.valueOf(d.monto));
         datosNumero.setText(String.valueOf(d.idComprobante));
@@ -150,7 +154,7 @@ public class Comprobante extends javax.swing.JPanel implements Printable {
                     .addGroup(panelPrincipalLayout.createSequentialGroup()
                         .addGap(71, 71, 71)
                         .addComponent(Comprobante, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 14, Short.MAX_VALUE)))
                 .addGap(39, 39, 39))
         );
         panelPrincipalLayout.setVerticalGroup(
@@ -176,10 +180,10 @@ public class Comprobante extends javax.swing.JPanel implements Printable {
                     .addComponent(datosConcepto, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30)
                 .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(datosMonto, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(Concepto, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel25)))
+                        .addComponent(jLabel25))
+                    .addComponent(datosMonto, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(138, 138, 138))
         );
 
@@ -187,7 +191,7 @@ public class Comprobante extends javax.swing.JPanel implements Printable {
         btnGuardar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnGuardar.setForeground(new java.awt.Color(255, 255, 255));
         btnGuardar.setText("Guardar");
-        btnGuardar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnGuardar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnGuardar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnGuardarMouseClicked(evt);
@@ -203,14 +207,14 @@ public class Comprobante extends javax.swing.JPanel implements Printable {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(btnGuardar)
                     .addComponent(panelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(155, Short.MAX_VALUE))
+                .addContainerGap(141, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(49, 49, 49)
+                .addContainerGap(66, Short.MAX_VALUE)
                 .addComponent(panelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(btnGuardar)
                 .addGap(32, 32, 32))
         );
@@ -266,6 +270,6 @@ public class Comprobante extends javax.swing.JPanel implements Printable {
     private javax.swing.JLabel jLabel25;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JPanel panelPrincipal;
+    public javax.swing.JPanel panelPrincipal;
     // End of variables declaration//GEN-END:variables
 }
