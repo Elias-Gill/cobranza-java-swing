@@ -2,9 +2,8 @@ src
 src.bankServer
 src.bankServer.data
 src.bankServer.regsYcomprobs
-src.gui
 src.gui.comprobante
 src.gui.formulario
-src.gui.inicioSesion
+src.gui.intercambiarPaneles
 src.gui.menu
 src.mediador

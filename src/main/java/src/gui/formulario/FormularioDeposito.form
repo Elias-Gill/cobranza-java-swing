@@ -69,9 +69,9 @@
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="157" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="lblInvalido" min="-2" pref="100" max="-2" attributes="0"/>
-                              <Component id="btnDepositar" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="btnDepositar" max="32767" attributes="0"/>
+                              <Component id="lblInvalido" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -86,9 +86,9 @@
                   <Component id="lblMonto" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="jTextMonto" min="-2" pref="20" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                   <Component id="lblInvalido" min="-2" pref="20" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="btnDepositar" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="141" max="-2" attributes="0"/>
               </Group>
@@ -137,7 +137,7 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Depositar"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Cursor Por defecto"/>
+              <Color id="Default Cursor"/>
             </Property>
           </Properties>
           <Events>

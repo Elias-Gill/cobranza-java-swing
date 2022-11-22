@@ -22,8 +22,8 @@ public class Mediador {
         if (monto <= 0) {
             throw new RuntimeException("Monto no puede ser negativo o 0");
         }
-        DatosComprobante d =
-                server.NuevaTransferencia(
+        DatosComprobante d
+                = server.NuevaTransferencia(
                         new Transferencia(cuentaActiva.cedula, cuentaDestino, monto, pin));
         return new Comprobante(d);
     }
@@ -54,8 +54,8 @@ public class Mediador {
         if (monto <= 0) {
             throw new RuntimeException("Monto no puede ser negativo o 0");
         }
-        DatosComprobante d =
-                server.PagarServicio(
+        DatosComprobante d
+                = server.PagarServicio(
                         new PagoServicio(monto, servicio, cuentaActiva.cedula, pin, metodo));
         return new Comprobante(d);
     }
