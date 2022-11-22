@@ -1,22 +1,22 @@
 package src.bankServer;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.SQLException;
 
 import src.bankServer.data.Cuenta;
+import src.bankServer.data.ServicioExterno;
 import src.bankServer.regsYcomprobs.DatosComprobante;
 import src.bankServer.regsYcomprobs.Deposito;
 import src.bankServer.regsYcomprobs.PagoServicio;
 import src.bankServer.regsYcomprobs.Transferencia;
-
-import java.sql.DriverManager;
-import java.sql.Connection;
-import src.bankServer.data.ServicioExterno;
 
 public class BankServer {
 
     private static Connection cn = iniciarBaseDeDatos();
     private static operacionesSQL sql = new operacionesSQL(cn);
     private static generadorRegistro gr = new generadorRegistro(cn);
+    private static serverServicio servicios = new serverServicio(cn);
 
     // iniciar la base de datos
     private static Connection iniciarBaseDeDatos() {
@@ -83,11 +83,23 @@ public class BankServer {
         throw new RuntimeException("Credenciales invalidas");
     }
 
+    // retorna solo la deuda de un servicio
+    public int getDeudaServicio(String idServicio) throws SQLException {
+        return servicios.getServicioNombre(idServicio).deuda;
+    }
+
+    // funcion para realizar el pago de un servicio
     public DatosComprobante PagarServicio(PagoServicio p) throws Exception {
-        // comprobar pin de transaccion
+        // conectarse con el servicio a pagar
+        ServicioExterno servicio = servicios.getServicioNombre(p.servicio);
+        if (p.monto > servicio.deuda) {
+            throw new Exception("El monto a pagar es superior a la deuda");
+        }
+
+        // comprobar pin de transaccion o pin de tarjeta
         Cuenta c = sql.obtenerCuentaCedula(p.cuentaOrigen);
-        if (c.pin != p.pin && c.pin != p.pin) {
-            throw new Exception("Pin de transaccion incorrecto");
+        if (c.pin != p.pin && c.pin_tarjeta != p.pin) {
+            throw new Exception("Pin incorrecto");
         }
 
         // determinar el metodo de transaccion
@@ -95,14 +107,12 @@ public class BankServer {
             if (c.saldoTarjeta < p.monto) {
                 throw new Exception("Fondos insuficientes");
             }
-            pagarServicio(p.monto, p.servicio);
             sql.setSaldoTarjeta(c.saldoTarjeta - p.monto, c.cedula);
 
         } else {
             if (c.saldo < p.monto) {
                 throw new Exception("Fondos insuficientes");
             }
-            pagarServicio(p.monto, p.servicio);
             sql.setSaldo(c.saldo - p.monto, c.cedula);
         }
 

@@ -91,7 +91,7 @@ public class operacionesSQL {
             // comprobar que el monto no supere la deuda
             deudaTarjeta = rs.getInt("deuda_Tarjeta");
             if (deudaTarjeta < monto) {
-                throw new RuntimeException("Monto invalido");
+                throw new RuntimeException("Monto no puede ser superior a la deuda");
             }
         } else {
             throw new RuntimeException("No se encontro la tarjeta");
