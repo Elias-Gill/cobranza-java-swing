@@ -16,6 +16,7 @@ import src.mediador.Mediador;
 public class FormularioPagarServicios extends javax.swing.JPanel {
 
     Mediador m;
+    String metodo;
 
     /**
      * Creates new form FormularioPagarServicios
