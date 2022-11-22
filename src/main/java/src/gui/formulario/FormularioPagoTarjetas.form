@@ -56,13 +56,10 @@
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="153" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                                  <Component id="btnPagar" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="lblInvalido" min="-2" pref="100" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="159" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="btnPagar" max="32767" attributes="0"/>
+                              <Component id="lblInvalido" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -160,7 +157,7 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Pagar"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Cursor Por defecto"/>
+              <Color id="Default Cursor"/>
             </Property>
           </Properties>
           <Events>
