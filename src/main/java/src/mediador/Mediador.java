@@ -15,28 +15,26 @@ public class Mediador {
     public Cuenta cuentaActiva;
 
     // metodo para realizar una nueva transferencia
-    public Comprobante NuevaTransferencia(int cuentaDestino, int monto, int pin) throws Exception {
-        if (cuentaDestino == cuentaActiva.nroCuenta) {
+    public Comprobante NuevaTransferencia(int nroCuentaDestino, int monto, int pin) throws Exception {
+        System.out.println(nroCuentaDestino + "\t" + cuentaActiva.nroCuenta);
+        // revisar que las cuentas no sean iguales
+        if (Integer.compare(nroCuentaDestino, cuentaActiva.nroCuenta) == 0) {
             throw new RuntimeException("Cuenta destino es la misma cuenta del usuario");
         }
         if (monto <= 0) {
             throw new RuntimeException("Monto no puede ser negativo o 0");
         }
-        DatosComprobante d
-                = server.NuevaTransferencia(
-                        new Transferencia(cuentaActiva.cedula, cuentaDestino, monto, pin));
+        DatosComprobante d = server.NuevaTransferencia(
+                new Transferencia(cuentaActiva.cedula, nroCuentaDestino, monto, pin));
         return new Comprobante(d);
     }
 
     // metodo para realizar un nuevo deposito
     public Comprobante NuevoDeposito(int monto)
             throws RuntimeException, ClassNotFoundException, SQLException {
-        // por si acaso
+        // monto no puede ser negativo
         if (monto <= 0) {
             throw new RuntimeException("Monto no puede ser negativo o 0");
-        }
-        if (cuentaActiva == null) {
-            throw new RuntimeException("Aun no se ha iniciado sesion");
         }
         DatosComprobante d = server.NuevoDeposito(new Deposito(cuentaActiva.cedula, monto));
         return new Comprobante(d);
@@ -54,9 +52,8 @@ public class Mediador {
         if (monto <= 0) {
             throw new RuntimeException("Monto no puede ser negativo o 0");
         }
-        DatosComprobante d
-                = server.PagarServicio(
-                        new PagoServicio(monto, servicio, cuentaActiva.cedula, pin, metodo));
+        DatosComprobante d = server.PagarServicio(
+                new PagoServicio(monto, servicio, cuentaActiva.cedula, pin, metodo));
         return new Comprobante(d);
     }
 

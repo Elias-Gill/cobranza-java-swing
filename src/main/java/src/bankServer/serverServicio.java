@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import src.bankServer.data.ServicioExterno;
 
 public class serverServicio {
+
     private Connection cn;
 
     serverServicio(Connection c) {
@@ -14,25 +15,13 @@ public class serverServicio {
 
     // buscar un servicio por su descripcion
     ServicioExterno getServicioNombre(String id) throws SQLException {
-        String query = String.format("SELECT * FROM Servicios WHERE id_Servicio=%s", id);
+        String query = String.format("SELECT * FROM servicios WHERE id_Servicio=%s", id);
         ResultSet rs = cn.createStatement().executeQuery(query);
         if (rs.next()) {
-            ServicioExterno res =
-                    new ServicioExterno(rs.getInt("id_Servicio"), rs.getString("descripcion"));
+            ServicioExterno res
+                    = new ServicioExterno(rs.getString("id_Servicio"), rs.getInt("deuda"));
             return res;
         }
-        throw new SQLException("Unable to find account");
-    }
-
-    // buscar un servicio por su id
-    ServicioExterno getServicioID(String descripcion) throws SQLException {
-        String query = String.format("SELECT * FROM Servicios WHERE descripcion=%s", descripcion);
-        ResultSet rs = cn.createStatement().executeQuery(query);
-        if (rs.next()) {
-            ServicioExterno res =
-                    new ServicioExterno(rs.getInt("id_Servicio"), rs.getString("descripcion"));
-            return res;
-        }
-        throw new SQLException("Unable to find account");
+        throw new SQLException("Unable to find service");
     }
 }
