@@ -32,10 +32,11 @@ public class operacionesSQL {
             String contrasena = rs.getString("contrasena");
             int saldo_Tarjeta = rs.getInt("saldo_Tarjeta");
             int pin_tarjeta = rs.getInt("pin_Tarjeta");
+            int deudaTarjeta = rs.getInt("deuda_Tarjeta");
             // retorna la cuenta encontrada
             return new Cuenta(nroCuenta, direccion, nombre, apellido,
                     cedula, telefono, saldo, tarjetaID, pin,
-                    contrasena, saldo_Tarjeta, pin_tarjeta);
+                    contrasena, saldo_Tarjeta, pin_tarjeta, deudaTarjeta);
         }
         throw new SQLException("Unable to find account");
     }
@@ -55,10 +56,11 @@ public class operacionesSQL {
             String contrasena = rs.getString("contrasena");
             int saldo_Tarjeta = rs.getInt("saldo_Tarjeta");
             int pin_tarjeta = rs.getInt("saldo_Tarjeta");
+            int deudaTarjeta = rs.getInt("deuda_Tarjeta");
             // retorna la cuenta encontrada
             return new Cuenta(nroCuenta, direccion, nombre, apellido,
                     cedula, telefono, saldo, tarjetaID, pin,
-                    contrasena, saldo_Tarjeta, pin_tarjeta);
+                    contrasena, saldo_Tarjeta, pin_tarjeta, deudaTarjeta);
         }
         throw new SQLException("Unable to find account");
     }

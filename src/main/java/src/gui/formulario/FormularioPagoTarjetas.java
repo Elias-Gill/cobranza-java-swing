@@ -21,6 +21,7 @@ public class FormularioPagoTarjetas extends javax.swing.JPanel {
     public FormularioPagoTarjetas(Mediador m) {
         initComponents();
         this.m = m;
+        jTextMonto.setText(String.valueOf(m.cuentaActiva.deudaTarjeta));
     }
 
     /**

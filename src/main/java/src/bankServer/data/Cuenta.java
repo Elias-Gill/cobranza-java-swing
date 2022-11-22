@@ -12,13 +12,14 @@ public class Cuenta {
     public int saldoTarjeta;
     public int pin;
     public String contrasena;
-    public int pin_tarjeta;
+    public int pinTarjeta;
+    public int deudaTarjeta;
 
     // constructor normal
     public Cuenta(int nroCuenta, String direccion, String nombre,
             String apellido, int cedula, String telefono,
             int saldo, int tarjeta, int pin, String contrasena,
-            int saldoTarjeta, int pin_tarjeta) {
+            int saldoTarjeta, int pin_tarjeta, int deuda_tarjeta) {
 
         this.cedula = cedula;
         this.direccion = direccion;
@@ -31,7 +32,8 @@ public class Cuenta {
         this.saldoTarjeta = saldoTarjeta;
         this.pin = pin;
         this.contrasena = contrasena;
-        this.pin_tarjeta = pin_tarjeta;
+        this.pinTarjeta = pin_tarjeta;
+        this.deudaTarjeta = deuda_tarjeta;
     }
 
     @Override
