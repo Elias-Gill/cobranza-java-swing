@@ -10,8 +10,10 @@ import src.bankServer.regsYcomprobs.Transferencia;
 
 import java.sql.DriverManager;
 import java.sql.Connection;
+import src.bankServer.data.ServicioExterno;
 
 public class BankServer {
+
     private static Connection cn = iniciarBaseDeDatos();
     private static operacionesSQL sql = new operacionesSQL(cn);
     private static generadorRegistro gr = new generadorRegistro(cn);
