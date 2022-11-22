@@ -22,6 +22,6 @@ public class serverServicio {
                     = new ServicioExterno(rs.getString("id_Servicio"), rs.getInt("deuda"));
             return res;
         }
-        throw new SQLException("Unable to find account");
+        throw new SQLException("Unable to find service");
     }
 }

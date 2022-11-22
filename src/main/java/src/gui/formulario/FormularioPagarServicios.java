@@ -16,14 +16,17 @@ import src.mediador.Mediador;
 public class FormularioPagarServicios extends javax.swing.JPanel {
 
     Mediador m;
+    String metodo;
 
     /**
      * Creates new form FormularioPagarServicios
      */
     public FormularioPagarServicios(Mediador m) {
         initComponents();
-        botones.add(btnSaldo);
-        botones.add(btnTarjeta);
+        btnSaldo.setActionCommand("Cuenta");
+        btnTarjeta.setActionCommand("Tarjeta");
+        botones.add(btn1);
+        botones.add(btn2);
         this.m = m;
     }
 
@@ -34,7 +37,8 @@ public class FormularioPagarServicios extends javax.swing.JPanel {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         botones = new javax.swing.ButtonGroup();
@@ -108,55 +112,137 @@ public class FormularioPagarServicios extends javax.swing.JPanel {
         javax.swing.GroupLayout panelPrincipalLayout = new javax.swing.GroupLayout(panelPrincipal);
         panelPrincipal.setLayout(panelPrincipalLayout);
         panelPrincipalLayout.setHorizontalGroup(
-            panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelPrincipalLayout.createSequentialGroup()
-                .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelPrincipalLayout.createSequentialGroup()
-                        .addGap(66, 66, 66)
-                        .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblPin)
-                            .addComponent(lblMonto, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPassPintTransaccion, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(panelPrincipalLayout.createSequentialGroup()
-                                    .addComponent(comboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(btnSaldo)
-                                        .addComponent(btnTarjeta)))
-                                .addComponent(jTextMonto, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(panelPrincipalLayout.createSequentialGroup()
-                                .addGap(105, 105, 105)
-                                .addComponent(btnPagar1))))
-                    .addGroup(panelPrincipalLayout.createSequentialGroup()
-                        .addGap(163, 163, 163)
-                        .addComponent(lblInvalido, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(195, Short.MAX_VALUE))
-        );
+                panelPrincipalLayout
+                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(
+                                panelPrincipalLayout
+                                        .createSequentialGroup()
+                                        .addGroup(
+                                                panelPrincipalLayout
+                                                        .createParallelGroup(
+                                                                javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addGroup(
+                                                                panelPrincipalLayout
+                                                                        .createSequentialGroup()
+                                                                        .addGap(66, 66, 66)
+                                                                        .addGroup(
+                                                                                panelPrincipalLayout
+                                                                                        .createParallelGroup(
+                                                                                                javax.swing.GroupLayout.Alignment.LEADING)
+                                                                                        .addComponent(
+                                                                                                lblPinTransaccion)
+                                                                                        .addComponent(
+                                                                                                lblMonto,
+                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                                97,
+                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                        .addComponent(
+                                                                                                jPassPintTransaccion,
+                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                                330,
+                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                        .addGroup(
+                                                                                                panelPrincipalLayout
+                                                                                                        .createSequentialGroup()
+                                                                                                        .addGap(
+                                                                                                                105,
+                                                                                                                105,
+                                                                                                                105)
+                                                                                                        .addComponent(
+                                                                                                                btnPagar1))
+                                                                                        .addGroup(
+                                                                                                panelPrincipalLayout
+                                                                                                        .createParallelGroup(
+                                                                                                                javax.swing.GroupLayout.Alignment.TRAILING,
+                                                                                                                false)
+                                                                                                        .addGroup(
+                                                                                                                panelPrincipalLayout
+                                                                                                                        .createSequentialGroup()
+                                                                                                                        .addComponent(
+                                                                                                                                comboBox,
+                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                                                        .addPreferredGap(
+                                                                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+                                                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                                                                                Short.MAX_VALUE)
+                                                                                                                        .addGroup(
+                                                                                                                                panelPrincipalLayout
+                                                                                                                                        .createParallelGroup(
+                                                                                                                                                javax.swing.GroupLayout.Alignment.LEADING)
+                                                                                                                                        .addComponent(
+                                                                                                                                                btn1)
+                                                                                                                                        .addComponent(
+                                                                                                                                                btn2)))
+                                                                                                        .addComponent(
+                                                                                                                jTextMonto,
+                                                                                                                javax.swing.GroupLayout.Alignment.LEADING,
+                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                                                330,
+                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                                        .addGroup(
+                                                                panelPrincipalLayout
+                                                                        .createSequentialGroup()
+                                                                        .addGap(155, 155, 155)
+                                                                        .addComponent(
+                                                                                lblInvalido,
+                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                100,
+                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addContainerGap(195, Short.MAX_VALUE)));
         panelPrincipalLayout.setVerticalGroup(
-            panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelPrincipalLayout.createSequentialGroup()
-                .addContainerGap(92, Short.MAX_VALUE)
-                .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(comboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(panelPrincipalLayout.createSequentialGroup()
-                        .addComponent(btnSaldo)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnTarjeta)))
-                .addGap(61, 61, 61)
-                .addComponent(lblMonto)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextMonto, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24)
-                .addComponent(lblPin)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPassPintTransaccion, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblInvalido, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnPagar1)
-                .addGap(61, 61, 61))
-        );
+                panelPrincipalLayout
+                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(
+                                javax.swing.GroupLayout.Alignment.TRAILING,
+                                panelPrincipalLayout
+                                        .createSequentialGroup()
+                                        .addContainerGap(92, Short.MAX_VALUE)
+                                        .addGroup(
+                                                panelPrincipalLayout
+                                                        .createParallelGroup(
+                                                                javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addComponent(
+                                                                comboBox,
+                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addGroup(
+                                                                panelPrincipalLayout
+                                                                        .createSequentialGroup()
+                                                                        .addComponent(btn1)
+                                                                        .addPreferredGap(
+                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                        .addComponent(btn2)))
+                                        .addGap(61, 61, 61)
+                                        .addComponent(lblMonto)
+                                        .addPreferredGap(
+                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(
+                                                jTextMonto,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                20,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(24, 24, 24)
+                                        .addComponent(lblPinTransaccion)
+                                        .addPreferredGap(
+                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(
+                                                jPassPintTransaccion,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                20,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(9, 9, 9)
+                                        .addComponent(
+                                                lblInvalido,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                20,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(
+                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(btnPagar1)
+                                        .addGap(70, 70, 70)));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
