@@ -103,7 +103,7 @@ public class BankServer {
         }
 
         // determinar el metodo de transaccion
-        if (p.metodo == "tarjeta") {
+        if (p.metodo == "Tarjeta") {
             if (c.saldoTarjeta < p.monto) {
                 throw new Exception("Fondos insuficientes");
             }
