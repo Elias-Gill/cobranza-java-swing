@@ -52,14 +52,8 @@ public class Mediador {
         if (monto <= 0) {
             throw new RuntimeException("Monto no puede ser negativo o 0");
         }
-<<<<<<< HEAD
-        DatosComprobante d
-                = server.PagarServicio(
-                        new PagoServicio(monto, servicio, cuentaActiva.cedula, pin, metodo));
-=======
         DatosComprobante d = server.PagarServicio(
                 new PagoServicio(monto, servicio, cuentaActiva.cedula, pin, metodo));
->>>>>>> 7aeebb8 (solucionando problemas con el mediador y el tema de las cuentas)
         return new Comprobante(d);
     }
 

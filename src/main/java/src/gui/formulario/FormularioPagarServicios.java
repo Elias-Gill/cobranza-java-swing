@@ -16,7 +16,6 @@ import src.mediador.Mediador;
 public class FormularioPagarServicios extends javax.swing.JPanel {
 
     Mediador m;
-    String metodo;
 
     /**
      * Creates new form FormularioPagarServicios
@@ -25,8 +24,8 @@ public class FormularioPagarServicios extends javax.swing.JPanel {
         initComponents();
         btnSaldo.setActionCommand("Cuenta");
         btnTarjeta.setActionCommand("Tarjeta");
-        botones.add(btn1);
-        botones.add(btn2);
+        botones.add(btnSaldo);
+        botones.add(btnTarjeta);
         this.m = m;
     }
 
@@ -130,7 +129,7 @@ public class FormularioPagarServicios extends javax.swing.JPanel {
                                                                                         .createParallelGroup(
                                                                                                 javax.swing.GroupLayout.Alignment.LEADING)
                                                                                         .addComponent(
-                                                                                                lblPinTransaccion)
+                                                                                                lblPin)
                                                                                         .addComponent(
                                                                                                 lblMonto,
                                                                                                 javax.swing.GroupLayout.PREFERRED_SIZE,
@@ -172,9 +171,9 @@ public class FormularioPagarServicios extends javax.swing.JPanel {
                                                                                                                                         .createParallelGroup(
                                                                                                                                                 javax.swing.GroupLayout.Alignment.LEADING)
                                                                                                                                         .addComponent(
-                                                                                                                                                btn1)
+                                                                                                                                                btnSaldo)
                                                                                                                                         .addComponent(
-                                                                                                                                                btn2)))
+                                                                                                                                                btnTarjeta)))
                                                                                                         .addComponent(
                                                                                                                 jTextMonto,
                                                                                                                 javax.swing.GroupLayout.Alignment.LEADING,
@@ -211,10 +210,10 @@ public class FormularioPagarServicios extends javax.swing.JPanel {
                                                         .addGroup(
                                                                 panelPrincipalLayout
                                                                         .createSequentialGroup()
-                                                                        .addComponent(btn1)
+                                                                        .addComponent(btnSaldo)
                                                                         .addPreferredGap(
                                                                                 javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                        .addComponent(btn2)))
+                                                                        .addComponent(btnTarjeta)))
                                         .addGap(61, 61, 61)
                                         .addComponent(lblMonto)
                                         .addPreferredGap(
@@ -225,7 +224,7 @@ public class FormularioPagarServicios extends javax.swing.JPanel {
                                                 20,
                                                 javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(24, 24, 24)
-                                        .addComponent(lblPinTransaccion)
+                                        .addComponent(lblPin)
                                         .addPreferredGap(
                                                 javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(
