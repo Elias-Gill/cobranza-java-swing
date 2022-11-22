@@ -13,8 +13,18 @@ public class Cuenta {
     public int pin;
     public String contrasena;
 
-    public Cuenta(int nroCuenta, String direccion, String nombre, String apellido,
-            int cedula, String telefono, int saldo, int tarjeta, int pin, String contrasena, int saldoTarjeta) {
+    public Cuenta(
+            int nroCuenta,
+            String direccion,
+            String nombre,
+            String apellido,
+            int cedula,
+            String telefono,
+            int saldo,
+            int tarjeta,
+            int pin,
+            String contrasena,
+            int saldoTarjeta) {
 
         this.cedula = cedula;
         this.direccion = direccion;
@@ -31,15 +41,22 @@ public class Cuenta {
 
     @Override
     public String toString() {
-        String res = String.format(
-                "Nro: %d \nNombre: %s\n Apellido: %s \nDireccion: %s \nCedula: %d \nTelefono: %s \nSaldo: %d",
-                this.cedula,
-                this.nombre,
-                this.apellido,
-                this.direccion,
-                this.cedula,
-                this.telefono,
-                this.saldo);
+        String res =
+                String.format(
+                        "Nro: %d \n"
+                            + "Nombre: %s\n"
+                            + " Apellido: %s \n"
+                            + "Direccion: %s \n"
+                            + "Cedula: %d \n"
+                            + "Telefono: %s \n"
+                            + "Saldo: %d",
+                        this.cedula,
+                        this.nombre,
+                        this.apellido,
+                        this.direccion,
+                        this.cedula,
+                        this.telefono,
+                        this.saldo);
         return res;
     }
 

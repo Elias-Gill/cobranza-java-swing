@@ -15,8 +15,7 @@ public class DatosComprobante {
     public String idServicio;
 
     // constructor vacio
-    public DatosComprobante() {
-    }
+    public DatosComprobante() {}
 
     // Transferencia a otra cuenta
     public DatosComprobante(Transferencia t) {

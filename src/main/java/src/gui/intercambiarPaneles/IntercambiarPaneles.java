@@ -5,9 +5,7 @@ import javax.swing.JPanel;
 
 public class IntercambiarPaneles {
 
-    public IntercambiarPaneles() {
-
-    }
+    public IntercambiarPaneles() {}
 
     public void modificarPanel(JPanel panelNuevo, JPanel panelViejo) {
         panelNuevo.setSize(panelViejo.getWidth(), panelViejo.getHeight());

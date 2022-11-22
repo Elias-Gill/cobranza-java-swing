@@ -32,16 +32,17 @@ public class BankServer {
         return cn;
     }
 
-    public DatosComprobante NuevaTransferencia(Transferencia t) throws Exception {
+    public DatosComprobante NuevaTransferencia(Transferencia t)
+            throws RuntimeException, ClassNotFoundException, SQLException {
         Cuenta origen = sql.obtenerCuentaCedula(t.cuentaOrigen);
         Cuenta destino = sql.obtenerCuentaNro(t.cuentaDestino);
         // revisar pin de transaccion
         if (origen.pin != t.pin) {
-            throw new Exception("PIN proporcionado invalido");
+            throw new RuntimeException("PIN proporcionado invalido");
         }
         // comprobar que la cuenta tenga saldo suficiente
         if (origen.saldo < t.monto) {
-            throw new Exception("Saldo insuficiente");
+            throw new RuntimeException("Saldo insuficiente");
         }
 
         // realizar la transaccion
@@ -54,7 +55,7 @@ public class BankServer {
             // si ocurre un error entonces restaurar el saldo de las cuentas
             sql.setSaldo(origen.saldo, t.cuentaOrigen);
             sql.setSaldo(destino.saldo, t.cuentaDestino);
-            throw new Exception("Problema de base de datos: " + e.toString());
+            throw new SQLException("Problema de base de datos: " + e.toString());
         }
 
         DatosComprobante dc = new DatosComprobante(t);
@@ -71,12 +72,13 @@ public class BankServer {
         return dc;
     }
 
-    public Cuenta IniciarSesion(String contrasena, int cedula) throws Exception {
+    public Cuenta IniciarSesion(String contrasena, int cedula)
+            throws RuntimeException, ClassNotFoundException, SQLException {
         Cuenta c = sql.obtenerCuentaCedula(cedula);
         if (c.contrasena.compareTo(contrasena) == 0) {
             return c;
         }
-        throw new Exception("Credenciales invalidas");
+        throw new RuntimeException("Credenciales invalidas");
     }
 
     public DatosComprobante PagarServicio(PagoServicio p) throws Exception {
@@ -117,6 +119,7 @@ public class BankServer {
 
     // no hay servicios para pagar
     private void pagarServicio(int m, String servicio) throws Exception {
-        throw new Exception("No se puede conectar con el servicio. \nDebe de ser cosa del gobierno o algo");
+        throw new Exception(
+                "No se puede conectar con el servicio. \nDebe de ser cosa del gobierno o algo");
     }
 }

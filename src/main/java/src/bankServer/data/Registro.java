@@ -13,7 +13,15 @@ public class Registro {
     String idServicio;
     int cuenta_origen;
 
-    public Registro(int id_registro, int cuenta_destino, int monto, LocalDate fecha_transaccion, int forma_pago, String concepto, String idServicio, int cuenta_origen) {
+    public Registro(
+            int id_registro,
+            int cuenta_destino,
+            int monto,
+            LocalDate fecha_transaccion,
+            int forma_pago,
+            String concepto,
+            String idServicio,
+            int cuenta_origen) {
         this.concepto = concepto;
         this.id_registro = id_registro;
         this.cuenta_destino = cuenta_destino;

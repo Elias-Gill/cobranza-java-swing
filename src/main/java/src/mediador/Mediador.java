@@ -17,16 +17,24 @@ public class Mediador {
     // metodo para realizar una nueva transferencia
     public Comprobante NuevaTransferencia(int cuentaDestino, int monto, int pin) throws Exception {
         if (cuentaDestino == cuentaActiva.nroCuenta) {
-            throw new Exception("Cuenta destino es la misma cuenta del usuario");
+            throw new RuntimeException("Cuenta destino es la misma cuenta del usuario");
         }
-        DatosComprobante d = server
-            .NuevaTransferencia(new Transferencia(cuentaActiva.cedula, cuentaDestino, monto, pin));
+        if (monto <= 0) {
+            throw new RuntimeException("Monto no puede ser negativo o 0");
+        }
+        DatosComprobante d =
+                server.NuevaTransferencia(
+                        new Transferencia(cuentaActiva.cedula, cuentaDestino, monto, pin));
         return new Comprobante(d);
     }
 
     // metodo para realizar un nuevo deposito
-    public Comprobante NuevoDeposito(int monto) throws RuntimeException, ClassNotFoundException, SQLException {
+    public Comprobante NuevoDeposito(int monto)
+            throws RuntimeException, ClassNotFoundException, SQLException {
         // por si acaso
+        if (monto <= 0) {
+            throw new RuntimeException("Monto no puede ser negativo o 0");
+        }
         if (cuentaActiva == null) {
             throw new RuntimeException("Aun no se ha iniciado sesion");
         }
@@ -41,12 +49,21 @@ public class Mediador {
     }
 
     // pagar un servicion externo (copaco, ANDE)
-    public Comprobante PagarServicio(int pin, String servicio, int monto, String metodo) throws Exception {
-        DatosComprobante d = server.PagarServicio(new PagoServicio(monto, servicio, cuentaActiva.cedula, pin, metodo));
+    public Comprobante PagarServicio(int pin, String servicio, int monto, String metodo)
+            throws Exception {
+        if (monto <= 0) {
+            throw new RuntimeException("Monto no puede ser negativo o 0");
+        }
+        DatosComprobante d =
+                server.PagarServicio(
+                        new PagoServicio(monto, servicio, cuentaActiva.cedula, pin, metodo));
         return new Comprobante(d);
     }
 
     public Comprobante PagarTarjeta(int monto) throws SQLException {
+        if (monto <= 0) {
+            throw new RuntimeException("Monto no puede ser negativo o 0");
+        }
         DatosComprobante d = server.PagarTarjeta(cuentaActiva, monto);
         return new Comprobante(d);
     }
