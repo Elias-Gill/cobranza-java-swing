@@ -10,8 +10,10 @@ import src.bankServer.regsYcomprobs.Transferencia;
 
 import java.sql.DriverManager;
 import java.sql.Connection;
+import src.bankServer.data.ServicioExterno;
 
 public class BankServer {
+
     private static Connection cn = iniciarBaseDeDatos();
     private static operacionesSQL sql = new operacionesSQL(cn);
     private static generadorRegistro gr = new generadorRegistro(cn);
@@ -118,8 +120,15 @@ public class BankServer {
     }
 
     // no hay servicios para pagar
-    private void pagarServicio(int m, String servicio) throws Exception {
-        throw new Exception(
-                "No se puede conectar con el servicio. \nDebe de ser cosa del gobierno o algo");
+    private void pagarServicio(int monto, String idServicio) throws Exception {
+        serverServicio server = new serverServicio(cn);
+        ServicioExterno servicio = server.getServicioNombre(idServicio);
+        if (servicio.deuda == 0) {
+            throw new Exception("La deuda ya ha sido pagada\n");
+        } else if (servicio.deuda - monto < 0) {
+            throw new Exception("El monto que quiere pagar es mas grande que la deuda\n");
+        } else {
+            servicio.deuda = servicio.deuda - monto;
+        }
     }
 }

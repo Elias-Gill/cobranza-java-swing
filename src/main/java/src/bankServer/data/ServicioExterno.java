@@ -2,11 +2,11 @@ package src.bankServer.data;
 
 public class ServicioExterno {
 
-    public int idServicio;
-    public String descripcionServicio;
+    public String idServicio;
+    public int deuda;
 
-    public ServicioExterno(int idServicio, String descripcion) {
+    public ServicioExterno(String idServicio, int deuda) {
         this.idServicio = idServicio;
-        this.descripcionServicio = descripcion;
+        this.deuda = deuda;
     }
 }
