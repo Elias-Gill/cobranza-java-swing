@@ -128,7 +128,6 @@ public class FormularioDeposito extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnDepositarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDepositarActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_btnDepositarActionPerformed
 
     private void btnDepositarMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btnDepositarMouseClicked

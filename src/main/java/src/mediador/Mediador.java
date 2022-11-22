@@ -16,6 +16,9 @@ public class Mediador {
 
     // metodo para realizar una nueva transferencia
     public Comprobante NuevaTransferencia(int cuentaDestino, int monto, int pin) throws Exception {
+        if (cuentaDestino == cuentaActiva.nroCuenta) {
+            throw new Exception("Cuenta destino es la misma cuenta del usuario");
+        }
         DatosComprobante d = server
             .NuevaTransferencia(new Transferencia(cuentaActiva.cedula, cuentaDestino, monto, pin));
         return new Comprobante(d);
@@ -46,9 +49,5 @@ public class Mediador {
     public Comprobante PagarTarjeta(int monto) throws SQLException {
         DatosComprobante d = server.PagarTarjeta(cuentaActiva, monto);
         return new Comprobante(d);
-    }
-
-    private void comprobarPin() {
-
     }
 }

@@ -8,7 +8,7 @@ public class Transferencia {
 
     public Transferencia(int cuentaOrigen, int cuentaDestino, int monto, int pin) {
         this.cuentaOrigen = cuentaOrigen;
-        this.cuentaOrigen = cuentaOrigen;
+        this.cuentaDestino = cuentaDestino;
         this.monto = monto;
         this.pin = pin;
     }

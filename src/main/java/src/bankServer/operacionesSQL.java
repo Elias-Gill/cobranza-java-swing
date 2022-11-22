@@ -14,7 +14,7 @@ public class operacionesSQL {
 		cn = c;
 	}
 
-	public Cuenta obtenerCuenta(int documentoIdentidad) throws ClassNotFoundException, SQLException {
+	public Cuenta obtenerCuentaCedula(int documentoIdentidad) throws ClassNotFoundException, SQLException {
 		String query = String.format("SELECT * FROM Cuentas WHERE cedula=%d", documentoIdentidad);
 		ResultSet rs = cn.createStatement().executeQuery(query);
 		if (rs.next()) {
@@ -31,6 +31,28 @@ public class operacionesSQL {
 			int saldo_Tarjeta = rs.getInt("saldo_Tarjeta");
 			// retorna la cuenta encontrada
 			return new Cuenta(nroCuenta, direccion, nombre, apellido, cedula, telefono, saldo,
+			    tarjetaID, pin, contrasena, saldo_Tarjeta);
+		}
+		throw new SQLException("Unable to find account");
+	}
+
+	public Cuenta obtenerCuentaNro(int nroCuenta) throws ClassNotFoundException, SQLException {
+		String query = String.format("SELECT * FROM Cuentas WHERE nro_cuenta=%d", nroCuenta);
+		ResultSet rs = cn.createStatement().executeQuery(query);
+		if (rs.next()) {
+			int nro = rs.getInt("nro_cuenta");
+			String direccion = rs.getString("direccion");
+			String nombre = rs.getString("nombre");
+			String apellido = rs.getString("apellido");
+			int cedula = rs.getInt("cedula");
+			String telefono = rs.getString("telefono");
+			int saldo = rs.getInt("saldo");
+			int tarjetaID = rs.getInt("nro_Tarjeta");
+			int pin = rs.getInt("pin_transaccion");
+			String contrasena = rs.getString("contrasena");
+			int saldo_Tarjeta = rs.getInt("saldo_Tarjeta");
+			// retorna la cuenta encontrada
+			return new Cuenta(nro, direccion, nombre, apellido, cedula, telefono, saldo,
 			    tarjetaID, pin, contrasena, saldo_Tarjeta);
 		}
 		throw new SQLException("Unable to find account");

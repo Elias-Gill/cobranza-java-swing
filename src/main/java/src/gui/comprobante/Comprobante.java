@@ -223,7 +223,6 @@ public class Comprobante extends javax.swing.JPanel implements Printable {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnGuardarMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btnGuardarMouseClicked
-        // TODO add your handling code here:
         try {
 
             PrinterJob job = PrinterJob.getPrinterJob();
