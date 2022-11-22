@@ -4,6 +4,8 @@
  */
 package src.gui.formulario;
 
+import javax.swing.JOptionPane;
+import static javax.swing.JOptionPane.YES_NO_OPTION;
 import src.gui.comprobante.Comprobante;
 import src.gui.intercambiarPaneles.IntercambiarPaneles;
 import src.mediador.Mediador;
@@ -37,7 +39,7 @@ public class FormularioPagarServicios extends javax.swing.JPanel {
 
         botones = new javax.swing.ButtonGroup();
         panelPrincipal = new javax.swing.JPanel();
-        comboBox = new javax.swing.JComboBox<String>();
+        comboBox = new javax.swing.JComboBox<>();
         btnSaldo = new javax.swing.JRadioButton();
         btnTarjeta = new javax.swing.JRadioButton();
         lblMonto = new javax.swing.JLabel();
@@ -56,7 +58,7 @@ public class FormularioPagarServicios extends javax.swing.JPanel {
 
         comboBox.setBackground(new java.awt.Color(102, 102, 102));
         comboBox.setForeground(new java.awt.Color(255, 255, 255));
-        comboBox.setModel(new javax.swing.DefaultComboBoxModel<String>(new String[] { "FPUNA", "ANDE", "CLARO", "TIGO" }));
+        comboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "FPUNA", "ANDE", "CLARO", "TIGO" }));
 
         btnSaldo.setForeground(new java.awt.Color(102, 102, 102));
         btnSaldo.setText("Saldo de Cuenta");
@@ -178,6 +180,7 @@ public class FormularioPagarServicios extends javax.swing.JPanel {
 
     private void btnPagar1MouseClicked(java.awt.event.MouseEvent evt) {
         transaccionar();
+
     } // GEN-LAST:event_btnPagar1MouseClicked
 
     private void transaccionar() {
@@ -187,10 +190,15 @@ public class FormularioPagarServicios extends javax.swing.JPanel {
             int pin = Integer.parseInt(String.valueOf(jPassPintTransaccion.getPassword()));
             String servicio = comboBox.getItemAt(comboBox.getSelectedIndex());
             String metodo = botones.getSelection().toString();
-            // realizar la transaccion
-            Comprobante comp = m.PagarServicio(pin, servicio, monto, metodo);
-            IntercambiarPaneles intercambiar = new IntercambiarPaneles();
-            intercambiar.modificarPanel(comp, panelPrincipal);
+            int eleccion = JOptionPane.showConfirmDialog(this, "Desea seguir con el Pago?",
+                    "Confirmación de Pago", YES_NO_OPTION);
+            // Si
+            if (eleccion == JOptionPane.YES_OPTION) {
+                // realizar la transaccion
+                Comprobante comp = m.PagarServicio(pin, servicio, monto, metodo);
+                IntercambiarPaneles intercambiar = new IntercambiarPaneles();
+                intercambiar.modificarPanel(comp, panelPrincipal);
+            }
         } catch (Exception e) {
             lblInvalido.setText("Datos Inválidos");
         }
