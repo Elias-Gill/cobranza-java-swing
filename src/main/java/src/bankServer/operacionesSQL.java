@@ -19,6 +19,7 @@ public class operacionesSQL {
         String query = String.format("SELECT * FROM Cuentas WHERE cedula=%d", documentoIdentidad);
         ResultSet rs = cn.createStatement().executeQuery(query);
         if (rs.next()) {
+            // cargar los datos de la cuenta
             int nroCuenta = rs.getInt("nro_cuenta");
             String direccion = rs.getString("direccion");
             String nombre = rs.getString("nombre");
@@ -30,19 +31,11 @@ public class operacionesSQL {
             int pin = rs.getInt("pin_transaccion");
             String contrasena = rs.getString("contrasena");
             int saldo_Tarjeta = rs.getInt("saldo_Tarjeta");
+            int pin_tarjeta = rs.getInt("pin_Tarjeta");
             // retorna la cuenta encontrada
-            return new Cuenta(
-                    nroCuenta,
-                    direccion,
-                    nombre,
-                    apellido,
-                    cedula,
-                    telefono,
-                    saldo,
-                    tarjetaID,
-                    pin,
-                    contrasena,
-                    saldo_Tarjeta);
+            return new Cuenta(nroCuenta, direccion, nombre, apellido,
+                    cedula, telefono, saldo, tarjetaID, pin,
+                    contrasena, saldo_Tarjeta, pin_tarjeta);
         }
         throw new SQLException("Unable to find account");
     }
@@ -51,7 +44,6 @@ public class operacionesSQL {
         String query = String.format("SELECT * FROM Cuentas WHERE nro_cuenta=%d", nroCuenta);
         ResultSet rs = cn.createStatement().executeQuery(query);
         if (rs.next()) {
-            int nro = rs.getInt("nro_cuenta");
             String direccion = rs.getString("direccion");
             String nombre = rs.getString("nombre");
             String apellido = rs.getString("apellido");
@@ -62,19 +54,11 @@ public class operacionesSQL {
             int pin = rs.getInt("pin_transaccion");
             String contrasena = rs.getString("contrasena");
             int saldo_Tarjeta = rs.getInt("saldo_Tarjeta");
+            int pin_tarjeta = rs.getInt("saldo_Tarjeta");
             // retorna la cuenta encontrada
-            return new Cuenta(
-                    nro,
-                    direccion,
-                    nombre,
-                    apellido,
-                    cedula,
-                    telefono,
-                    saldo,
-                    tarjetaID,
-                    pin,
-                    contrasena,
-                    saldo_Tarjeta);
+            return new Cuenta(nroCuenta, direccion, nombre, apellido,
+                    cedula, telefono, saldo, tarjetaID, pin,
+                    contrasena, saldo_Tarjeta, pin_tarjeta);
         }
         throw new SQLException("Unable to find account");
     }
@@ -93,8 +77,7 @@ public class operacionesSQL {
     }
 
     public void setSaldoTarjeta(int monto, int cedula) throws SQLException {
-        String query =
-                String.format("UPDATE Cuentas SET saldo_Tarjeta = ? WHERE cedula=%d", cedula);
+        String query = String.format("UPDATE Cuentas SET saldo_Tarjeta = ? WHERE cedula=%d", cedula);
         PreparedStatement pstmt = cn.prepareStatement(query);
         pstmt.setInt(1, monto);
         pstmt.executeUpdate();
