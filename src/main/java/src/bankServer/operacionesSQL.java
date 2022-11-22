@@ -87,6 +87,7 @@ public class operacionesSQL {
         String query = String.format("SELECT * FROM Cuentas WHERE cedula=%d", cedula);
         ResultSet rs = cn.createStatement().executeQuery(query);
         int deudaTarjeta;
+        // comprobaciones
         if (rs.next()) {
             // comprobar que el monto no supere la deuda
             deudaTarjeta = rs.getInt("deuda_Tarjeta");
@@ -97,6 +98,7 @@ public class operacionesSQL {
             throw new RuntimeException("No se encontro la tarjeta");
         }
 
+        // operacion
         query = String.format("UPDATE Cuentas SET deuda_Tarjeta = ? WHERE cedula=%d", cedula);
         PreparedStatement pstmt = cn.prepareStatement(query);
         pstmt.setInt(1, deudaTarjeta - monto);

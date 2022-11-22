@@ -287,6 +287,7 @@ public class FormularioPagarServicios extends javax.swing.JPanel {
             }
         } catch (Exception e) {
             lblInvalido.setText("Datos Inválidos");
+            System.out.println(e);
         }
     }
 
