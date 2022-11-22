@@ -22,8 +22,11 @@ public class FormularioPagarServicios extends javax.swing.JPanel {
      */
     public FormularioPagarServicios(Mediador m) {
         initComponents();
+        btnSaldo.setActionCommand("Saldo de Cuenta");
+        btnTarjeta.setActionCommand("Tarjeta de Crédito");
         botones.add(btnSaldo);
         botones.add(btnTarjeta);
+
         this.m = m;
     }
 
@@ -189,7 +192,7 @@ public class FormularioPagarServicios extends javax.swing.JPanel {
             int monto = Integer.parseInt(jTextMonto.getText());
             int pin = Integer.parseInt(String.valueOf(jPassPintTransaccion.getPassword()));
             String servicio = comboBox.getItemAt(comboBox.getSelectedIndex());
-            String metodo = botones.getSelection().toString();
+            String metodo = botones.getSelection().getActionCommand();
             int eleccion = JOptionPane.showConfirmDialog(this, "Desea seguir con el Pago?",
                     "Confirmación de Pago", YES_NO_OPTION);
             // Si
