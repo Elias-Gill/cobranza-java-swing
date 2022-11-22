@@ -158,6 +158,7 @@ public class FormularioTransferencia extends javax.swing.JPanel {
             intercambiar.modificarPanel(comp, panelPrincipal);
         } catch (Exception e) {
             lblInvalido.setText("Datos Inválidos");
+            System.out.println(e);
         }
     }
 

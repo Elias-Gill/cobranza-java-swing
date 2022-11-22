@@ -15,7 +15,7 @@ public class serverServicio {
 
     // buscar un servicio por su descripcion
     ServicioExterno getServicioNombre(String id) throws SQLException {
-        String query = String.format("SELECT * FROM servicios WHERE id_Servicio=%s", id);
+        String query = String.format("SELECT * FROM Servicios WHERE id_Servicio='%s'", id);
         ResultSet rs = cn.createStatement().executeQuery(query);
         if (rs.next()) {
             ServicioExterno res

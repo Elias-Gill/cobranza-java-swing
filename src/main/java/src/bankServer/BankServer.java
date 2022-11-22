@@ -98,7 +98,7 @@ public class BankServer {
 
         // comprobar pin de transaccion o pin de tarjeta
         Cuenta c = sql.obtenerCuentaCedula(p.cuentaOrigen);
-        if (c.pin != p.pin && c.pin_tarjeta != p.pin) {
+        if (c.pin != p.pin && c.pinTarjeta != p.pin) {
             throw new Exception("Pin incorrecto");
         }
 

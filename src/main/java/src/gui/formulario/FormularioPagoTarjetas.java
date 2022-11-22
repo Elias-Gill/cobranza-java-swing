@@ -21,6 +21,7 @@ public class FormularioPagoTarjetas extends javax.swing.JPanel {
     public FormularioPagoTarjetas(Mediador m) {
         initComponents();
         this.m = m;
+        jTextMonto.setText(String.valueOf(m.cuentaActiva.deudaTarjeta));
     }
 
     /**
@@ -141,6 +142,7 @@ public class FormularioPagoTarjetas extends javax.swing.JPanel {
             intercambiar.modificarPanel(comp, panelPrincipal);
         } catch (Exception e) {
             lblInvalido.setText("Datos Inválidos");
+            System.out.println(e);
         }
     }
 

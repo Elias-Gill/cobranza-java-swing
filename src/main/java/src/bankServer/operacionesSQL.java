@@ -32,10 +32,11 @@ public class operacionesSQL {
             String contrasena = rs.getString("contrasena");
             int saldo_Tarjeta = rs.getInt("saldo_Tarjeta");
             int pin_tarjeta = rs.getInt("pin_Tarjeta");
+            int deudaTarjeta = rs.getInt("deuda_Tarjeta");
             // retorna la cuenta encontrada
             return new Cuenta(nroCuenta, direccion, nombre, apellido,
                     cedula, telefono, saldo, tarjetaID, pin,
-                    contrasena, saldo_Tarjeta, pin_tarjeta);
+                    contrasena, saldo_Tarjeta, pin_tarjeta, deudaTarjeta);
         }
         throw new SQLException("Unable to find account");
     }
@@ -55,10 +56,11 @@ public class operacionesSQL {
             String contrasena = rs.getString("contrasena");
             int saldo_Tarjeta = rs.getInt("saldo_Tarjeta");
             int pin_tarjeta = rs.getInt("saldo_Tarjeta");
+            int deudaTarjeta = rs.getInt("deuda_Tarjeta");
             // retorna la cuenta encontrada
             return new Cuenta(nroCuenta, direccion, nombre, apellido,
                     cedula, telefono, saldo, tarjetaID, pin,
-                    contrasena, saldo_Tarjeta, pin_tarjeta);
+                    contrasena, saldo_Tarjeta, pin_tarjeta, deudaTarjeta);
         }
         throw new SQLException("Unable to find account");
     }
@@ -87,6 +89,7 @@ public class operacionesSQL {
         String query = String.format("SELECT * FROM Cuentas WHERE cedula=%d", cedula);
         ResultSet rs = cn.createStatement().executeQuery(query);
         int deudaTarjeta;
+        // comprobaciones
         if (rs.next()) {
             // comprobar que el monto no supere la deuda
             deudaTarjeta = rs.getInt("deuda_Tarjeta");
@@ -97,6 +100,7 @@ public class operacionesSQL {
             throw new RuntimeException("No se encontro la tarjeta");
         }
 
+        // operacion
         query = String.format("UPDATE Cuentas SET deuda_Tarjeta = ? WHERE cedula=%d", cedula);
         PreparedStatement pstmt = cn.prepareStatement(query);
         pstmt.setInt(1, deudaTarjeta - monto);
