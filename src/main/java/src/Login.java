@@ -58,13 +58,13 @@ public class Login extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(769, 500));
         setUndecorated(true);
+        setResizable(false);
         setSize(new java.awt.Dimension(769, 500));
 
         panelDer.setBackground(new java.awt.Color(255, 255, 255));
         panelDer.setMinimumSize(new java.awt.Dimension(591, 444));
         panelDer.setLayout(null);
 
-        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
         jTextField1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jTextField1.setForeground(new java.awt.Color(42, 42, 42));
         jTextField1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(217, 219, 228)));
@@ -89,7 +89,6 @@ public class Login extends javax.swing.JFrame {
         panelDer.add(btnInicio);
         btnInicio.setBounds(190, 360, 150, 20);
 
-        jPasswordField1.setBackground(new java.awt.Color(255, 255, 255));
         jPasswordField1.setForeground(new java.awt.Color(58, 58, 58));
         jPasswordField1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(217, 219, 228)));
         panelDer.add(jPasswordField1);
@@ -99,7 +98,7 @@ public class Login extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(102, 102, 102));
         jLabel2.setText("Iniciar Sesión");
         panelDer.add(jLabel2);
-        jLabel2.setBounds(170, 90, 180, 30);
+        jLabel2.setBounds(150, 90, 200, 30);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(102, 102, 102));
@@ -134,14 +133,13 @@ public class Login extends javax.swing.JFrame {
 
         jLabel9.setBackground(new java.awt.Color(255, 255, 255));
         jLabel9.setFont(new java.awt.Font("Segoe UI Emoji", 1, 130)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setText("🌄");
         jLabel9.setToolTipText("");
 
         jLabel10.setBackground(new java.awt.Color(0, 0, 0));
         jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(210, 208, 208));
-        jLabel10.setText("NOMBRE DEL BANCO");
+        jLabel10.setText("     Banco Diaz Gill");
 
         javax.swing.GroupLayout panelIzqLayout = new javax.swing.GroupLayout(panelIzq);
         panelIzq.setLayout(panelIzqLayout);
