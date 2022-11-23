@@ -1,6 +1,7 @@
 package src.mediador;
 
 import java.sql.SQLException;
+import java.time.LocalDate;
 import src.bankServer.BankServer;
 import src.bankServer.data.Cuenta;
 import src.bankServer.regsYcomprobs.DatosComprobante;
@@ -37,6 +38,17 @@ public class Mediador {
             throw new RuntimeException("Monto no puede ser negativo o 0");
         }
         DatosComprobante d = server.NuevoDeposito(new Deposito(cuentaActiva.cedula, monto));
+        return new Comprobante(d);
+    }
+
+    // metodo para consulta saldo
+    public Comprobante ConsultaSaldo(int saldo) throws SQLException {
+        DatosComprobante d = new DatosComprobante();
+        d.concepto = "Consulta de Saldo";
+        d.cuentaDestino = 0;
+        d.fecha = LocalDate.now();
+        d.monto = saldo;
+        server.ConsultaSaldo(d);
         return new Comprobante(d);
     }
 

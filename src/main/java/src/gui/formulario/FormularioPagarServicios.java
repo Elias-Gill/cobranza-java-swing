@@ -25,6 +25,7 @@ public class FormularioPagarServicios extends javax.swing.JPanel {
         initComponents();
         btnSaldo.setActionCommand("Cuenta");
         btnTarjeta.setActionCommand("Tarjeta");
+        jTextMonto.setText("4000");
         botones.add(btnSaldo);
         botones.add(btnTarjeta);
         this.m = m;
