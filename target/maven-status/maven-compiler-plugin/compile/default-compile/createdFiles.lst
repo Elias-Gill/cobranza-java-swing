@@ -22,7 +22,6 @@ src/gui/formulario/FormularioDeposito$2.class
 src/bankServer/regsYcomprobs/Deposito.class
 src/gui/formulario/FormularioPagarServicios$2.class
 src/Login$2.class
-src/bankServer/data/Registro.class
 src/gui/menu/Menu$2.class
 src/gui/menu/Menu$7.class
 src/gui/menu/Menu$6.class
