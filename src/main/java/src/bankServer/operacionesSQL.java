@@ -106,4 +106,11 @@ public class operacionesSQL {
         pstmt.setInt(1, deudaTarjeta - monto);
         pstmt.executeUpdate();
     }
+
+    void setDeudaTarjeta(int monto, int cedula) throws SQLException {
+        String query = String.format("UPDATE Cuentas SET deuda_Tarjeta = ? WHERE cedula=%d", cedula);
+        PreparedStatement pstmt = cn.prepareStatement(query);
+        pstmt.setInt(1, monto);
+        pstmt.executeUpdate();
+    }
 }

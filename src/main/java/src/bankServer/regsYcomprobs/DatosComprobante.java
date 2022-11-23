@@ -15,7 +15,8 @@ public class DatosComprobante {
     public String idServicio;
 
     // constructor vacio
-    public DatosComprobante() {}
+    public DatosComprobante() {
+    }
 
     // Transferencia a otra cuenta
     public DatosComprobante(Transferencia t) {
@@ -38,7 +39,7 @@ public class DatosComprobante {
     public DatosComprobante(PagoServicio p) {
         this.cuentaOrigen = p.cuentaOrigen;
         this.monto = p.monto;
-        this.concepto = "Pago de serivicio: " + p.servicio + " con " + p.metodo;
+        this.concepto = "Pago de serivicio: " + p.servicio;
         this.idServicio = p.servicio;
         this.fecha = LocalDate.now();
     }
