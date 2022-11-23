@@ -76,6 +76,7 @@ public class Mediador {
         d.cuentaDestino = 0;
         d.fecha = LocalDate.now();
         d.monto = saldo;
+        d.metodo = "consultaSaldo";
         server.ConsultaSaldo(d);
         // actualizar los datos de la cuenta activa
         this.cuentaActiva = server.IniciarSesion(cuentaActiva.contrasena, cuentaActiva.cedula);

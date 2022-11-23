@@ -24,11 +24,14 @@ public class Comprobante extends javax.swing.JPanel implements Printable {
         initComponents();
         datosConcepto.setText(d.concepto);
         datosCuentaDestino.setText(String.valueOf(d.cuentaDestino));
-        if (d.cuentaDestino != 0 && d.metodo != "pagoTarjeta") {
-            datosCuentaDestino.setText(String.valueOf(d.cuentaDestino));
-        } else {
-            datosCuentaDestino.setText("########");
+        if (d.metodo == "consultaSaldo") {
             Monto.setText("Saldo Disponible");
+            datosCuentaDestino.setText("########");
+        } else {
+            if (d.cuentaDestino == 0) {
+                datosCuentaDestino.setText("########");
+            }
+            datosCuentaDestino.setText(String.valueOf(d.cuentaDestino));
         }
         datosFecha.setText(d.fecha.toString());
         datosMonto.setText(String.valueOf(d.monto));
