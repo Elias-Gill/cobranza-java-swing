@@ -1,5 +1,6 @@
 package src.bankServer.data;
 
+// clase uitlizada para el pago de serivcios externos
 public class ServicioExterno {
 
     public String idServicio;

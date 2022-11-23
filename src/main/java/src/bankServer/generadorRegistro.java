@@ -14,6 +14,7 @@ public class generadorRegistro {
         cn = c;
     }
 
+    // genera un nuevo registro de alguna operacion dentro de la base de datos
     public void nuevoRegistro(DatosComprobante datos) throws SQLException {
         datos.idComprobante = datos.hashCode();
         PreparedStatement ps = cn.prepareStatement("INSERT INTO registro VALUES(?, ?, ?, ?, ?, ?, ?, ?);");

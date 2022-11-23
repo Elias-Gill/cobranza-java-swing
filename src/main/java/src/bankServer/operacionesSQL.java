@@ -10,10 +10,12 @@ public class operacionesSQL {
 
     private Connection cn;
 
+    // constructor
     public operacionesSQL(Connection c) {
         cn = c;
     }
 
+    // Obtener una cuenta en base al numero de cedula del cliente
     public Cuenta obtenerCuentaCedula(int documentoIdentidad)
             throws ClassNotFoundException, SQLException {
         String query = String.format("SELECT * FROM Cuentas WHERE cedula=%d", documentoIdentidad);
@@ -41,6 +43,7 @@ public class operacionesSQL {
         throw new SQLException("Unable to find account");
     }
 
+    // Obtener una cuenta en base al numero de cuenta
     public Cuenta obtenerCuentaNro(int nroCuenta) throws ClassNotFoundException, SQLException {
         String query = String.format("SELECT * FROM Cuentas WHERE nro_cuenta=%d", nroCuenta);
         ResultSet rs = cn.createStatement().executeQuery(query);
@@ -65,9 +68,8 @@ public class operacionesSQL {
         throw new SQLException("Unable to find account");
     }
 
-    // setea un saldo especifico, se usa para recuperacion de errores de transaccion
-    // ja'e chupe
-    public void setSaldo(int monto, int cedula) throws SQLException {
+    // Establece un valor especifico al saldo de la cuenta dentro de la base de datos
+    public void setSaldoCuenta(int monto, int cedula) throws SQLException {
         try {
             String query = String.format("UPDATE Cuentas SET saldo = ? WHERE cedula=%d", cedula);
             PreparedStatement pstmt = cn.prepareStatement(query);
@@ -78,6 +80,7 @@ public class operacionesSQL {
         }
     }
 
+    // Establece un valor especifico al saldo de la tarjeta dentro de la base de datos
     public void setSaldoTarjeta(int monto, int cedula) throws SQLException {
         String query = String.format("UPDATE Cuentas SET saldo_Tarjeta = ? WHERE cedula=%d", cedula);
         PreparedStatement pstmt = cn.prepareStatement(query);
@@ -85,14 +88,17 @@ public class operacionesSQL {
         pstmt.executeUpdate();
     }
 
+    // realiza el proceso de pago de tarjeta
     public void pagarTarjeta(int monto, int cedula) throws SQLException {
         String query = String.format("SELECT * FROM Cuentas WHERE cedula=%d", cedula);
         ResultSet rs = cn.createStatement().executeQuery(query);
         int deudaTarjeta;
+        int saldoActual;
         // comprobaciones
         if (rs.next()) {
             // comprobar que el monto no supere la deuda
             deudaTarjeta = rs.getInt("deuda_Tarjeta");
+            saldoActual = rs.getInt("saldo_Tarjeta");
             if (deudaTarjeta < monto) {
                 throw new RuntimeException("Monto no puede ser superior a la deuda");
             }
@@ -100,8 +106,10 @@ public class operacionesSQL {
             throw new RuntimeException("No se encontro la tarjeta");
         }
 
-        // operacion
-        query = String.format("UPDATE Cuentas SET deuda_Tarjeta = ? WHERE cedula=%d", cedula);
+        // retornar al saldo disponible
+        setSaldoTarjeta(saldoActual + monto, cedula);
+        // restar de la deuda pendiente
+        query = String.format("UPDATE Cuentas SET deudaTarjeta = ? WHERE cedula=%d", cedula);
         PreparedStatement pstmt = cn.prepareStatement(query);
         pstmt.setInt(1, deudaTarjeta - monto);
         pstmt.executeUpdate();

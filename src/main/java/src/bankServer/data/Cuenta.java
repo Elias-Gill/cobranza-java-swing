@@ -1,5 +1,6 @@
 package src.bankServer.data;
 
+// clase que contiene los datos proporcionados por la base de datos
 public class Cuenta {
     public int cedula;
     public String direccion;
