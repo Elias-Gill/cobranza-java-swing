@@ -180,7 +180,7 @@ public class BankServer {
         sql.pagarTarjeta(monto, c.cedula);
         sql.setSaldoCuenta(c.saldo - monto, c.cedula);
 
-        DatosComprobante dc = new DatosComprobante(c.cedula, monto);
+        DatosComprobante dc = new DatosComprobante(c.cedula, monto, "pagoTarjeta");
         gr.nuevoRegistro(dc);
         return dc;
     }

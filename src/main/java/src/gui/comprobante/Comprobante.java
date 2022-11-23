@@ -24,7 +24,7 @@ public class Comprobante extends javax.swing.JPanel implements Printable {
         initComponents();
         datosConcepto.setText(d.concepto);
         datosCuentaDestino.setText(String.valueOf(d.cuentaDestino));
-        if (d.cuentaDestino != 0) {
+        if (d.cuentaDestino != 0 && d.metodo != "pagoTarjeta") {
             datosCuentaDestino.setText(String.valueOf(d.cuentaDestino));
         } else {
             datosCuentaDestino.setText("########");

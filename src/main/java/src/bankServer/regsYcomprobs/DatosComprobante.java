@@ -46,10 +46,11 @@ public class DatosComprobante {
     }
 
     // pago de deuda de tarjeta
-    public DatosComprobante(int c, int monto) {
+    public DatosComprobante(int c, int monto, String metodo) {
         this.cuentaOrigen = c;
         this.monto = monto;
         this.concepto = "Pago de deuda Tarjeta de credito.";
+        this.metodo = metodo;
         this.fecha = LocalDate.now();
     }
 }
