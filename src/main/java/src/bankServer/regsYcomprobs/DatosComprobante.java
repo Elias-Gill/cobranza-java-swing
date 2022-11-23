@@ -30,6 +30,7 @@ public class DatosComprobante {
     // deposito de dinero
     public DatosComprobante(Deposito d) {
         this.cuentaOrigen = d.cuentaOrigen;
+        this.cuentaDestino = d.cuentaOrigen;
         this.monto = d.monto;
         this.concepto = "Deposito de dinero";
         this.fecha = LocalDate.now();

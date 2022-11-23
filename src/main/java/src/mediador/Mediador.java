@@ -49,13 +49,13 @@ public class Mediador {
      * @throws ClassNotFoundException
      * @throws SQLException
      */
-    public Comprobante NuevoDeposito(int monto)
+    public Comprobante NuevoDeposito(int cuenta, int monto)
             throws RuntimeException, ClassNotFoundException, SQLException {
         // monto no puede ser negativo
         if (monto <= 0) {
             throw new RuntimeException("Monto no puede ser negativo o 0");
         }
-        DatosComprobante d = server.NuevoDeposito(new Deposito(cuentaActiva.cedula, monto));
+        DatosComprobante d = server.NuevoDeposito(new Deposito(cuenta, monto));
         // actualizar los datos de la cuenta activa
         this.cuentaActiva = server.IniciarSesion(cuentaActiva.contrasena, cuentaActiva.cedula);
         return new Comprobante(d);
