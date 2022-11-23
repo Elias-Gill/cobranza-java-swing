@@ -145,7 +145,7 @@
                       <Component id="jLabel12" min="-2" pref="28" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="39" max="32767" attributes="0"/>
+                      <EmptySpace pref="37" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -750,7 +750,6 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="33" green="33" red="33" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="DFGDFG"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jtextCedula">
@@ -761,7 +760,6 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="33" green="33" red="33" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="DFGDFGDG"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jtextTelefono">
@@ -772,7 +770,6 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="33" green="33" red="33" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="DFGDFG"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="lblGuarani">
@@ -823,7 +820,6 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="33" green="33" red="33" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="DFGDFGH"/>
               </Properties>
             </Component>
           </SubComponents>

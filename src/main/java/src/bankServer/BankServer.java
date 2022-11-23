@@ -67,7 +67,7 @@ public class BankServer {
             // restar dinero al origen
             sql.setSaldoCuenta(origen.saldo - t.monto, t.cuentaOrigen);
             // sumar dinero al destino
-            sql.setSaldoCuenta(destino.saldo + t.monto, t.cuentaDestino);
+            sql.setSaldoCuenta(destino.saldo + t.monto, destino.cedula);
         } catch (SQLException e) {
             // si ocurre un error entonces restaurar el saldo de las cuentas
             sql.setSaldoCuenta(origen.saldo, t.cuentaOrigen);
@@ -90,8 +90,8 @@ public class BankServer {
      * @throws SQLException
      */
     public DatosComprobante NuevoDeposito(Deposito d) throws ClassNotFoundException, SQLException {
-        Cuenta destino = sql.obtenerCuentaCedula(d.cuentaOrigen);
-        sql.setSaldoCuenta(d.monto + destino.saldo, d.cuentaOrigen);
+        Cuenta destino = sql.obtenerCuentaNro(d.cuentaOrigen);
+        sql.setSaldoCuenta(d.monto + destino.saldo, destino.cedula);
 
         DatosComprobante dc = new DatosComprobante(d);
         gr.nuevoRegistro(dc);

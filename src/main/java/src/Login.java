@@ -242,7 +242,7 @@ public class Login extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(
                 new Runnable() {
             public void run() {
-                FlatDarkLaf.setup();
+                //FlatDarkLaf.setup();
                 new Login().setVisible(true);
             }
         });
