@@ -152,7 +152,7 @@ public class BankServer {
                 throw new Exception("Fondos insuficientes");
             }
             sql.setSaldoTarjeta(c.saldoTarjeta - p.monto, c.cedula);
-            sql.setDeudaTarjeta(c.saldoTarjeta + p.monto, c.cedula);
+            sql.setDeudaTarjeta(c.deudaTarjeta + p.monto, c.cedula);
 
         } else {
             if (c.saldo < p.monto) {

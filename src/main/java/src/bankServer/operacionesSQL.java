@@ -109,7 +109,7 @@ public class operacionesSQL {
         // retornar al saldo disponible
         setSaldoTarjeta(saldoActual + monto, cedula);
         // restar de la deuda pendiente
-        query = String.format("UPDATE Cuentas SET deudaTarjeta = ? WHERE cedula=%d", cedula);
+        query = String.format("UPDATE Cuentas SET deuda_Tarjeta = ? WHERE cedula=%d", cedula);
         PreparedStatement pstmt = cn.prepareStatement(query);
         pstmt.setInt(1, deudaTarjeta - monto);
         pstmt.executeUpdate();
