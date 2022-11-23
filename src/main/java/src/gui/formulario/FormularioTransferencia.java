@@ -4,6 +4,8 @@
  */
 package src.gui.formulario;
 
+import javax.swing.JOptionPane;
+import static javax.swing.JOptionPane.YES_NO_OPTION;
 import src.gui.comprobante.Comprobante;
 import src.gui.intercambiarPaneles.IntercambiarPaneles;
 import src.mediador.Mediador;
@@ -151,11 +153,15 @@ public class FormularioTransferencia extends javax.swing.JPanel {
             int monto = Integer.parseInt(jTextMonto.getText());
             int destino = Integer.parseInt(jTextCuentaDestino.getText());
             int pin = Integer.parseInt(String.valueOf(jPassPintTransaccion.getPassword()));
-
-            // realizar la transaccion
-            Comprobante comp = m.NuevaTransferencia(destino, monto, pin);
-            IntercambiarPaneles intercambiar = new IntercambiarPaneles();
-            intercambiar.modificarPanel(comp, panelPrincipal);
+            int eleccion = JOptionPane.showConfirmDialog(this, "Desea seguir con la Transferencia?",
+                    "Confirmación de Transferencia", YES_NO_OPTION);
+            // Si
+            if (eleccion == JOptionPane.YES_OPTION) {
+                // realizar la transaccion
+                Comprobante comp = m.NuevaTransferencia(destino, monto, pin);
+                IntercambiarPaneles intercambiar = new IntercambiarPaneles();
+                intercambiar.modificarPanel(comp, panelPrincipal);
+            }
         } catch (Exception e) {
             lblInvalido.setText("Datos Inválidos");
             System.out.println(e);

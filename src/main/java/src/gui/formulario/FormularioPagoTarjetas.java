@@ -4,6 +4,8 @@
  */
 package src.gui.formulario;
 
+import javax.swing.JOptionPane;
+import static javax.swing.JOptionPane.YES_NO_OPTION;
 import src.gui.comprobante.Comprobante;
 import src.gui.intercambiarPaneles.IntercambiarPaneles;
 import src.mediador.Mediador;
@@ -37,8 +39,6 @@ public class FormularioPagoTarjetas extends javax.swing.JPanel {
         panelPrincipal = new javax.swing.JPanel();
         lblMonto = new javax.swing.JLabel();
         jTextMonto = new javax.swing.JTextField();
-        lblPinTransaccion = new javax.swing.JLabel();
-        jPassPintTransaccion = new javax.swing.JPasswordField();
         btnPagar = new javax.swing.JButton();
         lblInvalido = new javax.swing.JLabel();
 
@@ -55,14 +55,6 @@ public class FormularioPagoTarjetas extends javax.swing.JPanel {
         jTextMonto.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jTextMonto.setForeground(new java.awt.Color(80, 80, 80));
         jTextMonto.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(217, 219, 228)));
-
-        lblPinTransaccion.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblPinTransaccion.setForeground(new java.awt.Color(102, 102, 102));
-        lblPinTransaccion.setText("Pin de Transaccion");
-
-        jPassPintTransaccion.setBackground(new java.awt.Color(255, 255, 255));
-        jPassPintTransaccion.setForeground(new java.awt.Color(80, 80, 80));
-        jPassPintTransaccion.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(217, 219, 228)));
 
         btnPagar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnPagar.setForeground(new java.awt.Color(255, 255, 255));
@@ -83,35 +75,29 @@ public class FormularioPagoTarjetas extends javax.swing.JPanel {
             .addGroup(panelPrincipalLayout.createSequentialGroup()
                 .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelPrincipalLayout.createSequentialGroup()
-                        .addGap(67, 67, 67)
-                        .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblPinTransaccion)
-                            .addComponent(lblMonto, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextMonto, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPassPintTransaccion, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(panelPrincipalLayout.createSequentialGroup()
                         .addGap(159, 159, 159)
                         .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(btnPagar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lblInvalido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(194, Short.MAX_VALUE))
+                            .addComponent(lblInvalido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(panelPrincipalLayout.createSequentialGroup()
+                        .addGap(56, 56, 56)
+                        .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblMonto, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextMonto, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(205, Short.MAX_VALUE))
         );
         panelPrincipalLayout.setVerticalGroup(
             panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelPrincipalLayout.createSequentialGroup()
-                .addContainerGap(157, Short.MAX_VALUE)
+                .addContainerGap(203, Short.MAX_VALUE)
                 .addComponent(lblMonto)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextMonto, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24)
-                .addComponent(lblPinTransaccion)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPassPintTransaccion, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(lblInvalido, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(btnPagar)
-                .addGap(105, 105, 105))
+                .addGap(117, 117, 117))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -135,11 +121,16 @@ public class FormularioPagoTarjetas extends javax.swing.JPanel {
         try {
             // parsear datos
             int monto = Integer.parseInt(jTextMonto.getText());
+            int eleccion = JOptionPane.showConfirmDialog(this, "Desea seguir el Pago?",
+                    "Confirmación de Pago", YES_NO_OPTION);
+            // Si
+            if (eleccion == JOptionPane.YES_OPTION) {
+                // realizar la transaccion
+                Comprobante comp = m.PagarTarjeta(monto);
+                IntercambiarPaneles intercambiar = new IntercambiarPaneles();
+                intercambiar.modificarPanel(comp, panelPrincipal);
+            }
 
-            // realizar la transaccion
-            Comprobante comp = m.PagarTarjeta(monto);
-            IntercambiarPaneles intercambiar = new IntercambiarPaneles();
-            intercambiar.modificarPanel(comp, panelPrincipal);
         } catch (Exception e) {
             lblInvalido.setText("Datos Inválidos");
             System.out.println(e);
@@ -148,11 +139,9 @@ public class FormularioPagoTarjetas extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnPagar;
-    private javax.swing.JPasswordField jPassPintTransaccion;
     private javax.swing.JTextField jTextMonto;
     private javax.swing.JLabel lblInvalido;
     private javax.swing.JLabel lblMonto;
-    private javax.swing.JLabel lblPinTransaccion;
     private javax.swing.JPanel panelPrincipal;
     // End of variables declaration//GEN-END:variables
 }

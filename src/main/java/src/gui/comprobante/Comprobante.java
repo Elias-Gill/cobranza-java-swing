@@ -85,12 +85,16 @@ public class Comprobante extends javax.swing.JPanel implements Printable {
         Monto.setText("Concepto:");
 
         datosFecha.setBackground(new java.awt.Color(0, 0, 0));
+        datosFecha.setForeground(new java.awt.Color(51, 51, 51));
 
         datosMonto.setBackground(new java.awt.Color(0, 0, 0));
+        datosMonto.setForeground(new java.awt.Color(51, 51, 51));
 
         datosCuentaDestino.setBackground(new java.awt.Color(0, 0, 0));
+        datosCuentaDestino.setForeground(new java.awt.Color(51, 51, 51));
 
         datosNumero.setBackground(new java.awt.Color(0, 0, 0));
+        datosNumero.setForeground(new java.awt.Color(51, 51, 51));
 
         Comprobante.setBackground(new java.awt.Color(0, 0, 0));
         Comprobante.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -114,6 +118,7 @@ public class Comprobante extends javax.swing.JPanel implements Printable {
         Concepto.setText("Monto: ");
 
         datosConcepto.setBackground(new java.awt.Color(0, 0, 0));
+        datosConcepto.setForeground(new java.awt.Color(51, 51, 51));
 
         jLabel25.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel25.setForeground(new java.awt.Color(51, 51, 51));
@@ -191,7 +196,7 @@ public class Comprobante extends javax.swing.JPanel implements Printable {
         btnGuardar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnGuardar.setForeground(new java.awt.Color(255, 255, 255));
         btnGuardar.setText("Guardar");
-        btnGuardar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnGuardar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnGuardar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnGuardarMouseClicked(evt);
