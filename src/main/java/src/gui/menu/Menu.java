@@ -5,6 +5,8 @@
 package src.gui.menu;
 
 import com.formdev.flatlaf.FlatDarkLaf;
+import src.bankServer.regsYcomprobs.DatosComprobante;
+import src.gui.comprobante.Comprobante;
 import src.gui.formulario.*;
 import src.gui.intercambiarPaneles.IntercambiarPaneles;
 import src.mediador.Mediador;
@@ -672,8 +674,10 @@ public class Menu extends javax.swing.JPanel {
     private void btnRecargarMouseClicked(
             java.awt.event.MouseEvent evt) { // GEN-FIRST:event_jButton1MouseClicked
         try {
-            m.IniciarSesion(m.cuentaActiva.contrasena, m.cuentaActiva.cedula);
-            jtextSaldo.setText(String.valueOf(m.cuentaActiva.saldo));
+            Comprobante comp = m.ConsultaSaldo(m.cuentaActiva.saldo);
+            IntercambiarPaneles intercambiar = new IntercambiarPaneles();
+            intercambiar.modificarPanel(comp, panelDer);
+
         } catch (Exception e) {
         }
     } // GEN-LAST:event_jButton1MouseClicked

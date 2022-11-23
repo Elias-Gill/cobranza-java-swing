@@ -8,6 +8,7 @@ import java.awt.Graphics;
 import java.awt.print.PageFormat;
 import java.awt.print.Printable;
 import java.awt.print.PrinterJob;
+import java.time.LocalDate;
 
 import src.bankServer.regsYcomprobs.DatosComprobante;
 
@@ -27,6 +28,7 @@ public class Comprobante extends javax.swing.JPanel implements Printable {
             datosCuentaDestino.setText(String.valueOf(d.cuentaDestino));
         } else {
             datosCuentaDestino.setText("########");
+            Monto.setText("Saldo Disponible");
         }
         datosFecha.setText(d.fecha.toString());
         datosMonto.setText(String.valueOf(d.monto));
@@ -46,7 +48,7 @@ public class Comprobante extends javax.swing.JPanel implements Printable {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         panelPrincipal = new javax.swing.JPanel();
-        Monto = new javax.swing.JLabel();
+        Concepto = new javax.swing.JLabel();
         datosFecha = new javax.swing.JLabel();
         datosMonto = new javax.swing.JLabel();
         datosCuentaDestino = new javax.swing.JLabel();
@@ -55,7 +57,7 @@ public class Comprobante extends javax.swing.JPanel implements Printable {
         Numero = new javax.swing.JLabel();
         Fecha = new javax.swing.JLabel();
         CuentaDestino = new javax.swing.JLabel();
-        Concepto = new javax.swing.JLabel();
+        Monto = new javax.swing.JLabel();
         datosConcepto = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
         btnGuardar = new javax.swing.JButton();
@@ -80,9 +82,9 @@ public class Comprobante extends javax.swing.JPanel implements Printable {
         panelPrincipal.setBackground(new java.awt.Color(255, 255, 255));
         panelPrincipal.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        Monto.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        Monto.setForeground(new java.awt.Color(60, 63, 65));
-        Monto.setText("Concepto:");
+        Concepto.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        Concepto.setForeground(new java.awt.Color(60, 63, 65));
+        Concepto.setText("Concepto:");
 
         datosFecha.setBackground(new java.awt.Color(0, 0, 0));
         datosFecha.setForeground(new java.awt.Color(51, 51, 51));
@@ -113,9 +115,9 @@ public class Comprobante extends javax.swing.JPanel implements Printable {
         CuentaDestino.setForeground(new java.awt.Color(60, 63, 65));
         CuentaDestino.setText("Numero: ");
 
-        Concepto.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        Concepto.setForeground(new java.awt.Color(60, 63, 65));
-        Concepto.setText("Monto: ");
+        Monto.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        Monto.setForeground(new java.awt.Color(60, 63, 65));
+        Monto.setText("Monto: ");
 
         datosConcepto.setBackground(new java.awt.Color(0, 0, 0));
         datosConcepto.setForeground(new java.awt.Color(51, 51, 51));
@@ -148,10 +150,10 @@ public class Comprobante extends javax.swing.JPanel implements Printable {
                             .addGroup(panelPrincipalLayout.createSequentialGroup()
                                 .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(panelPrincipalLayout.createSequentialGroup()
-                                        .addComponent(Concepto)
+                                        .addComponent(Monto)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabel25))
-                                    .addComponent(Monto, javax.swing.GroupLayout.Alignment.LEADING))
+                                    .addComponent(Concepto, javax.swing.GroupLayout.Alignment.LEADING))
                                 .addGap(18, 18, 18)
                                 .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(datosConcepto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -181,12 +183,12 @@ public class Comprobante extends javax.swing.JPanel implements Printable {
                     .addComponent(datosCuentaDestino, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27)
                 .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(Monto, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Concepto, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(datosConcepto, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30)
                 .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(Concepto, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Monto, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel25))
                     .addComponent(datosMonto, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(138, 138, 138))

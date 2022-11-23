@@ -19,9 +19,9 @@ public class BankServer {
     private static serverServicio servicios = new serverServicio(cn);
 
     /**
-     * Funcion para iniciar y establecer la conexion con la base de datos.
-     * Solo se utiliza durante el inicio.
-     * 
+     * Funcion para iniciar y establecer la conexion con la base de datos. Solo
+     * se utiliza durante el inicio.
+     *
      * @return
      */
     private static Connection iniciarBaseDeDatos() {
@@ -40,12 +40,11 @@ public class BankServer {
     }
 
     /**
-     * Realiza una nueva transferencia de dinero entre dos cuentas. Realiza
-     * las comprobaciones y la actualizacion del los saldos de ambas cuentas.
-     * 
+     * Realiza una nueva transferencia de dinero entre dos cuentas. Realiza las
+     * comprobaciones y la actualizacion del los saldos de ambas cuentas.
+     *
      * @param t
-     * @return
-     *         DatosComprobante
+     * @return DatosComprobante
      * @throws RuntimeException
      * @throws ClassNotFoundException
      * @throws SQLException
@@ -82,12 +81,11 @@ public class BankServer {
     }
 
     /**
-     * Realiza un nuevo deposito de dinero a una cuenta. Realiza la
-     * comprobacion y la actualizacion del saldo correspondiente.
-     * 
+     * Realiza un nuevo deposito de dinero a una cuenta. Realiza la comprobacion
+     * y la actualizacion del saldo correspondiente.
+     *
      * @param d
-     * @return
-     *         DatosComprobante
+     * @return DatosComprobante
      * @throws ClassNotFoundException
      * @throws SQLException
      */
@@ -100,6 +98,10 @@ public class BankServer {
         return dc;
     }
 
+    public void ConsultaSaldo(DatosComprobante dc) throws SQLException {
+        gr.nuevoRegistro(dc);
+    }
+
     public Cuenta IniciarSesion(String contrasena, int cedula)
             throws RuntimeException, ClassNotFoundException, SQLException {
         Cuenta c = sql.obtenerCuentaCedula(cedula);
@@ -110,12 +112,11 @@ public class BankServer {
     }
 
     /**
-     * Funcion que solo retorna la deuda de un determinado servicio. No requiere de
-     * parametros especiales, solo el ID del servicio.
-     * 
+     * Funcion que solo retorna la deuda de un determinado servicio. No requiere
+     * de parametros especiales, solo el ID del servicio.
+     *
      * @param idServicio
-     * @return
-     *         int: deuda de servicio
+     * @return int: deuda de servicio
      * @throws SQLException
      */
     public int getDeudaServicio(String idServicio) throws SQLException {
@@ -124,13 +125,12 @@ public class BankServer {
 
     /**
      * Funcion que realiza el pago de un determinado servicio. Se encarga de
-     * "conectarse" al servicio, realizar las comprobaciones necesarias y generar un
-     * descuento del saldo de la cuenta o aumentar la deuda de la tarjeta de
-     * credito, dependiendo del metodo de pago escogido.
-     * 
+     * "conectarse" al servicio, realizar las comprobaciones necesarias y
+     * generar un descuento del saldo de la cuenta o aumentar la deuda de la
+     * tarjeta de credito, dependiendo del metodo de pago escogido.
+     *
      * @param p
-     * @return
-     *         DatosComprobante
+     * @return DatosComprobante
      * @throws Exception
      */
     public DatosComprobante PagarServicio(PagoServicio p) throws Exception {
@@ -167,14 +167,13 @@ public class BankServer {
     }
 
     /**
-     * Funcion para realizar el pago de la deuda de alguna tarjeta asociada
-     * a una cuenta. La dueda se descuenta de la tarjeta, el saldo aumenta y se
+     * Funcion para realizar el pago de la deuda de alguna tarjeta asociada a
+     * una cuenta. La dueda se descuenta de la tarjeta, el saldo aumenta y se
      * resta del saldo de la cuenta del cliente.
-     * 
+     *
      * @param c
      * @param monto
-     * @return
-     *         DatosComprobante
+     * @return DatosComprobante
      * @throws SQLException
      */
     public DatosComprobante PagarTarjeta(Cuenta c, int monto) throws SQLException {
