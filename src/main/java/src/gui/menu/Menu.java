@@ -5,7 +5,6 @@
 package src.gui.menu;
 
 import com.formdev.flatlaf.FlatDarkLaf;
-import src.bankServer.regsYcomprobs.DatosComprobante;
 import src.gui.comprobante.Comprobante;
 import src.gui.formulario.*;
 import src.gui.intercambiarPaneles.IntercambiarPaneles;

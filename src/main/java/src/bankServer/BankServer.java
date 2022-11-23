@@ -175,12 +175,17 @@ public class BankServer {
      * @param monto
      * @return DatosComprobante
      * @throws SQLException
+     * @throws ClassNotFoundException
      */
-    public DatosComprobante PagarTarjeta(Cuenta c, int monto) throws SQLException {
-        sql.pagarTarjeta(monto, c.cedula);
-        sql.setSaldoCuenta(c.saldo - monto, c.cedula);
+    public DatosComprobante PagarTarjeta(int cedula, int monto) throws SQLException, ClassNotFoundException {
+        Cuenta cuenta = sql.obtenerCuentaCedula(cedula);
+        if (cuenta.saldo < monto) {
+            throw new RuntimeException("Fondos insuficientes");
+        }
+        sql.pagarTarjeta(monto, cuenta.cedula);
+        sql.setSaldoCuenta(cuenta.saldo - monto, cuenta.cedula);
 
-        DatosComprobante dc = new DatosComprobante(c.cedula, monto, "pagoTarjeta");
+        DatosComprobante dc = new DatosComprobante(cedula, monto, "pagoTarjeta");
         gr.nuevoRegistro(dc);
         return dc;
     }

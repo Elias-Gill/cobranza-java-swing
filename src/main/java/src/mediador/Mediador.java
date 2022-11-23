@@ -133,7 +133,7 @@ public class Mediador {
         if (monto <= 0) {
             throw new RuntimeException("Monto no puede ser negativo o 0");
         }
-        DatosComprobante d = server.PagarTarjeta(cuentaActiva, monto);
+        DatosComprobante d = server.PagarTarjeta(cuentaActiva.cedula, monto);
         // actualizar los valores de la cuenta activa en el mediador
         this.cuentaActiva = server.IniciarSesion(cuentaActiva.contrasena, cuentaActiva.cedula);
         return new Comprobante(d);

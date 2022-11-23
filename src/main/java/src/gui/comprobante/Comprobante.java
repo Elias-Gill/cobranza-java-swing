@@ -8,7 +8,6 @@ import java.awt.Graphics;
 import java.awt.print.PageFormat;
 import java.awt.print.Printable;
 import java.awt.print.PrinterJob;
-import java.time.LocalDate;
 
 import src.bankServer.regsYcomprobs.DatosComprobante;
 
