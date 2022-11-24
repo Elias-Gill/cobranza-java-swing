@@ -56,13 +56,15 @@ public class Login extends javax.swing.JFrame {
         jLabel6.setText("jLabel6");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(769, 500));
         setMinimumSize(new java.awt.Dimension(769, 500));
         setUndecorated(true);
         setResizable(false);
         setSize(new java.awt.Dimension(769, 500));
 
         panelDer.setBackground(new java.awt.Color(255, 255, 255));
-        panelDer.setMinimumSize(new java.awt.Dimension(591, 444));
+        panelDer.setMaximumSize(new java.awt.Dimension(462, 500));
+        panelDer.setMinimumSize(new java.awt.Dimension(462, 500));
         panelDer.setLayout(null);
 
         jTextField1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -87,7 +89,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
         panelDer.add(btnInicio);
-        btnInicio.setBounds(190, 360, 150, 20);
+        btnInicio.setBounds(180, 360, 150, 20);
 
         jPasswordField1.setForeground(new java.awt.Color(58, 58, 58));
         jPasswordField1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(217, 219, 228)));
@@ -130,6 +132,9 @@ public class Login extends javax.swing.JFrame {
 
         panelIzq.setBackground(new java.awt.Color(13, 167, 150));
         panelIzq.setForeground(new java.awt.Color(204, 204, 204));
+        panelIzq.setMaximumSize(new java.awt.Dimension(303, 500));
+        panelIzq.setMinimumSize(new java.awt.Dimension(303, 500));
+        panelIzq.setPreferredSize(new java.awt.Dimension(303, 500));
 
         jLabel9.setBackground(new java.awt.Color(255, 255, 255));
         jLabel9.setFont(new java.awt.Font("Segoe UI Emoji", 1, 130)); // NOI18N
@@ -150,7 +155,7 @@ public class Login extends javax.swing.JFrame {
                 .addGroup(panelIzqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(63, Short.MAX_VALUE))
+                .addContainerGap(69, Short.MAX_VALUE))
         );
         panelIzqLayout.setVerticalGroup(
             panelIzqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -159,7 +164,7 @@ public class Login extends javax.swing.JFrame {
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel10)
-                .addContainerGap(155, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -174,7 +179,9 @@ public class Login extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(panelIzq, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(panelDer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(panelDer, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
