@@ -2,6 +2,8 @@ package src.mediador;
 
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.util.ArrayList;
+
 import src.bankServer.BankServer;
 import src.bankServer.data.Cuenta;
 import src.bankServer.regsYcomprobs.DatosComprobante;
@@ -137,5 +139,15 @@ public class Mediador {
         // actualizar los valores de la cuenta activa en el mediador
         this.cuentaActiva = server.IniciarSesion(cuentaActiva.contrasena, cuentaActiva.cedula);
         return new Comprobante(d);
+    }
+
+    /**
+     * Metodo que retorna todos los registros asociados a una cuenta especifica dentro de un ArrayList.
+     * @param cedula
+     * @return
+     * @throws SQLException
+     */
+    public ArrayList<DatosComprobante> getRegistrosCuenta() throws SQLException {
+        return server.getRegistrosCuenta(cuentaActiva.cedula);
     }
 }

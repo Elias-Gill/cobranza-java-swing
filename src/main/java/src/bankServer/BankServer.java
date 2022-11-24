@@ -2,7 +2,9 @@ package src.bankServer;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import src.bankServer.data.Cuenta;
 import src.bankServer.data.ServicioExterno;
@@ -188,5 +190,33 @@ public class BankServer {
         DatosComprobante dc = new DatosComprobante(cedula, monto, "pagoTarjeta");
         gr.nuevoRegistro(dc);
         return dc;
+    }
+
+    
+    /**
+     * Metodo que retorna todos los registros asociados a una cuenta especifica.
+     * @param cedula
+     * @return
+     * @throws SQLException
+     */
+    public ArrayList<DatosComprobante> getRegistrosCuenta(int cedula) throws SQLException {
+        String query = String.format("SELECT * FROM Registro WHERE cuenta_origen=%d OR cuenta_destino=%d", cedula,
+                cedula);
+        ResultSet rs = cn.createStatement().executeQuery(query);
+        ArrayList<DatosComprobante> resultado = new ArrayList<>();
+        while (rs.next()) {
+            // cargar los datos de la cuenta
+            int idRegistro = rs.getInt("id_registro");
+            int cuentaDestino = rs.getInt("cuenta_destino");
+            int cuentaOrigen = rs.getInt("cuenta_origen");
+            int monto = rs.getInt("monto");
+            String fecha = rs.getString("fecha_transaccion");
+            String concepto = rs.getString("concepto");
+            String idServicio = rs.getString("id_Servicio");
+            // agregar a la lista de registros
+            resultado.add(new DatosComprobante(idRegistro, concepto, monto, fecha,
+                    cuentaDestino, cuentaOrigen, idServicio));
+        }
+        return resultado;
     }
 }
