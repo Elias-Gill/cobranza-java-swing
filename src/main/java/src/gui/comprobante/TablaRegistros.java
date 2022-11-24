@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
-import static jdk.internal.org.jline.utils.InfoCmp.Capability.columns;
 import src.bankServer.regsYcomprobs.DatosComprobante;
 
 /**
