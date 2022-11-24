@@ -2,6 +2,10 @@ La clase cuenta con metodos que modifan los datos de la cuenta de los clientes
 Algunas de las funciones utilizan la herramienta de manejo de excepciones de java
 
 # metodos de la clase:
+### iniciarBaseDeDatos()
+no recibe nada y retorna un objeto Connection que es la coneccion que tenemos con la base de datos
+
+Como su nombre indica, inicia la base de datos
 ### NuevaTransferencia(transferencia)
 Recibe un objeto de tipo Transferencia y retorna los datos del comprobante que se generara.
 Valida si el pin de transaccion es valido y si el saldo es suficiente para realizar la transferencia
@@ -37,4 +41,16 @@ Lanza una excepcion si ocurre un error en la ejecucion del metodo.
 ### pagarServicio(m,servicio)
 Recibe el servicio a pagar y el monto.
 Retorna los datos del comprobante.
+
 Lanza una excepcion si ocurre un error en la ejecucion del metodo.
+
+### consultarSaldo(datosComprobante)
+recibe un objeto de tipo datosComprobante y no retorna nada
+
+crea un nuevo registro
+
+### getDeudaServicio(idServicio)
+recibe el id del servicio y retorna la deuda de ese servicio
+
+retorna la deuda del servicio que se busca dentro de la base de datos
+
