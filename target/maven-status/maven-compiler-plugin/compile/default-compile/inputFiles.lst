@@ -1,19 +1,20 @@
-/home/elias/Documentos/finaLp/src/main/java/src/bankServer/regsYcomprobs/DatosComprobante.java
-/home/elias/Documentos/finaLp/src/main/java/src/gui/formulario/FormularioTransferencia.java
-/home/elias/Documentos/finaLp/src/main/java/src/bankServer/regsYcomprobs/PagoServicio.java
-/home/elias/Documentos/finaLp/src/main/java/src/gui/intercambiarPaneles/IntercambiarPaneles.java
-/home/elias/Documentos/finaLp/src/main/java/src/bankServer/data/Cuenta.java
-/home/elias/Documentos/finaLp/src/main/java/src/gui/comprobante/Comprobante.java
-/home/elias/Documentos/finaLp/src/main/java/src/bankServer/operacionesSQL.java
-/home/elias/Documentos/finaLp/src/main/java/src/gui/formulario/FormularioPagarServicios.java
-/home/elias/Documentos/finaLp/src/main/java/src/bankServer/serverServicio.java
-/home/elias/Documentos/finaLp/src/main/java/src/gui/formulario/FormularioDeposito.java
-/home/elias/Documentos/finaLp/src/main/java/src/bankServer/regsYcomprobs/Deposito.java
-/home/elias/Documentos/finaLp/src/main/java/src/bankServer/data/ServicioExterno.java
-/home/elias/Documentos/finaLp/src/main/java/src/Login.java
-/home/elias/Documentos/finaLp/src/main/java/src/gui/menu/Menu.java
-/home/elias/Documentos/finaLp/src/main/java/src/gui/formulario/FormularioPagoTarjetas.java
-/home/elias/Documentos/finaLp/src/main/java/src/bankServer/BankServer.java
-/home/elias/Documentos/finaLp/src/main/java/src/mediador/Mediador.java
-/home/elias/Documentos/finaLp/src/main/java/src/bankServer/regsYcomprobs/Transferencia.java
-/home/elias/Documentos/finaLp/src/main/java/src/bankServer/generadorRegistro.java
+C:\Users\Abeld\FP UNA\finaLP\src\main\java\src\bankServer\regsYcomprobs\DatosComprobante.java
+C:\Users\Abeld\FP UNA\finaLP\src\main\java\src\bankServer\operacionesSQL.java
+C:\Users\Abeld\FP UNA\finaLP\src\main\java\src\bankServer\generadorRegistro.java
+C:\Users\Abeld\FP UNA\finaLP\src\main\java\src\gui\menu\Menu.java
+C:\Users\Abeld\FP UNA\finaLP\src\main\java\src\bankServer\regsYcomprobs\Deposito.java
+C:\Users\Abeld\FP UNA\finaLP\src\main\java\src\gui\formulario\FormularioPagoTarjetas.java
+C:\Users\Abeld\FP UNA\finaLP\src\main\java\src\gui\formulario\FormularioTransferencia.java
+C:\Users\Abeld\FP UNA\finaLP\src\main\java\src\bankServer\data\ServicioExterno.java
+C:\Users\Abeld\FP UNA\finaLP\src\main\java\src\bankServer\regsYcomprobs\PagoServicio.java
+C:\Users\Abeld\FP UNA\finaLP\src\main\java\src\bankServer\regsYcomprobs\Transferencia.java
+C:\Users\Abeld\FP UNA\finaLP\src\main\java\src\mediador\Mediador.java
+C:\Users\Abeld\FP UNA\finaLP\src\main\java\src\gui\comprobante\TablaRegistros.java
+C:\Users\Abeld\FP UNA\finaLP\src\main\java\src\gui\formulario\FormularioDeposito.java
+C:\Users\Abeld\FP UNA\finaLP\src\main\java\src\bankServer\BankServer.java
+C:\Users\Abeld\FP UNA\finaLP\src\main\java\src\Login.java
+C:\Users\Abeld\FP UNA\finaLP\src\main\java\src\gui\formulario\FormularioPagarServicios.java
+C:\Users\Abeld\FP UNA\finaLP\src\main\java\src\bankServer\serverServicio.java
+C:\Users\Abeld\FP UNA\finaLP\src\main\java\src\gui\comprobante\Comprobante.java
+C:\Users\Abeld\FP UNA\finaLP\src\main\java\src\bankServer\data\Cuenta.java
+C:\Users\Abeld\FP UNA\finaLP\src\main\java\src\gui\intercambiarPaneles\IntercambiarPaneles.java

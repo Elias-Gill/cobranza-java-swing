@@ -58,7 +58,7 @@ public class operacionesSQL {
             int pin = rs.getInt("pin_transaccion");
             String contrasena = rs.getString("contrasena");
             int saldo_Tarjeta = rs.getInt("saldo_Tarjeta");
-            int pin_tarjeta = rs.getInt("saldo_Tarjeta");
+            int pin_tarjeta = rs.getInt("pin_Tarjeta");
             int deudaTarjeta = rs.getInt("deuda_Tarjeta");
             // retorna la cuenta encontrada
             return new Cuenta(nroCuenta, direccion, nombre, apellido,

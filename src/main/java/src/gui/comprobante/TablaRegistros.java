@@ -21,19 +21,19 @@ public class TablaRegistros extends javax.swing.JPanel {
     /**
      * Creates new form TablaRegistros
      */
-    public TablaRegistros(ArrayList<DatosComprobante>[] listaRegistros) {
+    public TablaRegistros(ArrayList<DatosComprobante> listaRegistros) {
         initComponents();
         generarTabla(listaRegistros);
     }
 
     // Genera la tabla de Registros
-    private void generarTabla(ArrayList<DatosComprobante>[] lista) {
+    private void generarTabla(ArrayList<DatosComprobante> lista) {
         String[] columnas = {"Id", "Fecha", "Cuenta Destino", "Concepto", "Monto"};
-        DefaultTableModel modelo = new DefaultTableModel(columnas, 5);
-        for (int i = 0; i < lista.length; i++) {
-            modelo.addRow(new Object[]{lista[i].get(i).idComprobante,
-                lista[i].get(i).fecha, lista[i].get(i).cuentaDestino,
-                lista[i].get(i).concepto, lista[i].get(i).monto});
+        DefaultTableModel modelo = new DefaultTableModel(columnas, 0);
+        for (int i = 0; i < lista.size(); i++) {
+            modelo.addRow(new Object[]{lista.get(i).idComprobante,
+                lista.get(i).fecha, lista.get(i).cuentaDestino,
+                lista.get(i).concepto, lista.get(i).monto});
         }
         Tabla.setModel(modelo);
     }

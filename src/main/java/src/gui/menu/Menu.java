@@ -5,6 +5,11 @@
 package src.gui.menu;
 
 import com.formdev.flatlaf.FlatDarkLaf;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import src.bankServer.regsYcomprobs.DatosComprobante;
 import src.gui.comprobante.Comprobante;
 import src.gui.comprobante.TablaRegistros;
 import src.gui.formulario.*;
@@ -606,8 +611,15 @@ public class Menu extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegistroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegistroMouseClicked
-        //TablaRegistros panel = new TablaRegistros(ListaRegistros);
-        intercambiar.modificarPanel(panel, panelDer);
+        ArrayList<DatosComprobante> ListaRegistros;
+        try {
+            ListaRegistros = m.getRegistrosCuenta();
+            TablaRegistros panel = new TablaRegistros(ListaRegistros);
+            intercambiar.modificarPanel(panel, panelDer);
+        } catch (SQLException ex) {
+            Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }//GEN-LAST:event_btnRegistroMouseClicked
 
     private void btnRegistroMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegistroMouseEntered
