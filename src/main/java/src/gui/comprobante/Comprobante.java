@@ -29,8 +29,10 @@ public class Comprobante extends javax.swing.JPanel implements Printable {
         } else {
             if (d.cuentaDestino == 0) {
                 datosCuentaDestino.setText("########");
+            } else {
+                datosCuentaDestino.setText(String.valueOf(d.cuentaDestino));
             }
-            datosCuentaDestino.setText(String.valueOf(d.cuentaDestino));
+
         }
         datosFecha.setText(d.fecha.toString());
         datosMonto.setText(String.valueOf(d.monto));
