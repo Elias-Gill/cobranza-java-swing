@@ -18,6 +18,19 @@ public class DatosComprobante {
     public DatosComprobante() {
     }
 
+    // constructor completo
+    public DatosComprobante(Integer idComprobante, String concepto, Integer monto, String fecha,
+            int cuentaDestino, int cuentaOrigen, String idServicio) {
+
+        this.idComprobante = idComprobante;
+        this.concepto = concepto;
+        this.monto = monto;
+        this.fecha = LocalDate.parse(fecha);
+        this.cuentaDestino = cuentaDestino;
+        this.cuentaOrigen = cuentaOrigen;
+        this.idServicio = idServicio;
+    }
+
     // Transferencia a otra cuenta
     public DatosComprobante(Transferencia t) {
         this.cuentaDestino = t.cuentaDestino;

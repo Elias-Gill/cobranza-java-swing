@@ -105,7 +105,6 @@ public class Menu extends javax.swing.JPanel {
             }
         });
 
-        jLabel1.setBackground(new java.awt.Color(240, 240, 240));
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(204, 204, 204));
         jLabel1.setText("Pagar Servicios Externos");
@@ -122,7 +121,7 @@ public class Menu extends javax.swing.JPanel {
                 .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(2, 2, 2)
                 .addComponent(jLabel1)
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
         btnPagarServiciosLayout.setVerticalGroup(
             btnPagarServiciosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -151,7 +150,6 @@ public class Menu extends javax.swing.JPanel {
             }
         });
 
-        jLabel8.setBackground(new java.awt.Color(240, 240, 240));
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(204, 204, 204));
         jLabel8.setText("Inicio");
@@ -196,7 +194,6 @@ public class Menu extends javax.swing.JPanel {
             }
         });
 
-        jLabel3.setBackground(new java.awt.Color(240, 240, 240));
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(204, 204, 204));
         jLabel3.setText("Transferir");
@@ -241,7 +238,6 @@ public class Menu extends javax.swing.JPanel {
             }
         });
 
-        jLabel4.setBackground(new java.awt.Color(240, 240, 240));
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(204, 204, 204));
         jLabel4.setText("Depositar");
@@ -286,7 +282,6 @@ public class Menu extends javax.swing.JPanel {
             }
         });
 
-        jLabel5.setBackground(new java.awt.Color(240, 240, 240));
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(204, 204, 204));
         jLabel5.setText("Pagar Tarjeta");
@@ -331,7 +326,6 @@ public class Menu extends javax.swing.JPanel {
             }
         });
 
-        jLabel14.setBackground(new java.awt.Color(240, 240, 240));
         jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(204, 204, 204));
         jLabel14.setText("Salir");
@@ -362,13 +356,11 @@ public class Menu extends javax.swing.JPanel {
 
         jLabel7.setBackground(new java.awt.Color(0, 0, 0));
         jLabel7.setFont(new java.awt.Font("Segoe UI Emoji", 1, 80)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("🌄");
 
-        jLabel6.setBackground(new java.awt.Color(240, 240, 240));
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(254, 254, 254));
-        jLabel6.setText("NOMBRE DEL BANCO");
+        jLabel6.setText("    Banco Diaz Gill");
 
         javax.swing.GroupLayout panelIzqLayout = new javax.swing.GroupLayout(panelIzq);
         panelIzq.setLayout(panelIzqLayout);
@@ -449,15 +441,12 @@ public class Menu extends javax.swing.JPanel {
 
         jtextCuenta.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jtextCuenta.setForeground(new java.awt.Color(51, 51, 51));
-        jtextCuenta.setText("DFGDFG");
 
         jtextCedula.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jtextCedula.setForeground(new java.awt.Color(51, 51, 51));
-        jtextCedula.setText("DFGDFGDG");
 
         jtextTelefono.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jtextTelefono.setForeground(new java.awt.Color(51, 51, 51));
-        jtextTelefono.setText("DFGDFG");
 
         lblGuarani.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lblGuarani.setForeground(new java.awt.Color(51, 51, 51));
@@ -480,7 +469,6 @@ public class Menu extends javax.swing.JPanel {
 
         jtextTitular.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jtextTitular.setForeground(new java.awt.Color(51, 51, 51));
-        jtextTitular.setText("DFGDFGH");
 
         javax.swing.GroupLayout panelInicioLayout = new javax.swing.GroupLayout(panelInicio);
         panelInicio.setLayout(panelInicioLayout);
